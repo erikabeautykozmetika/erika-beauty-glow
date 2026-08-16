@@ -102,7 +102,7 @@ function ServicesPage() {
                       ))}
                     </ul>
                     <Button asChild className="mt-6 w-full">
-                      <Link to="/foglalas" search={{ szolgaltatas: service.name }}>
+                      <Link to="/foglalas">
                         Időpont foglalása
                       </Link>
                     </Button>

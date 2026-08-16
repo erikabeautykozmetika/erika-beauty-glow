@@ -21,10 +21,6 @@ import { site, services } from "@/lib/site-data";
 import { breadcrumbJsonLd, pageMeta } from "@/lib/seo";
 
 export const Route = createFileRoute("/foglalas")({
-  validateSearch: (search: Record<string, unknown>) => ({
-    szolgaltatas:
-      typeof search.szolgaltatas === "string" ? search.szolgaltatas : undefined,
-  }),
   head: () => ({
     meta: pageMeta({
       title: "Időpontfoglalás online | Erika Beauty Kozmetika",
@@ -73,7 +69,6 @@ const timeSlots = [
 ];
 
 function BookingPage() {
-  const { szolgaltatas } = Route.useSearch();
   const {
     register,
     handleSubmit,
@@ -82,7 +77,7 @@ function BookingPage() {
     formState: { errors, isSubmitting },
   } = useForm<BookingValues>({
     resolver: zodResolver(bookingSchema),
-    defaultValues: { service: szolgaltatas ?? "" },
+    defaultValues: { service: "" },
   });
 
   const onSubmit = async (_values: BookingValues) => {
@@ -190,7 +185,6 @@ function BookingPage() {
               <div className="space-y-2">
                 <Label htmlFor="service">Szolgáltatás</Label>
                 <Select
-                  defaultValue={szolgaltatas}
                   onValueChange={(value) =>
                     setValue("service", value, { shouldValidate: true })
                   }

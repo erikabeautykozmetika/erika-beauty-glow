@@ -12,8 +12,10 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as FoglalasRouteImport } from './routes/foglalas'
 import { Route as GaleriaRouteImport } from './routes/galeria'
 import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as RolamRouteImport } from './routes/rolam'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as SzolgaltatasokRouteImport } from './routes/szolgaltatasok'
@@ -33,6 +35,11 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FoglalasRoute = FoglalasRouteImport.update({
+  id: '/foglalas',
+  path: '/foglalas',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GaleriaRoute = GaleriaRouteImport.update({
   id: '/galeria',
   path: '/galeria',
@@ -41,6 +48,11 @@ const GaleriaRoute = GaleriaRouteImport.update({
 const GalleryRoute = GalleryRouteImport.update({
   id: '/gallery',
   path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KontaktRoute = KontaktRouteImport.update({
+  id: '/kontakt',
+  path: '/kontakt',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RolamRoute = RolamRouteImport.update({
@@ -63,8 +75,10 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/foglalas': typeof FoglalasRoute
   '/galeria': typeof GaleriaRoute
   '/gallery': typeof GalleryRoute
+  '/kontakt': typeof KontaktRoute
   '/rolam': typeof RolamRoute
   '/services': typeof ServicesRoute
   '/szolgaltatasok': typeof SzolgaltatasokRoute
@@ -73,8 +87,10 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/foglalas': typeof FoglalasRoute
   '/galeria': typeof GaleriaRoute
   '/gallery': typeof GalleryRoute
+  '/kontakt': typeof KontaktRoute
   '/rolam': typeof RolamRoute
   '/services': typeof ServicesRoute
   '/szolgaltatasok': typeof SzolgaltatasokRoute
@@ -84,8 +100,10 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/foglalas': typeof FoglalasRoute
   '/galeria': typeof GaleriaRoute
   '/gallery': typeof GalleryRoute
+  '/kontakt': typeof KontaktRoute
   '/rolam': typeof RolamRoute
   '/services': typeof ServicesRoute
   '/szolgaltatasok': typeof SzolgaltatasokRoute
@@ -96,8 +114,10 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/foglalas'
     | '/galeria'
     | '/gallery'
+    | '/kontakt'
     | '/rolam'
     | '/services'
     | '/szolgaltatasok'
@@ -106,8 +126,10 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/foglalas'
     | '/galeria'
     | '/gallery'
+    | '/kontakt'
     | '/rolam'
     | '/services'
     | '/szolgaltatasok'
@@ -116,8 +138,10 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/foglalas'
     | '/galeria'
     | '/gallery'
+    | '/kontakt'
     | '/rolam'
     | '/services'
     | '/szolgaltatasok'
@@ -127,8 +151,10 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
+  FoglalasRoute: typeof FoglalasRoute
   GaleriaRoute: typeof GaleriaRoute
   GalleryRoute: typeof GalleryRoute
+  KontaktRoute: typeof KontaktRoute
   RolamRoute: typeof RolamRoute
   ServicesRoute: typeof ServicesRoute
   SzolgaltatasokRoute: typeof SzolgaltatasokRoute
@@ -157,6 +183,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/foglalas': {
+      id: '/foglalas'
+      path: '/foglalas'
+      fullPath: '/foglalas'
+      preLoaderRoute: typeof FoglalasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/galeria': {
       id: '/galeria'
       path: '/galeria'
@@ -169,6 +202,13 @@ declare module '@tanstack/react-router' {
       path: '/gallery'
       fullPath: '/gallery'
       preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kontakt': {
+      id: '/kontakt'
+      path: '/kontakt'
+      fullPath: '/kontakt'
+      preLoaderRoute: typeof KontaktRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/rolam': {
@@ -199,8 +239,10 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
+  FoglalasRoute: FoglalasRoute,
   GaleriaRoute: GaleriaRoute,
   GalleryRoute: GalleryRoute,
+  KontaktRoute: KontaktRoute,
   RolamRoute: RolamRoute,
   ServicesRoute: ServicesRoute,
   SzolgaltatasokRoute: SzolgaltatasokRoute,
