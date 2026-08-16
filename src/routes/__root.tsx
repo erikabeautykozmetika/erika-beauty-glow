@@ -80,10 +80,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "ErikaBeautyKozmetika" },
+      { title: "Erika Beauty Kozmetika — kozmetika Budapest XII. kerület" },
       { name: "description", content: "Professzionális kozmetikai kezelések Budapesten. Arckezelések, manikűr, smink és masszázs barátságos környezetben." },
       { name: "author", content: "ErikaBeautyKozmetika" },
-      { property: "og:title", content: "ErikaBeautyKozmetika" },
+      { property: "og:title", content: "Erika Beauty Kozmetika" },
       { property: "og:description", content: "Professzionális kozmetikai kezelések Budapesten. Foglalj időpontot online!" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
