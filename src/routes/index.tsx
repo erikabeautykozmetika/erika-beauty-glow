@@ -76,7 +76,6 @@ function HomePage() {
                   width={1344}
                   height={896}
                   className="h-full w-full object-cover"
-                  priority
                 />
               </div>
             </div>
