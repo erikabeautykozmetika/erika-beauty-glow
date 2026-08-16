@@ -12,8 +12,11 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as GaleriaRouteImport } from './routes/galeria'
 import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as RolamRouteImport } from './routes/rolam'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as SzolgaltatasokRouteImport } from './routes/szolgaltatasok'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -30,9 +33,19 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GaleriaRoute = GaleriaRouteImport.update({
+  id: '/galeria',
+  path: '/galeria',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GalleryRoute = GalleryRouteImport.update({
   id: '/gallery',
   path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RolamRoute = RolamRouteImport.update({
+  id: '/rolam',
+  path: '/rolam',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesRoute = ServicesRouteImport.update({
@@ -40,43 +53,85 @@ const ServicesRoute = ServicesRouteImport.update({
   path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SzolgaltatasokRoute = SzolgaltatasokRouteImport.update({
+  id: '/szolgaltatasok',
+  path: '/szolgaltatasok',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/galeria': typeof GaleriaRoute
   '/gallery': typeof GalleryRoute
+  '/rolam': typeof RolamRoute
   '/services': typeof ServicesRoute
+  '/szolgaltatasok': typeof SzolgaltatasokRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/galeria': typeof GaleriaRoute
   '/gallery': typeof GalleryRoute
+  '/rolam': typeof RolamRoute
   '/services': typeof ServicesRoute
+  '/szolgaltatasok': typeof SzolgaltatasokRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/galeria': typeof GaleriaRoute
   '/gallery': typeof GalleryRoute
+  '/rolam': typeof RolamRoute
   '/services': typeof ServicesRoute
+  '/szolgaltatasok': typeof SzolgaltatasokRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/contact' | '/gallery' | '/services'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/galeria'
+    | '/gallery'
+    | '/rolam'
+    | '/services'
+    | '/szolgaltatasok'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/contact' | '/gallery' | '/services'
-  id: '__root__' | '/' | '/about' | '/contact' | '/gallery' | '/services'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/galeria'
+    | '/gallery'
+    | '/rolam'
+    | '/services'
+    | '/szolgaltatasok'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/galeria'
+    | '/gallery'
+    | '/rolam'
+    | '/services'
+    | '/szolgaltatasok'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
+  GaleriaRoute: typeof GaleriaRoute
   GalleryRoute: typeof GalleryRoute
+  RolamRoute: typeof RolamRoute
   ServicesRoute: typeof ServicesRoute
+  SzolgaltatasokRoute: typeof SzolgaltatasokRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -102,11 +157,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/galeria': {
+      id: '/galeria'
+      path: '/galeria'
+      fullPath: '/galeria'
+      preLoaderRoute: typeof GaleriaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/gallery': {
       id: '/gallery'
       path: '/gallery'
       fullPath: '/gallery'
       preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rolam': {
+      id: '/rolam'
+      path: '/rolam'
+      fullPath: '/rolam'
+      preLoaderRoute: typeof RolamRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services': {
@@ -116,6 +185,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/szolgaltatasok': {
+      id: '/szolgaltatasok'
+      path: '/szolgaltatasok'
+      fullPath: '/szolgaltatasok'
+      preLoaderRoute: typeof SzolgaltatasokRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -123,8 +199,11 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
+  GaleriaRoute: GaleriaRoute,
   GalleryRoute: GalleryRoute,
+  RolamRoute: RolamRoute,
   ServicesRoute: ServicesRoute,
+  SzolgaltatasokRoute: SzolgaltatasokRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
