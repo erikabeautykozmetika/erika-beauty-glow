@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/SectionHeading";
 import { services } from "@/lib/site-data";
 import { breadcrumbJsonLd, pageMeta } from "@/lib/seo";
+import servicesHeroAsset from "@/assets/hero-cosmetics.jpg.asset.json";
 
 export const Route = createFileRoute("/szolgaltatasok")({
   head: () => ({
