@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/SectionHeading";
 import { services } from "@/lib/site-data";
 import { breadcrumbJsonLd, pageMeta } from "@/lib/seo";
+import servicesHeroAsset from "@/assets/hero-cosmetics.jpg.asset.json";
 
 export const Route = createFileRoute("/szolgaltatasok")({
   head: () => ({
@@ -53,18 +54,46 @@ const categories = ["Arckezelés", "Gépi kezelés", "Kiegészítő kezelés"] a
 
 function ServicesPage() {
   return (
-    <div className="py-16 sm:py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          centered
-          className="mb-4"
-          title="Foglalható szolgáltatások"
-          subtitle="Minden kezelés bőrdiagnosztikával indul, így a végleges kezelési terv és annak időtartama a bőröd aktuális állapotához igazodik."
+    <>
+      {/* Hero */}
+      <section className="relative isolate overflow-hidden">
+        <img
+          src={servicesHeroAsset.url}
+          alt="Professzionális kozmetikai ampullák és virágok a szolgáltatásokhoz"
+          width={1920}
+          height={1080}
+          className="absolute inset-0 -z-10 h-full w-full object-cover"
+          fetchPriority="high"
         />
-        <p className="mx-auto mt-6 max-w-2xl text-center text-sm text-muted-foreground">
-          Az árakról az időpontfoglalás visszaigazolásakor, illetve telefonon adok
-          pontos tájékoztatást.
-        </p>
+        <div className="absolute inset-0 -z-10 bg-background/80 backdrop-blur-[2px]" />
+        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
+          <div className="max-w-2xl text-center sm:mx-auto">
+            <p className="text-xs font-medium uppercase tracking-[0.35em] text-primary">
+              Erika Beauty Kozmetika
+            </p>
+            <h1 className="mt-5 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+              Szolgáltatások
+            </h1>
+            <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+              Minden kezelés bőrdiagnosztikával indul, így a végleges kezelési terv
+              és annak időtartama a bőröd aktuális állapotához igazodik.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div className="py-16 sm:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            centered
+            className="mb-4"
+            title="Foglalható szolgáltatások"
+            subtitle="Válaszd ki a bőrödnek legmegfelelőbb kezelést, és foglalj időpontot néhány kattintással."
+          />
+          <p className="mx-auto mt-6 max-w-2xl text-center text-sm text-muted-foreground">
+            Az árakról az időpontfoglalás visszaigazolásakor, illetve telefonon adok
+            pontos tájékoztatást.
+          </p>
 
         {categories.map((category) => {
           const items = services.filter((s) => s.category === category);
@@ -114,5 +143,6 @@ function ServicesPage() {
         })}
       </div>
     </div>
+    </>
   );
 }
