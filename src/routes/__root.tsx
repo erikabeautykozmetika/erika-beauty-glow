@@ -129,6 +129,7 @@ function RootComponent() {
         </main>
         <Footer />
       </div>
+      <MessengerButton />
       <Toaster position="bottom-right" />
     </QueryClientProvider>
   );
