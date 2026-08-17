@@ -48,38 +48,39 @@ const pillars = [
 function HomePage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative isolate overflow-hidden">
+      {/* Hero image — full image visible, no overlay text */}
+      <section aria-label="Főkép" className="bg-secondary">
         <img
           src={homeHeroAsset.url}
           alt="Erika Beauty Kozmetika — természetes olajok, virágok és ápoló szérumok"
           width={1920}
           height={1080}
-          className="absolute inset-0 -z-10 h-full w-full object-cover"
+          className="mx-auto h-auto w-full max-w-7xl object-contain"
           fetchPriority="high"
         />
-        <div className="absolute inset-0 -z-10 bg-background/50" />
-        <div className="mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
-          <div className="max-w-2xl">
-            <p className="text-xs font-medium uppercase tracking-[0.35em] text-primary">
-              {site.postalCode} {site.city} · {site.district}
-            </p>
-            <h1 className="mt-5 text-4xl font-semibold tracking-tight text-foreground sm:text-6xl">
-              Erika Beauty Kozmetika
-            </h1>
-            <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-              Te is úgy érzed, hogy elvesztél a kozmetikai termékek és ígéretek
-              végtelen tengerében? A filozófiám egyszerű: nálam nincs tukmálás,
-              csak valódi megoldások és szakértő segítség.
-            </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button asChild size="lg">
-                <Link to="/foglalas">Időpontfoglalás</Link>
-              </Button>
-              <Button asChild size="lg" variant="outline">
-                <Link to="/szolgaltatasok">Szolgáltatások megtekintése</Link>
-              </Button>
-            </div>
+      </section>
+
+      {/* Intro text moved below the hero image */}
+      <section className="py-16 sm:py-24">
+        <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+          <p className="text-xs font-medium uppercase tracking-[0.35em] text-primary">
+            {site.postalCode} {site.city} · {site.district}
+          </p>
+          <h1 className="mt-5 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+            Erika Beauty Kozmetika
+          </h1>
+          <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+            Te is úgy érzed, hogy elvesztél a kozmetikai termékek és ígéretek
+            végtelen tengerében? A filozófiám egyszerű: nálam nincs tukmálás,
+            csak valódi megoldások és szakértő segítség.
+          </p>
+          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+            <Button asChild size="lg">
+              <Link to="/foglalas">Időpontfoglalás</Link>
+            </Button>
+            <Button asChild size="lg" variant="outline">
+              <Link to="/szolgaltatasok">Szolgáltatások megtekintése</Link>
+            </Button>
           </div>
         </div>
       </section>
