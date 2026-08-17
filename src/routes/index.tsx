@@ -14,7 +14,7 @@ export const Route = createFileRoute("/")({
       description:
         "Személyre szabott arckezelések Budapest XII. kerületében: mélytisztítás, hidratálás, anti-age kúra. 16 év tapasztalat, 5400+ kezelés. Foglalj időpontot online!",
       path: "/",
-      image: "/images/hero-salon.jpg",
+      image: heroAsset.url,
     }),
     links: [{ rel: "canonical", href: "/" }],
     scripts: [
