@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/SectionHeading";
 import { site, services } from "@/lib/site-data";
 import { localBusinessJsonLd, pageMeta } from "@/lib/seo";
+import heroAsset from "@/assets/hero-cosmetics.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -13,7 +14,7 @@ export const Route = createFileRoute("/")({
       description:
         "Személyre szabott arckezelések Budapest XII. kerületében: mélytisztítás, hidratálás, anti-age kúra. 16 év tapasztalat, 5400+ kezelés. Foglalj időpontot online!",
       path: "/",
-      image: "/images/hero-salon.jpg",
+      image: heroAsset.url,
     }),
     links: [{ rel: "canonical", href: "/" }],
     scripts: [
@@ -50,8 +51,8 @@ function HomePage() {
       {/* Hero */}
       <section className="relative isolate overflow-hidden">
         <img
-          src="/images/hero-salon.jpg"
-          alt="Az Erika Beauty Kozmetika világos, letisztult kezelőtere Budapesten"
+          src={heroAsset.url}
+          alt="Professzionális kozmetikai ampullák és virágok az Erika Beauty Kozmetikában"
           width={1920}
           height={1080}
           className="absolute inset-0 -z-10 h-full w-full object-cover"
