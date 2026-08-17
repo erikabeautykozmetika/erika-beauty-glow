@@ -51,8 +51,8 @@ function HomePage() {
       {/* Hero */}
       <section className="relative isolate overflow-hidden">
         <img
-          src={heroAsset.url}
-          alt="Professzionális kozmetikai ampullák és virágok az Erika Beauty Kozmetikában"
+          src={homeHeroAsset.url}
+          alt="Erika Beauty Kozmetika — természetes olajok, virágok és ápoló szérumok"
           width={1920}
           height={1080}
           className="absolute inset-0 -z-10 h-full w-full object-cover"
