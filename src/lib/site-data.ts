@@ -1,178 +1,414 @@
+/**
+ * Az Erika Beauty Kozmetika weboldal minden tartalmi adata.
+ * Forrás: a jelenlegi hivatalos oldal (sites.google.com/view/erika-beauty-kozmetika).
+ * Kitalált adat nincs benne.
+ */
+
 export const site = {
   name: "Erika Beauty Kozmetika",
-  legalName: "Erika Beauty Kozmetika",
-  owner: "Bertus Erika",
-  tagline: "Személyre szabott arckezelések Budapesten",
+  claim:
+    "ERIKA BEAUTY – PRÉMIUM SZÉPSÉGÁPOLÁS, HOGY MINDEN NAP KÜLÖNLEGESNEK ÉREZD MAGAD",
   domain: "erikabeautykozmetika.hu",
-  phone: "+36301234567",
-  phoneDisplay: "+36 30 123 4567",
-  email: "info@erikabeautykozmetika.hu",
-  street: "Táltos utca 15/b.",
-  postalCode: "1123",
+  addressLine: "1124 Budapest, Jagelló út 1–3.",
+  addressExtra: "Kongresszusi Központ / Művészbejáró",
+  street: "Jagelló út 1–3.",
+  postalCode: "1124",
   city: "Budapest",
-  district: "XII. kerület",
-  mapsQuery: "1123 Budapest, Táltos utca 15/b.",
-  bookingUrl: "/foglalas",
-  openingHours: [
-    { days: "Hétfő – Péntek", hours: "09:00 – 18:00" },
-    { days: "Szombat", hours: "09:00 – 14:00" },
-    { days: "Vasárnap", hours: "Zárva" },
-  ],
+  district: "Budapest XII. kerület",
+  phone: "+36704173932",
+  phoneDisplay: "+36 70 417 3932",
+  messengerUrl: "https://m.me/erika.lorinc.5",
+  mapsQuery: "1124 Budapest, Jagelló út 1-3.",
+  parking: "Utcában fizetős.",
+  parkingLots: "A MOM Irodaháznál és a Kongresszusi parkolóban.",
+  pedestrianAccess:
+    "Gyalogos bejárat a Művészbejárat felől, a Park oldaláról, a sárga lépcsőn lefelé.",
+  transit: "61-es villamos, valamint az 5, 9, 105 és 110 BKK buszok.",
+  contactPrompt:
+    "Kérdésed van? Foglalnál? Nem vagy biztos valamiben? Írj, és a lehető leghamarabb válaszolok neked.",
+  copyright: "Minden jog fenntartva © erikabeautykozmetika.hu 2026",
   stats: [
-    { value: "5400+", label: "elvégzett kezelés" },
-    { value: "16 év", label: "szakmai tapasztalat" },
-    { value: "14 féle", label: "szolgáltatás" },
-    { value: "27 gép", label: "és technológia" },
+    { value: "18 féle", label: "ARCKEZELÉS" },
+    { value: "16 év", label: "TAPASZTALAT" },
+    { value: "50 féle", label: "SZOLGÁLTATÁS" },
+    { value: "22 gépi", label: "KEZELÉS" },
   ],
 } as const;
 
-export type Service = {
+export type Treatment = {
   slug: string;
   name: string;
   duration: string;
-  summary: string;
-  details: string[];
-  category: "Arckezelés" | "Gépi kezelés" | "Kiegészítő kezelés";
+  description?: string;
+  note?: string;
+  image?: string;
 };
 
-export const services: Service[] = [
+export type Category = {
+  slug: string;
+  name: string;
+  lead?: string;
+  intro: string[];
+  image: string;
+  treatments: Treatment[];
+};
+
+export const categories: Category[] = [
   {
-    slug: "melytisztito-arckezeles",
-    name: "Mélytisztító arckezelés",
-    duration: "1 – 1,5 óra",
-    category: "Arckezelés",
-    summary:
-      "Klasszikus, alapos pórustisztítás a bőr légzésének és regenerálódásának helyreállításáért.",
-    details: [
-      "Bőrdiagnosztika és tisztítás",
-      "Hámlasztás, gőzölés, pórustisztítás",
-      "Nyugtató maszk és védőkrém",
+    slug: "arckezelesek",
+    name: "Arckezelések",
+    lead: "Személyre szabott kozmetikai arckezelések Budán, a XII. kerületben.",
+    intro: [
+      "Minden bőr más – ezért a jó arckezelés nem egy előre meghatározott recept szerint készül. A bőr aktuális állapotához, egyéni igényeihez és céljaihoz igazítva választjuk ki a megfelelő hatóanyagokat és kezelési lépéseket. Legyen szó hidratálásról, tisztításról, regenerálásról vagy a bőr frissebb, üdébb megjelenésének támogatásáról, a kezelés mindig rólad és a bőrödről szól.",
+    ],
+    image: "/images/gallery-facial.jpg",
+    treatments: [
+      {
+        slug: "arcmasszazs",
+        name: "Arcmasszázs",
+        duration: "45 perc",
+        description:
+          "Relaxáló és frissítő arcmasszázs a bőr és az arcizmok kellemes ápolására.",
+        image: "/images/gallery-massage.jpg",
+      },
+      {
+        slug: "oxigenes-kezeles",
+        name: "Oxigénes kezelés",
+        duration: "1,5 óra",
+        description:
+          "Frissítő, hidratáló és revitalizáló kozmetikai kezelés a fáradt, fakó bőr számára.",
+        image: "/images/gallery-skin.jpg",
+      },
+      {
+        slug: "szemelyre-szabott-arckezeles",
+        name: "Személyre szabott arckezelés",
+        duration: "2 óra",
+        description:
+          "A bőr aktuális állapotához és egyéni igényeihez igazított komplex arckezelés.",
+        image: "/images/gallery-facial.jpg",
+      },
+      {
+        slug: "regeneralo-kezeles",
+        name: "Regeneráló kezelés",
+        duration: "1 óra",
+        description:
+          "A megterhelt, fáradt bőr intenzívebb ápolására és regenerálásának támogatására.",
+        image: "/images/treatment-room.jpg",
+      },
+      {
+        slug: "szemkezeles",
+        name: "Szemkezelés",
+        duration: "1 óra",
+        description:
+          "Célzott kozmetikai ápolás a szemkörnyék érzékeny bőrére, hidratáló és frissítő hatással.",
+        image: "/images/gallery-skin.jpg",
+      },
+      {
+        slug: "tini-kezeles",
+        name: "Tini kezelés",
+        duration: "1 óra",
+        description:
+          "A fiatal bőr igényeihez igazított kozmetikai kezelés, különös figyelemmel a tisztításra és a megfelelő bőrápolásra.",
+        image: "/images/gallery-facial.jpg",
+      },
     ],
   },
   {
-    slug: "hidratalo-arckezeles",
-    name: "Hidratáló arckezelés száraz, dehidratált bőrre",
-    duration: "1,5 – 2 óra",
-    category: "Arckezelés",
-    summary:
-      "A felhalmozódott elhalt hámsejtek eltávolítása után visszaadjuk a bőr vízmegkötő képességét.",
-    details: [
-      "Elhalt hámsejtek eltávolítása",
-      "Mély pórustisztítás",
-      "Vízmegkötő hatóanyagok bevitele",
-      "Arcmasszázs, pihentető maszk",
+    slug: "ranctalanitas-es-bormegujito-kezelesek",
+    name: "Ránctalanítás és bőrmegújító kezelések",
+    lead: "Amikor a bőrünk történetet mesél",
+    intro: [
+      "Az idő múlásával bőrünk fokozatosan veszít feszességéből, hidratáltságából és természetes ragyogásából. A napsugárzás, a stressz, az életmód és a mindennapi környezeti hatások tovább gyorsíthatják ezeket a folyamatokat.",
+      "A modern kozmetikai kezelések célja nem az idő megállítása, hanem a bőr természetes megújulásának támogatása. Gépi kezelésekkel, professzionális hatóanyagokkal, mezoterápiával, tű nélküli kezelésekkel és bőrmegújító savas kezelésekkel segíthetünk a frissebb, feszesebb és ragyogóbb megjelenés elérésében. A szépség nem az életkor eltüntetéséről szól. Hanem arról, hogy a bőröd a lehető legszebb formáját mutassa – minden életkorban.",
+      "De vajon mikor kezdődött a harc az idő nyomaival? Sokkal régebben, mint gondolnánk. Már az ókori kultúrákban is keresték a módját annak, hogyan őrizhetnék meg a bőr szépségét és fiatalságát. Az évszázadok során az egyszerű bőrápolási praktikákat fokozatosan felváltották a tudományos alapokon nyugvó módszerek.",
+      "A 20. században aztán hatalmasat változott a világ: megjelentek a kémiai hámlasztások, a dermabrázió, később a lézeres és különböző energia-alapú kezelések, majd a mezoterápia, mikrotűs eljárások, rádiófrekvenciás és egyéb modern technológiák. A legfontosabb azonban: nem az a cél, hogy megállítsuk az időt. Hanem hogy a bőrünk a lehető legtovább megőrizhesse egészséges, ápolt, hidratált és ragyogó megjelenését.",
+    ],
+    image: "/images/gallery-skin.jpg",
+    treatments: [
+      {
+        slug: "ranctalanitas-therma-lifting",
+        name: "Ránctalanítás – Therma Lifting",
+        duration: "1 óra",
+        description:
+          "Lifting hatású kozmetikai kezelés a feszesebb, simább és fiatalosabb megjelenés támogatására.",
+        image: "/images/treatment-room.jpg",
+      },
+      {
+        slug: "ranctalanitas-telomer-kezeles",
+        name: "Ránctalanítás – Telomer kezelés",
+        duration: "1 óra",
+        note: "Feltöltés alatt…",
+        image: "/images/treatment-room.jpg",
+      },
+      {
+        slug: "ranctalanitas-tu-nelkuli-kezeles",
+        name: "Ránctalanítás – tű nélküli kezelés",
+        duration: "1 óra",
+        description:
+          "Kíméletes, tű nélküli kozmetikai kezelés a hidratáltabb és feszesebb bőr megjelenéséért.",
+        image: "/images/gallery-skin.jpg",
+      },
+      {
+        slug: "ranctalanitas-mezoterapia-invaziv",
+        name: "Ránctalanítás – Mezoterápia (invazív)",
+        duration: "1 óra",
+        description:
+          "Intenzív kozmetikai kezelés célzott hatóanyagok alkalmazásával, a bőr hidratáltságának, feszességének és megújulásának támogatására.",
+        image: "/images/gallery-facial.jpg",
+      },
+      {
+        slug: "ranctalanitas-mezoterapia-non-invaziv",
+        name: "Ránctalanítás – Mezoterápia (non-invazív)",
+        duration: "1 óra",
+        description:
+          "Tű nélküli, kíméletes mezoterápiás kezelés a bőr megújulásának és hidratáltságának támogatására.",
+        image: "/images/gallery-facial.jpg",
+      },
+      {
+        slug: "expressz-kezeles",
+        name: "Expressz kezelés",
+        duration: "45 perc",
+        description:
+          "Rövidebb idő alatt elvégezhető, célzott kozmetikai kezelés, amikor gyors felfrissülésre van szükség.",
+        image: "/images/gallery-skin.jpg",
+      },
+      {
+        slug: "vitaminos-arckezeles",
+        name: "Vitaminos arckezelés",
+        duration: "1,5 óra",
+        description:
+          "Tápláló és revitalizáló arckezelés a bőr friss, üde és ápolt megjelenésének támogatására.",
+        image: "/images/gallery-facial.jpg",
+      },
+      {
+        slug: "bormegujito-savas-kezeles",
+        name: "Bőrmegújító savas kezelés",
+        duration: "1 óra",
+        description:
+          "Kozmetikai savas kezelés a bőr megújulásának és egyenletesebb bőrfelszínének támogatására.",
+        image: "/images/gallery-skin.jpg",
+      },
+      {
+        slug: "borfiatalito-arckezeles",
+        name: "Bőrfiatalító arckezelés",
+        duration: "1–1,5 óra",
+        description:
+          "Intenzívebb kozmetikai ápolás az érett, fáradt vagy feszességét vesztett bőr számára.",
+        image: "/images/treatment-room.jpg",
+      },
     ],
   },
   {
-    slug: "anti-age-kezeles",
-    name: "Anti-age ránctalanító kúra",
-    duration: "2 – 2,5 óra",
-    category: "Arckezelés",
-    summary:
-      "Feszesítő, ránccsökkentő kezelés érett bőrre, látványos, azonnal érzékelhető eredménnyel.",
-    details: [
-      "Bőrfeszesítő hatóanyagok",
-      "Gépi hatóanyag-bevitel",
-      "Lifting hatású masszázs",
-      "Feszesítő maszk",
+    slug: "smink",
+    name: "Smink",
+    lead: "A smink története – évezredek óta a szépség kifejezése",
+    intro: [
+      "Az ókori Egyiptomban a smink már jóval több volt egyszerű díszítésnél. Nők és férfiak egyaránt használtak kozmetikumokat: a szemeket fekete kohl-lal és zöld malachittal hangsúlyozták, vörös okkerrel az ajkakat és az arcot színezték, olajokkal és illatos készítményekkel pedig a bőrüket ápolták. A kozmetikumoknak szépségápolási, gyakorlati és spirituális jelentőségük is volt.",
+      "De vajon mennyit változott mindez több ezer év alatt? A szemek kiemelése, az arc hangsúlyozása és az önkifejezés iránti vágy ma is ugyanúgy jelen van – csak az eszközeink, az alapanyagok és a technikák hatalmasat fejlődtek. Az egykori kohlpálcikát ma ecsetek és professzionális eszközök váltják fel, a természetes pigmenteket pedig korszerű sminktermékek. A cél azonban ugyanaz maradt: kiemelni azt, ami bennünk szép.",
+    ],
+    image: "/images/gallery-makeup.jpg",
+    treatments: [
+      {
+        slug: "professzionalis-smink",
+        name: "Professzionális smink",
+        duration: "30–60 perc",
+        description:
+          "Professzionális smink az egyéni adottságokhoz és az alkalomhoz igazítva.",
+        image: "/images/gallery-makeup.jpg",
+      },
+      {
+        slug: "menyasszonyi-proba-smink",
+        name: "Menyasszonyi próbasmink",
+        duration: "1–1,5 óra",
+        description:
+          "Az esküvő előtti próba során kialakítható az ideális sminkstílus, színvilág és intenzitás.",
+        image: "/images/gallery-makeup.jpg",
+      },
+      {
+        slug: "menyasszonyi-smink",
+        name: "Menyasszonyi smink",
+        duration: "1–1,5 óra",
+        description:
+          "Az esküvő napjára készített, az arcvonásokhoz, ruhához és az esküvő stílusához igazított professzionális smink.",
+        image: "/images/gallery-makeup.jpg",
+      },
     ],
   },
   {
-    slug: "problemas-bor-kezelese",
-    name: "Problémás, aknés bőr kezelése",
-    duration: "1 – 2 óra",
-    category: "Arckezelés",
-    summary:
-      "Kúraszerű kezelés zsíros, pattanásos bőrre, gyulladáscsökkentő és bőrnyugtató hatóanyagokkal.",
-    details: [
-      "Gyulladáscsökkentő tisztítás",
-      "Faggyútermelés szabályozása",
-      "Otthoni ápolási tanácsadás",
+    slug: "szemoldok-kezelesek",
+    name: "Szemöldök kezelések",
+    lead: "Szemöldök kezelések – az arc természetes kerete",
+    intro: [
+      "A szemöldök nem új keletű szépségtrend. Az ókori Egyiptomban már több ezer éve hangsúlyozták és formázták a szemöldököt, gyakran sötét pigmentekkel. A kozmetikumokat nemcsak szépségápolásra, hanem kulturális és vallási célokra is használták. A görög és római kultúrákban is fontos szerepet kapott a szemöldök formája. A rómaiaknál például a sötétebb, egymáshoz közelebb húzódó szemöldök szépségideálnak számított.",
+      "Ma már nem egyetlen divatot követünk. A megfelelő forma az arc karakteréhez, szemformájához és egyéni adottságokhoz igazítható – legyen szó formázásról, festésről vagy liftingről. Mert egy jól megformált szemöldök nem változtatja meg az arcot, hanem kiemeli azt, ami már eleve szép benne.",
+    ],
+    image: "/images/gallery-makeup.jpg",
+    treatments: [
+      {
+        slug: "professzionalis-szemoldokformazas",
+        name: "Professzionális szemöldökformázás",
+        duration: "20 perc",
+        description:
+          "Az arcformához és egyéni adottságokhoz igazított szemöldökformázás.",
+        image: "/images/gallery-makeup.jpg",
+      },
+      {
+        slug: "szemoldoklifting",
+        name: "Szemöldöklifting",
+        duration: "1 óra",
+        description:
+          "A szemöldökszálak rendezése és formázása természetes, ápolt és emeltebb hatásért.",
+        image: "/images/gallery-makeup.jpg",
+      },
     ],
   },
   {
-    slug: "gepi-hatoanyag-bevitel",
-    name: "Gépi hatóanyag-bevitel",
-    duration: "1 – 1,5 óra",
-    category: "Gépi kezelés",
-    summary:
-      "Ultrahangos és galvános technológiával juttatjuk a hatóanyagokat a bőr mélyebb rétegeibe.",
-    details: [
-      "Ultrahangos bevitel",
-      "Galvános kezelés",
-      "Bőrtípusra szabott hatóanyagok",
+    slug: "szempilla-kezelesek",
+    name: "Szempilla kezelések",
+    lead: "A tekintet ereje – évezredes szépségtitok",
+    intro: [
+      "A hangsúlyos tekintet szépsége nem új keletű. Már az ókori kultúrákban is nagy jelentőséget tulajdonítottak a szemek kiemelésének: a hosszú, dús szempilla a nőiesség, az elegancia és a különleges tekintet része volt.",
+      "Ma már nem természetes eredetű festékekkel és ősi praktikákkal dolgozunk, hanem korszerű, precíz technikákkal. A cél azonban mit sem változott: kiemelni a tekintetedet úgy, hogy az harmonizáljon az arcoddal és természetes szépségeddel.",
+      "A szempillaliftingtől a festésen át a műszempilláig olyan megoldásokat kínálok, amelyekkel a tekinteted lehet az egyik legszebb ékszered.",
     ],
-  },
-  {
-    slug: "ultrahangos-hamlasztas",
-    name: "Ultrahangos hámlasztás",
-    duration: "1 óra",
-    category: "Gépi kezelés",
-    summary:
-      "Kíméletes, fájdalommentes felszíni hámlasztás azonnal ragyogóbb, simább bőrfelületért.",
-    details: ["Kíméletes hámlasztás", "Pórusok fellazítása", "Hidratáló zárás"],
-  },
-  {
-    slug: "arcmasszazs",
-    name: "Kényeztető arc- és dekoltázsmasszázs",
-    duration: "45 perc",
-    category: "Kiegészítő kezelés",
-    summary:
-      "Nyirokkeringést serkentő, ellazító masszázs, amely feltölti és felfrissíti a fáradt arcbőrt.",
-    details: ["Nyirokmasszázs", "Ellazító mozdulatsor", "Bőrszínjavító hatás"],
-  },
-  {
-    slug: "szemoldok-szempilla",
-    name: "Szemöldökformázás és -festés",
-    duration: "30 perc",
-    category: "Kiegészítő kezelés",
-    summary:
-      "Arcformához igazított szemöldökrendezés, amely azonnal kipihentebbé teszi a tekintetet.",
-    details: ["Formatervezés", "Gyantázás vagy csipeszezés", "Színezés"],
+    image: "/images/gallery-makeup.jpg",
+    treatments: [
+      {
+        slug: "szempilla-lifting",
+        name: "Szempilla lifting",
+        duration: "1 óra",
+        description:
+          "A természetes szempillák ívének kiemelése látványos, mégis természetes hatás érdekében.",
+        image: "/images/gallery-makeup.jpg",
+      },
+      {
+        slug: "szempillafestes",
+        name: "Szempillafestés",
+        duration: "15 perc",
+        description:
+          "A természetes szempillák hangsúlyosabbá tétele intenzívebb színnel.",
+        image: "/images/gallery-makeup.jpg",
+      },
+      {
+        slug: "muszempilla-leoldas",
+        name: "Műszempilla leoldás",
+        duration: "30 perc",
+        description: "A korábban felhelyezett műszempillák szakszerű eltávolítása.",
+        note: "Saját épített szetteknél ingyenes.",
+        image: "/images/gallery-makeup.jpg",
+      },
+      {
+        slug: "3d-muszempilla-uj-szett",
+        name: "3D műszempilla – új szett",
+        duration: "1,5–2,5 óra",
+        description:
+          "Látványos, mégis személyre szabott műszempilla új szett kialakítása az egyéni adottságokhoz igazítva.",
+        image: "/images/gallery-makeup.jpg",
+      },
+      {
+        slug: "3d-muszempilla-toltes",
+        name: "3D műszempilla – töltés",
+        duration: "1,5 óra",
+        description:
+          "A kihullott szálak pótlása és a meglévő műszempilla-szett frissítése.",
+        image: "/images/gallery-makeup.jpg",
+      },
+    ],
   },
 ];
 
-export const galleryCases = [
+/** Önálló kezelésoldalak, amelyek közvetlenül a Kozmetikai kezelések alatt vannak. */
+export type StandaloneTreatment = Treatment & {
+  intro?: { heading?: string; paragraphs: string[] };
+};
+
+export const standaloneTreatments: StandaloneTreatment[] = [
   {
-    image: "/images/gallery-facial.jpg",
-    alt: "Mélytisztító arckezelés az Erika Beauty Kozmetikában",
-    title: "Személyre szabott mélytisztító arckezelés",
-    text: "Vendégünk arca már nagyon igényelt egy alapos mélytisztítást. A rutin tisztítási folyamatok után gépi hatóanyag-bevitel következett, majd egy pihentető masszázs. Végül nyugtató maszk és védőkrém zárta a kezelést — az eredmény ismét látványos lett.",
-    tags: ["mélytisztítás", "élettel teli bőr", "egészséges bőr"],
-  },
-  {
-    image: "/images/gallery-skin.jpg",
-    alt: "Hidratáló arckezelés eredménye: sugárzó, egészséges arcbőr",
-    title: "Száraz, dehidratált bőr újraélesztése",
-    text: "Sokszor nem a bőr rossz tápláltsága okozza a problémát, hanem a felhalmozódott elhalt hámsejtek nem engedik be a jótékony hatóanyagokat. Eltávolítottuk a hámsejteket, mély pórustisztítást végeztünk, majd vízmegkötő természetes hatóanyagot vittünk a bőrbe — masszázzsal és pihentető maszkkal zárva.",
-    tags: ["dehidratált bőr", "hidratálás", "sugárzó bőr"],
-  },
-  {
-    image: "/images/gallery-massage.jpg",
-    alt: "Feszesítő anti-age arckezelés visszatérő vendégnél",
-    title: "Anti-age kezelés visszatérő vendégnek",
-    text: "Hosszabb kihagyás után dolgoztunk ismét együtt, és az arcbőr csodásan reagált egy új kezelésre. A változás annyira látványos lett, hogy a kép magáért beszél — azóta ez a kúra a kedvencünk lett.",
-    tags: ["botox hatás", "feszesítés", "látványos eredmény"],
-  },
-  {
-    image: "/images/gallery-manicure.jpg",
-    alt: "Ápolt kezek és precíz kiegészítő kezelés",
-    title: "Precizitás a részletekben",
-    text: "A kezelés nem ér véget az arcnál: a részletekre — kézre, szemöldökre, dekoltázsra — ugyanolyan figyelmet fordítok, mert az összkép ezekből áll össze.",
-    tags: ["részletek", "ápoltság"],
-  },
-  {
-    image: "/images/gallery-makeup.jpg",
-    alt: "Ápolt, természetes hatású bőr a kezelés után",
-    title: "Természetes, ápolt végeredmény",
-    text: "A cél soha nem a maszk, hanem az egészséges, saját fényében ragyogó bőr. Ehhez otthoni ápolási tervet is kapsz, hogy az eredmény hosszú távon megmaradjon.",
-    tags: ["természetes szépség", "otthoni ápolás"],
-  },
-  {
+    slug: "ferfi-kozmetikai-kezeles",
+    name: "Férfi kozmetikai kezelés",
+    duration: "1–1,5 óra",
+    description:
+      "A férfi bőr sajátosságaihoz igazított kozmetikai kezelés, tisztítással és célzott bőrápolással.",
     image: "/images/treatment-room.jpg",
-    alt: "Az Erika Beauty Kozmetika világos, modern kezelőszobája",
-    title: "A kezelőszoba",
-    text: "Nyugodt, tiszta és világos környezet, ahol a kezelés valódi feltöltődés is egyben.",
-    tags: ["szalon", "nyugalom"],
+    intro: {
+      heading: "A férfiak szépségápolása – régen és ma",
+      paragraphs: [
+        "A férfiak bőrápolása korántsem új keletű. Már az ókori Egyiptomban és Rómában is fontos része volt a férfiak mindennapjainak a test és az arc ápolása: olajokat, illatos készítményeket és különféle bőrápoló praktikákat használtak.",
+        "Az évszázadok során a szokások változtak, az igény azonban ugyanaz maradt: tiszta, ápolt, egészséges megjelenés.",
+        "Ma a modern kozmetikai kezelések ezt az igényt ötvözik korszerű hatóanyagokkal és technológiákkal – személyre szabva, férfi bőrre is figyelve. Az ápolt megjelenés nem női kiváltság, hanem mindenkié.",
+      ],
+    },
   },
+  {
+    slug: "hatkezeles",
+    name: "Hátkezelés",
+    duration: "1 óra",
+    description:
+      "A hát bőrének alapos tisztítására és ápolására kialakított kozmetikai kezelés, különösen problémásabb bőr esetén.",
+    image: "/images/treatment-room.jpg",
+  },
+  {
+    slug: "szortelenites-es-gyantazas",
+    name: "Szőrtelenítés és gyantázás",
+    duration: "30–60 perc",
+    description:
+      "Professzionális kozmetikai szőrtelenítés női és férfi vendégek számára.",
+    image: "/images/treatment-room.jpg",
+  },
+];
+
+/** A Kozmetikai kezelések áttekintő oldal listája (a jelenlegi oldal sorrendjében). */
+export const overviewItems: {
+  name: string;
+  duration: string;
+  note?: string;
+  to?: string;
+}[] = [
+  { name: "Arcmasszázs (férfi / női)", duration: "45 perc", to: "/kozmetikai-kezelesek/arckezelesek/arcmasszazs" },
+  { name: "Oxigénes kezelés", duration: "1,5 óra", to: "/kozmetikai-kezelesek/arckezelesek/oxigenes-kezeles" },
+  { name: "Regeneráló kezelés", duration: "1 óra", to: "/kozmetikai-kezelesek/arckezelesek/regeneralo-kezeles" },
+  { name: "Személyre szabott arckezelés", duration: "2 óra", to: "/kozmetikai-kezelesek/arckezelesek/szemelyre-szabott-arckezeles" },
+  { name: "Ránctalanítás – Mezoterápia (invazív)", duration: "1 óra", to: "/kozmetikai-kezelesek/ranctalanitas-es-bormegujito-kezelesek/ranctalanitas-mezoterapia-invaziv" },
+  { name: "Ránctalanítás – Mezoterápia (non-invazív)", duration: "1 óra", to: "/kozmetikai-kezelesek/ranctalanitas-es-bormegujito-kezelesek/ranctalanitas-mezoterapia-non-invaziv" },
+  { name: "Ránctalanítás – Therma Lifting", duration: "1 óra", to: "/kozmetikai-kezelesek/ranctalanitas-es-bormegujito-kezelesek/ranctalanitas-therma-lifting" },
+  { name: "Ránctalanítás – Telomer kezelés", duration: "1 óra", to: "/kozmetikai-kezelesek/ranctalanitas-es-bormegujito-kezelesek/ranctalanitas-telomer-kezeles" },
+  { name: "Szemkezelés", duration: "1 óra", to: "/kozmetikai-kezelesek/arckezelesek/szemkezeles" },
+  { name: "Tini kezelés", duration: "1 óra", to: "/kozmetikai-kezelesek/arckezelesek/tini-kezeles" },
+  { name: "Expressz kezelés", duration: "1 óra", to: "/kozmetikai-kezelesek/ranctalanitas-es-bormegujito-kezelesek/expressz-kezeles" },
+  { name: "Hátkezelés", duration: "1 óra", to: "/kozmetikai-kezelesek/hatkezeles" },
+  { name: "MEN kezelés", duration: "1 óra", to: "/kozmetikai-kezelesek/ferfi-kozmetikai-kezeles" },
+  { name: "Vitaminos arckezelés", duration: "1,5 óra", to: "/kozmetikai-kezelesek/ranctalanitas-es-bormegujito-kezelesek/vitaminos-arckezeles" },
+  { name: "Bőrmegújító savas kezelés", duration: "1 óra", to: "/kozmetikai-kezelesek/ranctalanitas-es-bormegujito-kezelesek/bormegujito-savas-kezeles" },
+  { name: "Bőrfiatalító arckezelés", duration: "1–1,5 óra", to: "/kozmetikai-kezelesek/ranctalanitas-es-bormegujito-kezelesek/borfiatalito-arckezeles" },
+  { name: "Szőrtelenítés és gyantázás (női / férfi)", duration: "30–60 perc", to: "/kozmetikai-kezelesek/szortelenites-es-gyantazas" },
+  { name: "Professzionális szemöldökformázás", duration: "20 perc", to: "/kozmetikai-kezelesek/szemoldok-kezelesek/professzionalis-szemoldokformazas" },
+  { name: "Szemöldöklifting", duration: "1 óra", to: "/kozmetikai-kezelesek/szemoldok-kezelesek/szemoldoklifting" },
+  { name: "Szempilla lifting", duration: "1 óra", to: "/kozmetikai-kezelesek/szempilla-kezelesek/szempilla-lifting" },
+  { name: "Szempillafestés", duration: "15 perc", to: "/kozmetikai-kezelesek/szempilla-kezelesek/szempillafestes" },
+  { name: "Műszempilla leoldás", duration: "30 perc", note: "Saját épített szetteknél ingyenes.", to: "/kozmetikai-kezelesek/szempilla-kezelesek/muszempilla-leoldas" },
+  { name: "3D műszempilla – új szett", duration: "1,5–2,5 óra", to: "/kozmetikai-kezelesek/szempilla-kezelesek/3d-muszempilla-uj-szett" },
+  { name: "3D műszempilla – töltés", duration: "1,5 óra", to: "/kozmetikai-kezelesek/szempilla-kezelesek/3d-muszempilla-toltes" },
+  { name: "Microblading szemöldök tetoválás", duration: "2,5–3 óra", note: "Ingyenes a korrekció, és garancia fél évig!" },
+  { name: "Professzionális smink", duration: "30–60 perc", to: "/kozmetikai-kezelesek/smink/professzionalis-smink" },
+  { name: "Menyasszonyi próbasmink", duration: "1–1,5 óra", to: "/kozmetikai-kezelesek/smink/menyasszonyi-proba-smink" },
+  { name: "Menyasszonyi smink", duration: "1–1,5 óra", to: "/kozmetikai-kezelesek/smink/menyasszonyi-smink" },
+];
+
+export function findCategory(slug: string) {
+  return categories.find((c) => c.slug === slug);
+}
+
+export function findStandalone(slug: string) {
+  return standaloneTreatments.find((t) => t.slug === slug);
+}
+
+export function findTreatment(categorySlug: string, treatmentSlug: string) {
+  return findCategory(categorySlug)?.treatments.find((t) => t.slug === treatmentSlug);
+}
+
+export const allTreatmentPaths = [
+  ...categories.flatMap((c) =>
+    c.treatments.map((t) => `/kozmetikai-kezelesek/${c.slug}/${t.slug}`),
+  ),
+  ...standaloneTreatments.map((t) => `/kozmetikai-kezelesek/${t.slug}`),
 ];
