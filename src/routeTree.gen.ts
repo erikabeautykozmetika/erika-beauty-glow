@@ -11,10 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as FoglalasRouteImport } from './routes/foglalas'
-import { Route as GaleriaRouteImport } from './routes/galeria'
 import { Route as KontaktRouteImport } from './routes/kontakt'
-import { Route as RolamRouteImport } from './routes/rolam'
-import { Route as SzolgaltatasokRouteImport } from './routes/szolgaltatasok'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -26,75 +23,40 @@ const FoglalasRoute = FoglalasRouteImport.update({
   path: '/foglalas',
   getParentRoute: () => rootRouteImport,
 } as any)
-const GaleriaRoute = GaleriaRouteImport.update({
-  id: '/galeria',
-  path: '/galeria',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const KontaktRoute = KontaktRouteImport.update({
   id: '/kontakt',
   path: '/kontakt',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RolamRoute = RolamRouteImport.update({
-  id: '/rolam',
-  path: '/rolam',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SzolgaltatasokRoute = SzolgaltatasokRouteImport.update({
-  id: '/szolgaltatasok',
-  path: '/szolgaltatasok',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/foglalas': typeof FoglalasRoute
-  '/galeria': typeof GaleriaRoute
   '/kontakt': typeof KontaktRoute
-  '/rolam': typeof RolamRoute
-  '/szolgaltatasok': typeof SzolgaltatasokRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/foglalas': typeof FoglalasRoute
-  '/galeria': typeof GaleriaRoute
   '/kontakt': typeof KontaktRoute
-  '/rolam': typeof RolamRoute
-  '/szolgaltatasok': typeof SzolgaltatasokRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/foglalas': typeof FoglalasRoute
-  '/galeria': typeof GaleriaRoute
   '/kontakt': typeof KontaktRoute
-  '/rolam': typeof RolamRoute
-  '/szolgaltatasok': typeof SzolgaltatasokRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    '/' | '/foglalas' | '/galeria' | '/kontakt' | '/rolam' | '/szolgaltatasok'
+  fullPaths: '/' | '/foglalas' | '/kontakt'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/foglalas' | '/galeria' | '/kontakt' | '/rolam' | '/szolgaltatasok'
-  id:
-    | '__root__'
-    | '/'
-    | '/foglalas'
-    | '/galeria'
-    | '/kontakt'
-    | '/rolam'
-    | '/szolgaltatasok'
+  to: '/' | '/foglalas' | '/kontakt'
+  id: '__root__' | '/' | '/foglalas' | '/kontakt'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   FoglalasRoute: typeof FoglalasRoute
-  GaleriaRoute: typeof GaleriaRoute
   KontaktRoute: typeof KontaktRoute
-  RolamRoute: typeof RolamRoute
-  SzolgaltatasokRoute: typeof SzolgaltatasokRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -113,32 +75,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FoglalasRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/galeria': {
-      id: '/galeria'
-      path: '/galeria'
-      fullPath: '/galeria'
-      preLoaderRoute: typeof GaleriaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/kontakt': {
       id: '/kontakt'
       path: '/kontakt'
       fullPath: '/kontakt'
       preLoaderRoute: typeof KontaktRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/rolam': {
-      id: '/rolam'
-      path: '/rolam'
-      fullPath: '/rolam'
-      preLoaderRoute: typeof RolamRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/szolgaltatasok': {
-      id: '/szolgaltatasok'
-      path: '/szolgaltatasok'
-      fullPath: '/szolgaltatasok'
-      preLoaderRoute: typeof SzolgaltatasokRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -147,10 +88,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   FoglalasRoute: FoglalasRoute,
-  GaleriaRoute: GaleriaRoute,
   KontaktRoute: KontaktRoute,
-  RolamRoute: RolamRoute,
-  SzolgaltatasokRoute: SzolgaltatasokRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
