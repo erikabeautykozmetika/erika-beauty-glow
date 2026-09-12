@@ -1,0 +1,11 @@
+# Erika Beauty újraépítés
+- [ ] Teljes Google Sites oldalstruktúra és 1:1 tartalom átültetése
+- [ ] Feltöltött eredeti főképek és logó használata helyi fájlokból
+- [ ] Eredeti menü, almenük, minden szolgáltatásoldal és foglalási CTA
+- [ ] Árak pontos feltérképezése; elérhetetlen árakat nem kitalálni
+- [ ] Kapcsolat, esküvői fotózás, jogi oldalak
+- [ ] Responsive prémium arculat, mobilmenü, Messenger és Fel gomb
+- [ ] Oldalankénti SEO, canonical, Open Graph és tényszerű JSON-LD
+- [ ] robots.txt, sitemap.xml és UTF-8 llms.txt
+- [ ] Desktop/tablet/mobil, link- és technikai ellenőrzés
+- [ ] Hiányzó képek/linkek/adatok listája
