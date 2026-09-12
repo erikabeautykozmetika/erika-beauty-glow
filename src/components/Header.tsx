@@ -1,127 +1,30 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useState } from "react";
-import { Menu, Phone } from "lucide-react";
-
+import { ChevronDown, Menu, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { site } from "@/lib/site-data";
+import { categories, site, standaloneTreatments } from "@/lib/site-data";
 
 export const navItems = [
-  { to: "/", label: "Kezdőlap" },
-  { to: "/szolgaltatasok", label: "Szolgáltatások" },
-  { to: "/rolam", label: "Rólam" },
-  { to: "/galeria", label: "Galéria" },
-  { to: "/kontakt", label: "Kontakt" },
+  { to: "/", label: "HOME" },
+  { to: "/kozmetikai-kezelesek", label: "KOZMETIKAI KEZELÉSEK" },
+  { to: "/arlista", label: "ÁRLISTA" },
+  { to: "/foglalas", label: "FOGLALÁS" },
+  { to: "/eskuvoi-fotozas", label: "ESKÜVŐI FOTÓZÁS" },
+  { to: "/kontakt", label: "KONTAKT" },
 ] as const;
 
 function Wordmark() {
-  return (
-    <span className="flex flex-col leading-none">
-      <span className="text-lg font-semibold tracking-[0.2em] text-foreground">
-        ERIKA
-      </span>
-      <span className="text-[0.68rem] font-medium tracking-[0.32em] text-primary">
-        BEAUTY KOZMETIKA
-      </span>
-    </span>
-  );
+  return <span className="flex items-center gap-3"><img src="/images/logo.png" alt="" width="48" height="48" className="h-11 w-11 object-contain"/><span className="flex flex-col leading-none"><span className="font-display text-xl font-semibold text-foreground">ERIKA BEAUTY</span><span className="mt-1 text-[0.62rem] font-semibold tracking-[0.22em] text-primary">KOZMETIKA</span></span></span>;
 }
 
 export function Header() {
   const [open, setOpen] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
-
-  return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/70">
-      <div className="hidden border-b border-border/60 bg-secondary md:block">
-        <div className="mx-auto flex h-9 max-w-7xl items-center justify-between px-4 text-xs text-muted-foreground sm:px-6 lg:px-8">
-          <span>Kérdése van? Írjon, amint tudok, válaszolok.</span>
-          <a
-            href={`tel:${site.phone}`}
-            className="inline-flex items-center gap-1.5 font-medium text-foreground transition-colors hover:text-primary"
-          >
-            <Phone className="h-3.5 w-3.5" aria-hidden="true" />
-            {site.phoneDisplay}
-          </a>
-        </div>
-      </div>
-
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link to="/" aria-label={`${site.name} — kezdőlap`}>
-          <Wordmark />
-        </Link>
-
-        <nav aria-label="Főmenü" className="hidden items-center gap-1 md:flex">
-          {navItems.map((item) => {
-            const active = pathname === item.to;
-            return (
-              <Link
-                key={item.to}
-                to={item.to}
-                aria-current={active ? "page" : undefined}
-                className={`rounded-md px-3 py-2 text-sm font-medium tracking-wide transition-colors ${
-                  active
-                    ? "text-primary"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                {item.label}
-              </Link>
-            );
-          })}
-        </nav>
-
-        <div className="hidden md:block">
-          <Button asChild>
-            <Link to="/foglalas">Időpontfoglalás</Link>
-          </Button>
-        </div>
-
-        <Sheet open={open} onOpenChange={setOpen}>
-          <SheetTrigger asChild className="md:hidden">
-            <Button variant="ghost" size="icon" aria-label="Menü megnyitása">
-              <Menu className="h-5 w-5" />
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="right" className="w-72">
-            <div className="flex flex-col gap-6 pt-8">
-              <Link to="/" onClick={() => setOpen(false)}>
-                <Wordmark />
-              </Link>
-              <nav aria-label="Mobil menü" className="flex flex-col gap-2">
-                {navItems.map((item) => {
-                  const active = pathname === item.to;
-                  return (
-                    <Link
-                      key={item.to}
-                      to={item.to}
-                      onClick={() => setOpen(false)}
-                      className={`rounded-md px-3 py-2 text-base font-medium transition-colors ${
-                        active
-                          ? "bg-secondary text-primary"
-                          : "text-muted-foreground hover:bg-secondary hover:text-foreground"
-                      }`}
-                    >
-                      {item.label}
-                    </Link>
-                  );
-                })}
-              </nav>
-              <Button asChild className="mt-2 w-full">
-                <Link to="/foglalas" onClick={() => setOpen(false)}>
-                  Időpontfoglalás
-                </Link>
-              </Button>
-              <a
-                href={`tel:${site.phone}`}
-                className="text-center text-sm text-muted-foreground"
-              >
-                {site.phoneDisplay}
-              </a>
-            </div>
-          </SheetContent>
-        </Sheet>
-      </div>
-    </header>
-  );
+  return <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur">
+    <div className="hidden border-b border-border bg-secondary lg:block"><div className="mx-auto flex h-9 max-w-7xl items-center justify-between px-6 text-xs text-muted-foreground"><span>{site.contactPrompt}</span><a href={`tel:${site.phone}`} className="flex items-center gap-2 font-semibold text-foreground"><Phone className="h-3.5 w-3.5"/>{site.phoneDisplay}</a></div></div>
+    <div className="mx-auto flex min-h-20 max-w-7xl items-center justify-between gap-6 px-4 sm:px-6"><Link to="/" aria-label="Erika Beauty Kozmetika kezdőlap"><Wordmark/></Link>
+      <nav aria-label="Főmenü" className="hidden items-center gap-0 xl:flex">{navItems.map(item => item.to === "/kozmetikai-kezelesek" ? <div className="group relative" key={item.to}><Link to={item.to} className="flex items-center gap-1 px-2 py-7 text-[0.72rem] font-semibold text-foreground hover:text-primary">{item.label}<ChevronDown className="h-3.5 w-3.5"/></Link><div className="invisible absolute left-0 top-full w-80 border border-border bg-background p-2 opacity-0 shadow-xl transition group-hover:visible group-hover:opacity-100">{categories.map(c=><Link key={c.slug} to="/kozmetikai-kezelesek/$category" params={{category:c.slug}} className="block px-3 py-2 text-sm hover:bg-secondary hover:text-primary">{c.name}</Link>)}{standaloneTreatments.map(t=><Link key={t.slug} to="/kozmetikai-kezelesek/$standalone" params={{standalone:t.slug}} className="block px-3 py-2 text-sm hover:bg-secondary hover:text-primary">{t.name}</Link>)}</div></div> : <Link key={item.to} to={item.to} className={`px-2 py-7 text-[0.72rem] font-semibold hover:text-primary ${pathname===item.to?'text-primary':'text-foreground'}`}>{item.label}</Link>)}</nav>
+      <Sheet open={open} onOpenChange={setOpen}><SheetTrigger asChild className="xl:hidden"><Button variant="ghost" size="icon" aria-label="Menü megnyitása"><Menu/></Button></SheetTrigger><SheetContent side="right" className="w-[min(90vw,24rem)] overflow-y-auto"><div className="pt-8"><Wordmark/><nav aria-label="Mobil menü" className="mt-8 flex flex-col">{navItems.map(item=><div key={item.to}><Link to={item.to} onClick={()=>setOpen(false)} className="block border-b border-border py-3 text-sm font-semibold">{item.label}</Link>{item.to==='/kozmetikai-kezelesek'&&<div className="ml-4 border-l border-border pl-4">{categories.map(c=><Link key={c.slug} to="/kozmetikai-kezelesek/$category" params={{category:c.slug}} onClick={()=>setOpen(false)} className="block py-2 text-sm text-muted-foreground">{c.name}</Link>)}{standaloneTreatments.map(t=><Link key={t.slug} to="/kozmetikai-kezelesek/$standalone" params={{standalone:t.slug}} onClick={()=>setOpen(false)} className="block py-2 text-sm text-muted-foreground">{t.name}</Link>)}</div>}</div>)}</nav></div></SheetContent></Sheet>
+    </div></header>;
 }
