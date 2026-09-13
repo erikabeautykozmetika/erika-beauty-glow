@@ -10,6 +10,8 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ArlistaRouteImport } from './routes/arlista'
+import { Route as EskuvoiFotozasRouteImport } from './routes/eskuvoi-fotozas'
 import { Route as FoglalasRouteImport } from './routes/foglalas'
 import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as KozmetikaiKezelesekRouteImport } from './routes/kozmetikai-kezelesek'
@@ -22,6 +24,16 @@ import { Route as KozmetikaiKezelesekCategoryTreatmentRouteImport } from './rout
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ArlistaRoute = ArlistaRouteImport.update({
+  id: '/arlista',
+  path: '/arlista',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EskuvoiFotozasRoute = EskuvoiFotozasRouteImport.update({
+  id: '/eskuvoi-fotozas',
+  path: '/eskuvoi-fotozas',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FoglalasRoute = FoglalasRouteImport.update({
@@ -72,6 +84,8 @@ const KozmetikaiKezelesekCategoryTreatmentRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/arlista': typeof ArlistaRoute
+  '/eskuvoi-fotozas': typeof EskuvoiFotozasRoute
   '/foglalas': typeof FoglalasRoute
   '/kontakt': typeof KontaktRoute
   '/kozmetikai-kezelesek': typeof KozmetikaiKezelesekRouteWithChildren
@@ -83,6 +97,8 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/arlista': typeof ArlistaRoute
+  '/eskuvoi-fotozas': typeof EskuvoiFotozasRoute
   '/foglalas': typeof FoglalasRoute
   '/kontakt': typeof KontaktRoute
   '/kozmetikai-kezelesek/$standalone': typeof KozmetikaiKezelesekStandaloneRoute
@@ -93,6 +109,8 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/arlista': typeof ArlistaRoute
+  '/eskuvoi-fotozas': typeof EskuvoiFotozasRoute
   '/foglalas': typeof FoglalasRoute
   '/kontakt': typeof KontaktRoute
   '/kozmetikai-kezelesek': typeof KozmetikaiKezelesekRouteWithChildren
@@ -106,6 +124,8 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/arlista'
+    | '/eskuvoi-fotozas'
     | '/foglalas'
     | '/kontakt'
     | '/kozmetikai-kezelesek'
@@ -117,6 +137,8 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/arlista'
+    | '/eskuvoi-fotozas'
     | '/foglalas'
     | '/kontakt'
     | '/kozmetikai-kezelesek/$standalone'
@@ -126,6 +148,8 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/arlista'
+    | '/eskuvoi-fotozas'
     | '/foglalas'
     | '/kontakt'
     | '/kozmetikai-kezelesek'
@@ -138,6 +162,8 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ArlistaRoute: typeof ArlistaRoute
+  EskuvoiFotozasRoute: typeof EskuvoiFotozasRoute
   FoglalasRoute: typeof FoglalasRoute
   KontaktRoute: typeof KontaktRoute
   KozmetikaiKezelesekRoute: typeof KozmetikaiKezelesekRouteWithChildren
@@ -150,6 +176,20 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/arlista': {
+      id: '/arlista'
+      path: '/arlista'
+      fullPath: '/arlista'
+      preLoaderRoute: typeof ArlistaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/eskuvoi-fotozas': {
+      id: '/eskuvoi-fotozas'
+      path: '/eskuvoi-fotozas'
+      fullPath: '/eskuvoi-fotozas'
+      preLoaderRoute: typeof EskuvoiFotozasRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/foglalas': {
@@ -247,6 +287,8 @@ const KozmetikaiKezelesekRouteWithChildren =
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ArlistaRoute: ArlistaRoute,
+  EskuvoiFotozasRoute: EskuvoiFotozasRoute,
   FoglalasRoute: FoglalasRoute,
   KontaktRoute: KontaktRoute,
   KozmetikaiKezelesekRoute: KozmetikaiKezelesekRouteWithChildren,

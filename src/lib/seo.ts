@@ -80,7 +80,7 @@ type MetaArgs = {
   title: string;
   description: string;
   path: string;
-  image?: string;
+  image?: string | undefined;
 };
 
 export function pageMeta({ title, description, path, image }: MetaArgs) {
