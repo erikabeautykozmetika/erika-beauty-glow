@@ -1,29 +1,32 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { MapPin, Phone, Mail, Clock, Car, TramFront } from "lucide-react";
+import { Car, Footprints, MapPin, MessageCircle, Phone, TramFront } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { SectionHeading } from "@/components/SectionHeading";
+import { PageHero } from "@/components/PageHero";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { site } from "@/lib/site-data";
-import { breadcrumbJsonLd, pageMeta } from "@/lib/seo";
+import { breadcrumbJsonLd, canonical, localBusinessJsonLd, pageMeta } from "@/lib/seo";
 
 export const Route = createFileRoute("/kontakt")({
   head: () => ({
     meta: pageMeta({
-      title: "Kapcsolat és megközelítés | Erika Beauty Kozmetika",
+      title: "Kontakt és megközelítés | Erika Beauty Kozmetika",
       description:
-        "Erika Beauty Kozmetika elérhetőségei: 1123 Budapest, Táltos utca 15/b. Telefon, nyitvatartás, parkolás és tömegközlekedés egy helyen.",
+        "Erika Beauty Kozmetika: 1124 Budapest, Jagelló út 1–3. Telefon, Messenger, parkolás és tömegközlekedés egy helyen.",
       path: "/kontakt",
+      image: "/images/hero-contact.png",
     }),
-    links: [{ rel: "canonical", href: "/kontakt" }],
+    links: canonical("/kontakt"),
     scripts: [
       {
         type: "application/ld+json",
-        children: JSON.stringify(
+        children: JSON.stringify([
+          localBusinessJsonLd,
           breadcrumbJsonLd([
             { name: "Kezdőlap", url: "/" },
             { name: "Kontakt", url: "/kontakt" },
           ]),
-        ),
+        ]),
       },
     ],
   }),
@@ -31,119 +34,98 @@ export const Route = createFileRoute("/kontakt")({
 });
 
 function ContactPage() {
-  const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(
-    site.mapsQuery,
-  )}&output=embed`;
+  const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(site.mapsQuery)}&output=embed`;
 
   return (
-    <div className="py-16 sm:py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          centered
-          className="mb-12"
-          title="Elérhetőségeim"
-          subtitle="Kérdésed van? Írj vagy hívj — amint tudok, válaszolok."
-        />
+    <>
+      <PageHero src="/images/hero-contact.png" alt="Erika Beauty Kozmetika kapcsolat" eager />
+      <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6">
+        <Breadcrumbs items={[{ label: "Kezdőlap", to: "/" }, { label: "Kontakt" }]} />
+        <h1 className="font-display text-4xl font-semibold sm:text-5xl">Kontakt</h1>
+        <p className="mt-5 max-w-3xl text-lg leading-relaxed text-muted-foreground">
+          {site.contactPrompt}
+        </p>
 
-        <div className="grid gap-12 lg:grid-cols-2">
+        <div className="mt-12 grid gap-12 lg:grid-cols-2">
+          <ul className="space-y-6">
+            <li className="flex gap-4">
+              <MapPin className="mt-1 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
+              <div>
+                <h2 className="font-display text-xl font-semibold">Cím</h2>
+                <p className="text-muted-foreground">{site.addressLine}</p>
+                <p className="text-muted-foreground">{site.addressExtra}</p>
+              </div>
+            </li>
+            <li className="flex gap-4">
+              <Phone className="mt-1 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
+              <div>
+                <h2 className="font-display text-xl font-semibold">Telefon</h2>
+                <a href={`tel:${site.phone}`} className="text-muted-foreground hover:text-primary">
+                  {site.phoneDisplay}
+                </a>
+              </div>
+            </li>
+            <li className="flex gap-4">
+              <MessageCircle className="mt-1 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
+              <div>
+                <h2 className="font-display text-xl font-semibold">Messenger</h2>
+                <a
+                  href={site.messengerUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-primary"
+                >
+                  Írj üzenetet Messengeren
+                </a>
+              </div>
+            </li>
+            <li className="flex gap-4">
+              <Car className="mt-1 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
+              <div>
+                <h2 className="font-display text-xl font-semibold">Parkolás</h2>
+                <p className="text-muted-foreground">{site.parking}</p>
+                <p className="text-muted-foreground">{site.parkingLots}</p>
+              </div>
+            </li>
+            <li className="flex gap-4">
+              <Footprints className="mt-1 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
+              <div>
+                <h2 className="font-display text-xl font-semibold">Gyalogos megközelítés</h2>
+                <p className="text-muted-foreground">{site.pedestrianAccess}</p>
+              </div>
+            </li>
+            <li className="flex gap-4">
+              <TramFront className="mt-1 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
+              <div>
+                <h2 className="font-display text-xl font-semibold">Tömegközlekedés</h2>
+                <p className="text-muted-foreground">{site.transit}</p>
+              </div>
+            </li>
+          </ul>
+
           <div className="space-y-6">
-            <ul className="space-y-5">
-              <li className="flex items-start gap-4">
-                <span className="inline-flex rounded-xl bg-secondary p-2.5 text-primary">
-                  <MapPin className="h-5 w-5" aria-hidden="true" />
-                </span>
-                <div>
-                  <h2 className="font-medium text-foreground">Cím</h2>
-                  <p className="text-muted-foreground">
-                    {site.postalCode} {site.city}, {site.street}
-                  </p>
-                </div>
-              </li>
-              <li className="flex items-start gap-4">
-                <span className="inline-flex rounded-xl bg-secondary p-2.5 text-primary">
-                  <Phone className="h-5 w-5" aria-hidden="true" />
-                </span>
-                <div>
-                  <h2 className="font-medium text-foreground">Mobil</h2>
-                  <a
-                    href={`tel:${site.phone}`}
-                    className="text-muted-foreground hover:text-primary"
-                  >
-                    {site.phoneDisplay}
-                  </a>
-                  <p className="text-sm text-muted-foreground">
-                    Ha nem érsz el, hagyj üzenetet és visszahívlak.
-                  </p>
-                </div>
-              </li>
-              <li className="flex items-start gap-4">
-                <span className="inline-flex rounded-xl bg-secondary p-2.5 text-primary">
-                  <Mail className="h-5 w-5" aria-hidden="true" />
-                </span>
-                <div>
-                  <h2 className="font-medium text-foreground">E-mail</h2>
-                  <a
-                    href={`mailto:${site.email}`}
-                    className="text-muted-foreground hover:text-primary"
-                  >
-                    {site.email}
-                  </a>
-                </div>
-              </li>
-              <li className="flex items-start gap-4">
-                <span className="inline-flex rounded-xl bg-secondary p-2.5 text-primary">
-                  <Clock className="h-5 w-5" aria-hidden="true" />
-                </span>
-                <div>
-                  <h2 className="font-medium text-foreground">Nyitvatartás</h2>
-                  {site.openingHours.map((o) => (
-                    <p key={o.days} className="text-muted-foreground">
-                      {o.days}: {o.hours}
-                    </p>
-                  ))}
-                </div>
-              </li>
-              <li className="flex items-start gap-4">
-                <span className="inline-flex rounded-xl bg-secondary p-2.5 text-primary">
-                  <Car className="h-5 w-5" aria-hidden="true" />
-                </span>
-                <div>
-                  <h2 className="font-medium text-foreground">Parkolás</h2>
-                  <p className="text-muted-foreground">
-                    Az utcában fizetős parkolás; parkolóház a MOM irodaházaknál,
-                    bejárat a Táltos utca felől.
-                  </p>
-                </div>
-              </li>
-              <li className="flex items-start gap-4">
-                <span className="inline-flex rounded-xl bg-secondary p-2.5 text-primary">
-                  <TramFront className="h-5 w-5" aria-hidden="true" />
-                </span>
-                <div>
-                  <h2 className="font-medium text-foreground">Tömegközlekedés</h2>
-                  <p className="text-muted-foreground">
-                    61-es villamos, valamint az 5-ös és 105-ös BKK buszok.
-                  </p>
-                </div>
-              </li>
-            </ul>
-
-            <Button asChild size="lg">
-              <Link to="/foglalas">Időpontfoglalás</Link>
-            </Button>
-          </div>
-
-          <div className="overflow-hidden rounded-3xl border border-border shadow-sm">
             <iframe
               title={`${site.name} térkép — ${site.mapsQuery}`}
               src={mapSrc}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              className="h-[420px] w-full lg:h-full lg:min-h-[560px]"
+              className="h-[380px] w-full border border-border"
+            />
+            <img
+              src="/images/parking-map.png"
+              alt="Parkolási térkép a kozmetika környékén"
+              width={1536}
+              height={1024}
+              loading="lazy"
+              className="w-full border border-border object-contain"
             />
           </div>
         </div>
-      </div>
-    </div>
+
+        <Button asChild size="lg" className="mt-12">
+          <Link to="/foglalas">Időpontfoglalás</Link>
+        </Button>
+      </section>
+    </>
   );
 }

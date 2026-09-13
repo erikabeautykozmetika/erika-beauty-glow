@@ -1,26 +1,30 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { CheckCircle2, Sparkles, HeartHandshake, ShieldCheck } from "lucide-react";
+import { HeartHandshake, ShieldCheck, Sparkles } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { SectionHeading } from "@/components/SectionHeading";
-import { site, services } from "@/lib/site-data";
-import { localBusinessJsonLd, pageMeta } from "@/lib/seo";
-import homeHeroAsset from "@/assets/hero-home.jpg.asset.json";
+import { PageHero } from "@/components/PageHero";
+import { categories, site, standaloneTreatments } from "@/lib/site-data";
+import {
+  canonical,
+  localBusinessJsonLd,
+  pageMeta,
+  websiteJsonLd,
+} from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: pageMeta({
-      title: "Kozmetika Budapest XII. kerület | Erika Beauty Kozmetika",
+      title: "Erika Beauty Kozmetika | Kozmetika Budapest XII. kerület",
       description:
-        "Személyre szabott arckezelések Budapest XII. kerületében: mélytisztítás, hidratálás, anti-age kúra. 16 év tapasztalat, 5400+ kezelés. Foglalj időpontot online!",
+        "Személyre szabott kozmetikai kezelések Budapest XII. kerületében: arckezelések, ránctalanítás, smink, szemöldök- és szempilla kezelések. 16 év tapasztalat.",
       path: "/",
-      image: homeHeroAsset.url,
+      image: "/images/hero-home.png",
     }),
-    links: [{ rel: "canonical", href: "/" }],
+    links: canonical("/"),
     scripts: [
       {
         type: "application/ld+json",
-        children: JSON.stringify(localBusinessJsonLd),
+        children: JSON.stringify([localBusinessJsonLd, websiteJsonLd]),
       },
     ],
   }),
@@ -30,70 +34,63 @@ export const Route = createFileRoute("/")({
 const pillars = [
   {
     icon: HeartHandshake,
-    title: "Nincs tukmálás",
-    text: "Nem termékeket adok el, hanem megoldásokat kínálok. Csak azt javaslom, amire a bőrödnek tényleg szüksége van.",
+    title: "Nálam nincs tukmálás",
+    text: "Nem termékeket adok el, hanem valódi megoldásokat és szakértő segítséget.",
   },
   {
     icon: Sparkles,
     title: "Személyre szabott kezelés",
-    text: "Minden arcbőr egyedi történetet mesél, ezért nem sablonokkal, hanem bőrdiagnosztikára épülő tervvel dolgozom.",
+    text: "Minden bőr más, ezért a kezelés mindig a bőröd aktuális állapotához igazodik.",
   },
   {
     icon: ShieldCheck,
-    title: "16 év szakmai tapasztalat",
-    text: "Több mint 5400 kezelés és 27 gép áll mögötte, hogy biztosan a legjobb utat válasszuk együtt.",
+    title: "16 év tapasztalat",
+    text: "Szakmai tudás és őszinte törődés, a XII. kerület szívében.",
   },
 ];
 
 function HomePage() {
   return (
     <>
-      {/* Hero image — full image visible, no overlay text */}
-      <section aria-label="Főkép" className="bg-secondary">
-        <img
-          src={homeHeroAsset.url}
-          alt="Erika Beauty Kozmetika — természetes olajok, virágok és ápoló szérumok"
-          width={1920}
-          height={1080}
-          className="mx-auto h-auto w-full max-w-7xl object-contain"
-          fetchPriority="high"
-        />
-      </section>
+      <PageHero
+        src="/images/hero-home.png"
+        alt="Erika Beauty Kozmetika — ápoló olajok és szérum"
+        eager
+      />
 
-      {/* Intro text moved below the hero image */}
-      <section className="py-16 sm:py-24">
-        <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-          <p className="text-xs font-medium uppercase tracking-[0.35em] text-primary">
-            {site.postalCode} {site.city} · {site.district}
-          </p>
-          <h1 className="mt-5 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
-            Erika Beauty Kozmetika
-          </h1>
-          <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-            Te is úgy érzed, hogy elvesztél a kozmetikai termékek és ígéretek
-            végtelen tengerében? A filozófiám egyszerű: nálam nincs tukmálás,
-            csak valódi megoldások és szakértő segítség.
-          </p>
-          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <Button asChild size="lg">
-              <Link to="/foglalas">Időpontfoglalás</Link>
-            </Button>
-            <Button asChild size="lg" variant="outline">
-              <Link to="/szolgaltatasok">Szolgáltatások megtekintése</Link>
-            </Button>
-          </div>
+      <section className="mx-auto max-w-3xl px-4 py-16 text-center sm:px-6 sm:py-20">
+        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">
+          {site.postalCode} {site.city} · {site.district}
+        </p>
+        <h1 className="mt-5 font-display text-4xl font-semibold sm:text-5xl">
+          {site.name}
+        </h1>
+        <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+          Te is úgy érzed, hogy elvesztél a kozmetikai termékek és ígéretek
+          végtelen tengerében? A filozófiám egyszerű: nálam nincs tukmálás, csak
+          valódi megoldások és szakértő segítség.
+        </p>
+        <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+          <Button asChild size="lg">
+            <Link to="/foglalas">Időpontfoglalás</Link>
+          </Button>
+          <Button asChild size="lg" variant="outline">
+            <Link to="/kozmetikai-kezelesek">Kozmetikai kezelések</Link>
+          </Button>
         </div>
       </section>
 
-      {/* Stats */}
-      <section aria-label="Számokban" className="border-y border-border bg-secondary">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-4 py-12 sm:px-6 lg:grid-cols-4 lg:px-8">
+      <section
+        aria-label="Számokban"
+        className="border-y border-border bg-secondary"
+      >
+        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-4 py-12 sm:px-6 lg:grid-cols-4">
           {site.stats.map((stat) => (
             <div key={stat.label} className="text-center">
-              <p className="text-3xl font-semibold text-foreground sm:text-4xl">
+              <p className="font-display text-3xl font-semibold sm:text-4xl">
                 {stat.value}
               </p>
-              <p className="mt-1 text-sm uppercase tracking-wider text-muted-foreground">
+              <p className="mt-1 text-xs uppercase tracking-[0.2em] text-muted-foreground">
                 {stat.label}
               </p>
             </div>
@@ -101,123 +98,78 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Philosophy */}
-      <section className="py-20">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
-          <img
-            src="/images/erika-portrait.jpg"
-            alt="Bertus Erika kozmetikus a szalonjában"
-            width={1024}
-            height={1280}
-            loading="lazy"
-            className="mx-auto w-full max-w-md rounded-3xl object-cover shadow-sm"
-          />
-          <div>
-            <SectionHeading
-              title="Minden arcbőr egyedi történetet mesél"
-              subtitle="Ezért nem sablonokat kínálok, hanem személyre szabott gondoskodást — legyen szó mélytisztításról, anti-age kúráról vagy a bőröd egészségének megőrzéséről."
-            />
-            <ul className="mt-8 space-y-4">
-              {[
-                "Bőrdiagnosztikára épülő, egyénre szabott kezelési terv",
-                "Üdvözlő szaktanácsadás online az első kezelés előtt",
-                "Otthoni ápolási javaslat, amit tényleg használni fogsz",
-                "Nyugodt, tiszta környezet a XII. kerület szívében",
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                  <span className="text-muted-foreground">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
+        <h2 className="text-center font-display text-3xl font-semibold sm:text-4xl">
+          Miért az Erika Beauty Kozmetika?
+        </h2>
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
+          {pillars.map((pillar) => (
+            <article
+              key={pillar.title}
+              className="border-b-2 border-primary/40 bg-secondary p-7"
+            >
+              <pillar.icon className="h-6 w-6 text-primary" aria-hidden="true" />
+              <h3 className="mt-5 font-display text-2xl font-semibold">
+                {pillar.title}
+              </h3>
+              <p className="mt-3 leading-relaxed text-muted-foreground">
+                {pillar.text}
+              </p>
+            </article>
+          ))}
         </div>
       </section>
 
-      {/* Pillars */}
       <section className="border-t border-border bg-secondary py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            centered
-            title="Miért az Erika Beauty Kozmetika?"
-            subtitle="Szakmai tudás és őszinte törődés — ez a kettő találkozik nálam."
-          />
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {pillars.map((pillar) => (
-              <article
-                key={pillar.title}
-                className="rounded-2xl border border-border bg-card p-7 shadow-sm"
-              >
-                <div className="inline-flex rounded-xl bg-secondary p-3 text-primary">
-                  <pillar.icon className="h-5 w-5" aria-hidden="true" />
-                </div>
-                <h3 className="mt-5 text-lg font-semibold text-foreground">
-                  {pillar.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {pillar.text}
-                </p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Services preview */}
-      <section className="py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            centered
-            title="Foglalható szolgáltatások"
-            subtitle="Arckezelések és gépi kúrák, minden esetben a bőröd aktuális állapotához igazítva."
-          />
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {services.slice(0, 6).map((service) => (
-              <article
-                key={service.slug}
-                className="flex flex-col rounded-2xl border border-border bg-card p-6 shadow-sm"
-              >
-                <p className="text-xs font-medium uppercase tracking-wider text-primary">
-                  {service.category}
-                </p>
-                <h3 className="mt-2 text-lg font-semibold text-foreground">
-                  {service.name}
-                </h3>
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
-                  {service.summary}
-                </p>
-                <p className="mt-4 text-sm text-muted-foreground">
-                  Időtartam: <strong className="text-foreground">{service.duration}</strong>
-                </p>
-              </article>
-            ))}
-          </div>
-          <div className="mt-10 text-center">
-            <Button asChild variant="outline" size="lg">
-              <Link to="/szolgaltatasok">Összes szolgáltatás</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="border-t border-border bg-secondary py-20">
-        <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-            Találjuk ki együtt, mire van szüksége a bőrödnek!
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <h2 className="text-center font-display text-3xl font-semibold sm:text-4xl">
+            Kezeléseim
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            Ne hagyd, hogy a bőröd bizonytalan legyen — kérj tanácsot, vagy foglalj
-            időpontot néhány kattintással.
-          </p>
-          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <Button asChild size="lg">
-              <Link to="/foglalas">Időpontot foglalok</Link>
-            </Button>
-            <Button asChild size="lg" variant="outline">
-              <a href={`tel:${site.phone}`}>{site.phoneDisplay}</a>
-            </Button>
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {categories.map((c) => (
+              <Link
+                key={c.slug}
+                to="/kozmetikai-kezelesek/$category"
+                params={{ category: c.slug }}
+                className="border-b-2 border-primary/40 bg-background p-6 transition-colors hover:border-primary"
+              >
+                <h3 className="font-display text-xl font-semibold">{c.name}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  {c.treatments.length} kezelés
+                </p>
+              </Link>
+            ))}
+            {standaloneTreatments.map((t) => (
+              <Link
+                key={t.slug}
+                to="/kozmetikai-kezelesek/$standalone"
+                params={{ standalone: t.slug }}
+                className="border-b-2 border-primary/40 bg-background p-6 transition-colors hover:border-primary"
+              >
+                <h3 className="font-display text-xl font-semibold">{t.name}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Időtartam: {t.duration}
+                </p>
+              </Link>
+            ))}
           </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-3xl px-4 py-20 text-center sm:px-6">
+        <h2 className="font-display text-3xl font-semibold sm:text-4xl">
+          Találjuk ki együtt, mire van szüksége a bőrödnek!
+        </h2>
+        <p className="mt-4 text-lg text-muted-foreground">
+          {site.contactPrompt}
+        </p>
+        <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+          <Button asChild size="lg">
+            <Link to="/foglalas">Időpontot foglalok</Link>
+          </Button>
+          <Button asChild size="lg" variant="outline">
+            <a href={`tel:${site.phone}`}>{site.phoneDisplay}</a>
+          </Button>
         </div>
       </section>
     </>
