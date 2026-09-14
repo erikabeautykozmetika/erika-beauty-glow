@@ -3,6 +3,7 @@ import { HeartHandshake, ShieldCheck, Sparkles } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/PageHero";
+import erikaPortrait from "@/assets/erika-portrait-banner.png.asset.json";
 import { categories, site, standaloneTreatments } from "@/lib/site-data";
 import {
   canonical,
@@ -58,25 +59,37 @@ function HomePage() {
         eager
       />
 
-      <section className="mx-auto max-w-3xl px-4 py-16 text-center sm:px-6 sm:py-20">
-        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">
-          {site.postalCode} {site.city} · {site.district}
-        </p>
-        <h1 className="mt-5 font-display text-3xl font-semibold sm:text-4xl">
-          {site.name}
-        </h1>
-        <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-          Te is úgy érzed, hogy elvesztél a kozmetikai termékek és ígéretek
-          végtelen tengerében? A filozófiám egyszerű: nálam nincs tukmálás, csak
-          valódi megoldások és szakértő segítség.
-        </p>
-        <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-          <Button asChild size="lg">
-            <Link to="/foglalas">Időpontfoglalás</Link>
-          </Button>
-          <Button asChild size="lg" variant="outline">
-            <Link to="/kozmetikai-kezelesek">Kozmetikai kezelések</Link>
-          </Button>
+      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+        <div className="grid items-center gap-10 lg:grid-cols-2">
+          <div className="text-center lg:text-left">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">
+              {site.postalCode} {site.city} · {site.district}
+            </p>
+            <h1 className="mt-5 font-display text-3xl font-semibold sm:text-4xl">
+              {site.name}
+            </h1>
+            <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+              Te is úgy érzed, hogy elvesztél a kozmetikai termékek és ígéretek
+              végtelen tengerében? A filozófiám egyszerű: nálam nincs tukmálás,
+              csak valódi megoldások és szakértő segítség.
+            </p>
+            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start">
+              <Button asChild size="lg">
+                <Link to="/foglalas">Időpontfoglalás</Link>
+              </Button>
+              <Button asChild size="lg" variant="outline">
+                <Link to="/kozmetikai-kezelesek">Kozmetikai kezelések</Link>
+              </Button>
+            </div>
+          </div>
+          <img
+            src={erikaPortrait.url}
+            alt="Erika, az Erika Beauty Kozmetika tulajdonosa"
+            width={1200}
+            height={800}
+            loading="lazy"
+            className="w-full rounded-sm shadow-md"
+          />
         </div>
       </section>
 
