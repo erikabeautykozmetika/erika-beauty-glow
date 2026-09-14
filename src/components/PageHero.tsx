@@ -26,7 +26,7 @@ export function PageHero({ src, alt, eager = false, compact = false }: PageHeroP
         fetchPriority={eager ? "high" : "auto"}
         className={
           compact
-            ? "mx-auto h-52 w-full max-w-[1920px] object-cover object-[50%_30%] sm:h-64 md:h-72"
+            ? "mx-auto h-52 w-full max-w-[1920px] object-cover object-[50%_62%] sm:h-64 md:h-72"
             : "mx-auto h-auto w-full max-w-[1920px] object-contain"
         }
       />
