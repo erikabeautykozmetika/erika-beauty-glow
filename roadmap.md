@@ -13,3 +13,4 @@
 - [x] Csatolt logó használata ismételt márkanév nélkül
 - [x] Playfair Display használata minden szövegnél
 - [x] Lefelé nyíl minden főkép alján; görgetéskor Fel gomb minden oldalon
+- [ ] Lábléckép, Erika fotók, #f70d1a kiemelőszín, kisebb főcímek, keskenyebb kontaktkép, nagyítható parkolótérkép
