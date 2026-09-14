@@ -2,12 +2,12 @@ type PageHeroProps = {
   src: string;
   alt: string;
   eager?: boolean;
+  compact?: boolean;
 };
 
 import { ChevronDown } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
-export function PageHero({ src, alt, eager = false }: PageHeroProps) {
+export function PageHero({ src, alt, eager = false, compact = false }: PageHeroProps) {
   const scrollBelow = () => {
     window.scrollTo({
       top: window.scrollY + window.innerHeight * 0.72,
@@ -24,18 +24,20 @@ export function PageHero({ src, alt, eager = false }: PageHeroProps) {
         height={720}
         loading={eager ? "eager" : "lazy"}
         fetchPriority={eager ? "high" : "auto"}
-        className="mx-auto h-auto w-full max-w-[1920px] object-contain"
+        className={
+          compact
+            ? "mx-auto h-52 w-full max-w-[1920px] object-cover object-[50%_30%] sm:h-64 md:h-72"
+            : "mx-auto h-auto w-full max-w-[1920px] object-contain"
+        }
       />
-      <Button
+      <button
         type="button"
-        variant="ghost"
-        size="icon"
         onClick={scrollBelow}
         aria-label="Tovább az oldal tartalmához"
-        className="absolute bottom-3 left-1/2 flex h-11 w-11 -translate-x-1/2 items-center justify-center rounded-full bg-background/85 text-foreground shadow-md backdrop-blur transition-transform hover:translate-y-1"
+        className="absolute bottom-3 left-1/2 flex h-11 w-11 -translate-x-1/2 cursor-pointer items-center justify-center rounded-full bg-background/85 text-foreground shadow-md backdrop-blur transition-transform hover:translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
       >
         <ChevronDown className="h-6 w-6" />
-      </Button>
+      </button>
     </section>
   );
 }
