@@ -9,3 +9,7 @@
 - [ ] robots.txt, sitemap.xml és UTF-8 llms.txt
 - [ ] Desktop/tablet/mobil, link- és technikai ellenőrzés
 - [ ] Hiányzó képek/linkek/adatok listája
+- [ ] Mindenhol #fdf0e8 háttér, kék árnyalatok teljes eltávolítása
+- [ ] Csatolt logó használata ismételt márkanév nélkül
+- [ ] Playfair Display használata minden szövegnél
+- [ ] Lefelé nyíl minden főkép alján; görgetéskor Fel gomb minden oldalon

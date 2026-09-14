@@ -15,6 +15,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Toaster } from "@/components/ui/sonner";
 import { MessengerButton } from "@/components/MessengerButton";
+import { ScrollToTop } from "@/components/ScrollToTop";
 
 function NotFoundComponent() {
   return (
@@ -97,7 +98,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "icon", href: "/favicon.png", type: "image/png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600&display=swap" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" },
     ],
   }),
   shellComponent: RootShell,
@@ -132,6 +133,7 @@ function RootComponent() {
         </main>
         <Footer />
       </div>
+      <ScrollToTop />
       <MessengerButton />
       <Toaster position="bottom-right" />
     </QueryClientProvider>
