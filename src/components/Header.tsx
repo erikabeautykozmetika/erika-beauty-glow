@@ -15,7 +15,7 @@ export const navItems = [
 ] as const;
 
 function Wordmark() {
-  return <span className="flex items-center gap-3"><img src="/images/logo.png" alt="" width="48" height="48" className="h-11 w-11 object-contain"/><span className="flex flex-col leading-none"><span className="font-display text-xl font-semibold text-foreground">ERIKA BEAUTY</span><span className="mt-1 text-[0.62rem] font-semibold tracking-[0.22em] text-primary">KOZMETIKA</span></span></span>;
+  return <img src="/images/logo.png" alt="Erika Beauty Kozmetika" width="460" height="137" className="h-14 w-auto max-w-[230px] object-contain sm:h-16 sm:max-w-[290px]"/>;
 }
 
 export function Header() {
