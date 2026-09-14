@@ -34,7 +34,7 @@ function PriceListPage() {
   return (
     <section className="mx-auto max-w-5xl px-4 py-14 sm:px-6">
       <Breadcrumbs items={[{ label: "Kezdőlap", to: "/" }, { label: "Árlista" }]} />
-      <h1 className="font-display text-4xl font-semibold sm:text-5xl">Árlista</h1>
+      <h1 className="font-display text-3xl font-semibold sm:text-4xl">Árlista</h1>
       <p className="mt-5 max-w-3xl text-lg leading-relaxed text-muted-foreground">
         Az alábbi listában minden szolgáltatás és annak időtartama szerepel, a
         jelenlegi weboldal szerint.

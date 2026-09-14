@@ -51,7 +51,7 @@ function WeddingPage() {
         <Breadcrumbs
           items={[{ label: "Kezdőlap", to: "/" }, { label: "Esküvői fotózás" }]}
         />
-        <h1 className="font-display text-4xl font-semibold sm:text-5xl">
+        <h1 className="font-display text-3xl font-semibold sm:text-4xl">
           Emlékek, amik örökké kísérnek
         </h1>
         <p className="mt-5 max-w-3xl text-lg leading-relaxed text-muted-foreground">

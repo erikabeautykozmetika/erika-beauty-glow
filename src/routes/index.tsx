@@ -62,7 +62,7 @@ function HomePage() {
         <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">
           {site.postalCode} {site.city} · {site.district}
         </p>
-        <h1 className="mt-5 font-display text-4xl font-semibold sm:text-5xl">
+        <h1 className="mt-5 font-display text-3xl font-semibold sm:text-4xl">
           {site.name}
         </h1>
         <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
