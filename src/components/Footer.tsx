@@ -6,7 +6,7 @@ import { site } from "@/lib/site-data";
 
 export function Footer() {
   return (
-    <footer className="relative isolate min-h-[360px] overflow-hidden border-t border-border bg-secondary sm:min-h-[320px]">
+    <footer className="relative min-h-[360px] overflow-hidden border-t border-border bg-secondary sm:min-h-[320px]">
       <img
         src={footerImage.url}
         alt=""
@@ -14,10 +14,10 @@ export function Footer() {
         height={720}
         loading="lazy"
         aria-hidden="true"
-        className="absolute inset-0 -z-10 h-full w-full object-cover object-center"
+        className="absolute inset-0 z-0 h-full w-full object-cover object-center"
       />
-      <div className="absolute inset-0 -z-10 bg-background/28" aria-hidden="true" />
-      <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 md:grid-cols-3 md:py-12">
+      <div className="absolute inset-0 z-0 bg-background/28" aria-hidden="true" />
+      <div className="relative z-10 mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 md:grid-cols-3 md:py-12">
         <div>
           <Link to="/" className="font-display text-2xl font-semibold">
             Erika Beauty Kozmetika
@@ -61,7 +61,7 @@ export function Footer() {
           </div>
         </div>
       </div>
-      <div className="border-t border-foreground/15 px-4 py-5 text-center text-xs text-foreground/75">
+      <div className="relative z-10 border-t border-foreground/15 px-4 py-5 text-center text-xs text-foreground/75">
         {site.copyright}
       </div>
     </footer>
