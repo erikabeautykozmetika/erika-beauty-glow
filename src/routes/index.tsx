@@ -59,9 +59,17 @@ function HomePage() {
         eager
       />
 
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-        <div className="grid items-center gap-10 lg:grid-cols-2">
-          <div className="text-center lg:text-left">
+      <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16">
+        <div className="grid items-center gap-8 md:grid-cols-[minmax(260px,0.78fr)_minmax(0,1.22fr)] lg:gap-12">
+          <img
+            src={erikaPortrait.url}
+            alt="Erika, az Erika Beauty Kozmetika tulajdonosa"
+            width={1200}
+            height={800}
+            loading="lazy"
+            className="mx-auto w-full max-w-lg rounded-sm object-cover shadow-md md:mx-0"
+          />
+          <div className="text-center md:text-left">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">
               {site.postalCode} {site.city} · {site.district}
             </p>
@@ -73,7 +81,7 @@ function HomePage() {
               végtelen tengerében? A filozófiám egyszerű: nálam nincs tukmálás,
               csak valódi megoldások és szakértő segítség.
             </p>
-            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start">
+            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row md:justify-start">
               <Button asChild size="lg">
                 <Link to="/foglalas">Időpontfoglalás</Link>
               </Button>
@@ -82,14 +90,6 @@ function HomePage() {
               </Button>
             </div>
           </div>
-          <img
-            src={erikaPortrait.url}
-            alt="Erika, az Erika Beauty Kozmetika tulajdonosa"
-            width={1200}
-            height={800}
-            loading="lazy"
-            className="w-full rounded-sm shadow-md"
-          />
         </div>
       </section>
 
