@@ -14,3 +14,4 @@
 - [x] Playfair Display használata minden szövegnél
 - [x] Lefelé nyíl minden főkép alján; görgetéskor Fel gomb minden oldalon
 - [x] Lábléckép, Erika fotók, #f70d1a kiemelőszín, kisebb főcímek, keskenyebb kontaktkép, nagyítható parkolótérkép
+- [x] Kisebb, balra rendezett Erika-kép a főoldalon; láblécszöveg az alacsonyabb képen
