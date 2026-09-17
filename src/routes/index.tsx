@@ -100,6 +100,13 @@ function HomePage() {
         <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-4 py-12 sm:px-6 lg:grid-cols-4">
           {site.stats.map((stat) => (
             <div key={stat.label} className="text-center">
+              <img
+                src={stat.image}
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+                className="mx-auto mb-4 h-20 w-20 rounded-full border-2 border-primary/30 object-cover shadow-sm sm:h-24 sm:w-24"
+              />
               <p className="font-display text-3xl font-semibold sm:text-4xl">
                 {stat.value}
               </p>

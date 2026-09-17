@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { CalendarCheck, Info, MessageCircle, Phone } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { PageHero } from "@/components/PageHero";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { site } from "@/lib/site-data";
 import { breadcrumbJsonLd, canonical, pageMeta } from "@/lib/seo";
@@ -13,6 +14,7 @@ export const Route = createFileRoute("/foglalas")({
       description:
         "Foglalj időpontot az Erika Beauty Kozmetikába telefonon vagy Messengeren. Itt találod a foglalás és a lemondás feltételeit is.",
       path: "/foglalas",
+      image: "/images/hero-foglalas.png",
     }),
     links: canonical("/foglalas"),
     scripts: [
@@ -32,7 +34,9 @@ export const Route = createFileRoute("/foglalas")({
 
 function BookingPage() {
   return (
-    <section className="mx-auto max-w-5xl px-4 py-14 sm:px-6">
+    <>
+      <PageHero src="/images/hero-foglalas.png" alt="Erika Beauty Kozmetika időpontfoglalás" eager />
+      <section className="mx-auto max-w-5xl px-4 py-14 sm:px-6">
       <Breadcrumbs items={[{ label: "Kezdőlap", to: "/" }, { label: "Foglalás" }]} />
       <h1 className="font-display text-3xl font-semibold text-primary sm:text-4xl">Foglalás</h1>
       <p className="mt-5 max-w-3xl text-lg leading-relaxed text-muted-foreground">
@@ -100,5 +104,6 @@ function BookingPage() {
         </Button>
       </div>
     </section>
+    </>
   );
 }

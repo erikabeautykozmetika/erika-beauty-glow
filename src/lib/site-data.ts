@@ -28,10 +28,10 @@ export const site = {
     "Kérdésed van? Foglalnál? Nem vagy biztos valamiben? Írj, és a lehető leghamarabb válaszolok neked.",
   copyright: "Minden jog fenntartva © erikabeautykozmetika.hu 2026",
   stats: [
-    { value: "18 féle", label: "ARCKEZELÉS" },
-    { value: "16 év", label: "TAPASZTALAT" },
-    { value: "50 féle", label: "SZOLGÁLTATÁS" },
-    { value: "22 gépi", label: "KEZELÉS" },
+    { value: "18 féle", label: "ARCKEZELÉS", image: "/images/stat-arckezeles.jpg" },
+    { value: "16 év", label: "TAPASZTALAT", image: "/images/stat-tapasztalat.jpg" },
+    { value: "50 féle", label: "SZOLGÁLTATÁS", image: "/images/stat-szolgaltatas.jpg" },
+    { value: "22 gépi", label: "KEZELÉS", image: "/images/stat-kezeles.jpg" },
   ],
 } as const;
 
