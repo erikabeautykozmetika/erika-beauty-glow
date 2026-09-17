@@ -145,7 +145,7 @@ export const categories: Category[] = [
         slug: "ranctalanitas-telomer-kezeles",
         name: "Ránctalanítás – Telomer kezelés",
         duration: "1 óra",
-        note: "Feltöltés alatt…",
+        price: "90 000 Ft",
         image: "/images/treatment-room.jpg",
       },
       {
