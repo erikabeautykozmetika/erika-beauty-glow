@@ -52,7 +52,7 @@ function ContactPage() {
 
   return (
     <>
-      <PageHero src="/images/hero-contact.png" alt="Erika Beauty Kozmetika kapcsolat" eager compact />
+      <PageHero src="/images/hero-contact.png" alt="Erika Beauty Kozmetika kapcsolat" eager />
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6">
         <Breadcrumbs items={[{ label: "Kezdőlap", to: "/" }, { label: "Kontakt" }]} />
         <h1 className="font-display text-3xl font-semibold text-primary sm:text-4xl">Kontakt</h1>

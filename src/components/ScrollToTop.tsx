@@ -19,9 +19,8 @@ export function ScrollToTop() {
     <Button
       type="button"
       variant="outline"
-      size="icon"
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      className="fixed bottom-20 right-24 z-40 gap-2 rounded-full bg-accent px-4 text-accent-foreground shadow-md"
+      className="fixed bottom-20 right-24 z-40 h-10 gap-2 rounded-full bg-accent px-4 text-accent-foreground shadow-md"
       aria-label="Vissza az oldal tetejére"
       title="Fel"
     >
