@@ -144,12 +144,21 @@ function HomePage() {
                 key={c.slug}
                 to="/kozmetikai-kezelesek/$category"
                 params={{ category: c.slug }}
-                className="border-b-2 border-primary/40 bg-background p-6 transition-colors hover:border-primary"
+                className="group relative overflow-hidden border-b-2 border-primary/40 bg-background p-6 transition-colors hover:border-primary"
               >
-                <h3 className="font-display text-xl font-semibold">{c.name}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  {c.treatments.length} kezelés
-                </p>
+                <img
+                  src={c.image}
+                  alt=""
+                  aria-hidden="true"
+                  loading="lazy"
+                  className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-10 transition-opacity duration-300 group-hover:opacity-15"
+                />
+                <div className="relative">
+                  <h3 className="font-display text-xl font-semibold">{c.name}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    {c.treatments.length} kezelés
+                  </p>
+                </div>
               </Link>
             ))}
             {standaloneTreatments.map((t) => (
@@ -157,12 +166,23 @@ function HomePage() {
                 key={t.slug}
                 to="/kozmetikai-kezelesek/$standalone"
                 params={{ standalone: t.slug }}
-                className="border-b-2 border-primary/40 bg-background p-6 transition-colors hover:border-primary"
+                className="group relative overflow-hidden border-b-2 border-primary/40 bg-background p-6 transition-colors hover:border-primary"
               >
-                <h3 className="font-display text-xl font-semibold">{t.name}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  Időtartam: {t.duration}
-                </p>
+                {t.image && (
+                  <img
+                    src={t.image}
+                    alt=""
+                    aria-hidden="true"
+                    loading="lazy"
+                    className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-10 transition-opacity duration-300 group-hover:opacity-15"
+                  />
+                )}
+                <div className="relative">
+                  <h3 className="font-display text-xl font-semibold">{t.name}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    Időtartam: {t.duration}
+                  </p>
+                </div>
               </Link>
             ))}
           </div>
