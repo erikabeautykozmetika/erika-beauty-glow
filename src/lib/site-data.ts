@@ -39,6 +39,7 @@ export type Treatment = {
   slug: string;
   name: string;
   duration: string;
+  price?: string;
   description?: string;
   note?: string;
   image?: string;
@@ -67,6 +68,7 @@ export const categories: Category[] = [
         slug: "arcmasszazs",
         name: "Arcmasszázs",
         duration: "45 perc",
+        price: "15 000 Ft",
         description:
           "Relaxáló és frissítő arcmasszázs a bőr és az arcizmok kellemes ápolására.",
         image: "/images/gallery-massage.jpg",
@@ -75,6 +77,7 @@ export const categories: Category[] = [
         slug: "oxigenes-kezeles",
         name: "Oxigénes kezelés",
         duration: "1,5 óra",
+        price: "35 000 Ft",
         description:
           "Frissítő, hidratáló és revitalizáló kozmetikai kezelés a fáradt, fakó bőr számára.",
         image: "/images/gallery-skin.jpg",
@@ -83,6 +86,7 @@ export const categories: Category[] = [
         slug: "szemelyre-szabott-arckezeles",
         name: "Személyre szabott arckezelés",
         duration: "2 óra",
+        price: "30 000 Ft-tól",
         description:
           "A bőr aktuális állapotához és egyéni igényeihez igazított komplex arckezelés.",
         image: "/images/gallery-facial.jpg",
@@ -91,6 +95,7 @@ export const categories: Category[] = [
         slug: "regeneralo-kezeles",
         name: "Regeneráló kezelés",
         duration: "1 óra",
+        price: "30 000 Ft",
         description:
           "A megterhelt, fáradt bőr intenzívebb ápolására és regenerálásának támogatására.",
         image: "/images/treatment-room.jpg",
@@ -99,6 +104,7 @@ export const categories: Category[] = [
         slug: "szemkezeles",
         name: "Szemkezelés",
         duration: "1 óra",
+        price: "20 000 Ft",
         description:
           "Célzott kozmetikai ápolás a szemkörnyék érzékeny bőrére, hidratáló és frissítő hatással.",
         image: "/images/gallery-skin.jpg",
@@ -107,6 +113,7 @@ export const categories: Category[] = [
         slug: "tini-kezeles",
         name: "Tini kezelés",
         duration: "1 óra",
+        price: "20 000 Ft",
         description:
           "A fiatal bőr igényeihez igazított kozmetikai kezelés, különös figyelemmel a tisztításra és a megfelelő bőrápolásra.",
         image: "/images/gallery-facial.jpg",
@@ -123,12 +130,13 @@ export const categories: Category[] = [
       "De vajon mikor kezdődött a harc az idő nyomaival? Sokkal régebben, mint gondolnánk. Már az ókori kultúrákban is keresték a módját annak, hogyan őrizhetnék meg a bőr szépségét és fiatalságát. Az évszázadok során az egyszerű bőrápolási praktikákat fokozatosan felváltották a tudományos alapokon nyugvó módszerek.",
       "A 20. században aztán hatalmasat változott a világ: megjelentek a kémiai hámlasztások, a dermabrázió, később a lézeres és különböző energia-alapú kezelések, majd a mezoterápia, mikrotűs eljárások, rádiófrekvenciás és egyéb modern technológiák. A legfontosabb azonban: nem az a cél, hogy megállítsuk az időt. Hanem hogy a bőrünk a lehető legtovább megőrizhesse egészséges, ápolt, hidratált és ragyogó megjelenését.",
     ],
-    image: "/images/gallery-skin.jpg",
+    image: "/images/hero-bormegujito.png",
     treatments: [
       {
         slug: "ranctalanitas-therma-lifting",
         name: "Ránctalanítás – Therma Lifting",
         duration: "1 óra",
+        price: "45 000 Ft",
         description:
           "Lifting hatású kozmetikai kezelés a feszesebb, simább és fiatalosabb megjelenés támogatására.",
         image: "/images/treatment-room.jpg",
@@ -144,14 +152,16 @@ export const categories: Category[] = [
         slug: "ranctalanitas-tu-nelkuli-kezeles",
         name: "Ránctalanítás – tű nélküli kezelés",
         duration: "1 óra",
+        price: "35 000 Ft",
         description:
           "Kíméletes, tű nélküli kozmetikai kezelés a hidratáltabb és feszesebb bőr megjelenéséért.",
-        image: "/images/gallery-skin.jpg",
+        image: "/images/gallery-tu-nelkuli-kezeles.png",
       },
       {
         slug: "ranctalanitas-mezoterapia-invaziv",
         name: "Ránctalanítás – Mezoterápia (invazív)",
         duration: "1 óra",
+        price: "40 000 Ft-tól",
         description:
           "Intenzív kozmetikai kezelés célzott hatóanyagok alkalmazásával, a bőr hidratáltságának, feszességének és megújulásának támogatására.",
         image: "/images/gallery-facial.jpg",
@@ -160,6 +170,7 @@ export const categories: Category[] = [
         slug: "ranctalanitas-mezoterapia-non-invaziv",
         name: "Ránctalanítás – Mezoterápia (non-invazív)",
         duration: "1 óra",
+        price: "20 000 Ft-tól",
         description:
           "Tű nélküli, kíméletes mezoterápiás kezelés a bőr megújulásának és hidratáltságának támogatására.",
         image: "/images/gallery-facial.jpg",
@@ -168,6 +179,7 @@ export const categories: Category[] = [
         slug: "expressz-kezeles",
         name: "Expressz kezelés",
         duration: "45 perc",
+        price: "20 000 Ft",
         description:
           "Rövidebb idő alatt elvégezhető, célzott kozmetikai kezelés, amikor gyors felfrissülésre van szükség.",
         image: "/images/gallery-skin.jpg",
@@ -176,6 +188,7 @@ export const categories: Category[] = [
         slug: "vitaminos-arckezeles",
         name: "Vitaminos arckezelés",
         duration: "1,5 óra",
+        price: "30 000 Ft-tól",
         description:
           "Tápláló és revitalizáló arckezelés a bőr friss, üde és ápolt megjelenésének támogatására.",
         image: "/images/gallery-facial.jpg",
@@ -184,14 +197,16 @@ export const categories: Category[] = [
         slug: "bormegujito-savas-kezeles",
         name: "Bőrmegújító savas kezelés",
         duration: "1 óra",
+        price: "20 000 Ft-tól",
         description:
           "Kozmetikai savas kezelés a bőr megújulásának és egyenletesebb bőrfelszínének támogatására.",
-        image: "/images/gallery-skin.jpg",
+        image: "/images/gallery-bormegujito-savas.png",
       },
       {
         slug: "borfiatalito-arckezeles",
         name: "Bőrfiatalító arckezelés",
         duration: "1–1,5 óra",
+        price: "35 000 Ft-tól",
         description:
           "Intenzívebb kozmetikai ápolás az érett, fáradt vagy feszességét vesztett bőr számára.",
         image: "/images/treatment-room.jpg",
@@ -206,28 +221,31 @@ export const categories: Category[] = [
       "Az ókori Egyiptomban a smink már jóval több volt egyszerű díszítésnél. Nők és férfiak egyaránt használtak kozmetikumokat: a szemeket fekete kohl-lal és zöld malachittal hangsúlyozták, vörös okkerrel az ajkakat és az arcot színezték, olajokkal és illatos készítményekkel pedig a bőrüket ápolták. A kozmetikumoknak szépségápolási, gyakorlati és spirituális jelentőségük is volt.",
       "De vajon mennyit változott mindez több ezer év alatt? A szemek kiemelése, az arc hangsúlyozása és az önkifejezés iránti vágy ma is ugyanúgy jelen van – csak az eszközeink, az alapanyagok és a technikák hatalmasat fejlődtek. Az egykori kohlpálcikát ma ecsetek és professzionális eszközök váltják fel, a természetes pigmenteket pedig korszerű sminktermékek. A cél azonban ugyanaz maradt: kiemelni azt, ami bennünk szép.",
     ],
-    image: "/images/gallery-makeup.jpg",
+    image: "/images/hero-smink.png",
     treatments: [
       {
         slug: "professzionalis-smink",
         name: "Professzionális smink",
         duration: "30–60 perc",
+        price: "20 000 Ft",
         description:
           "Professzionális smink az egyéni adottságokhoz és az alkalomhoz igazítva.",
-        image: "/images/gallery-makeup.jpg",
+        image: "/images/gallery-smink-tortenete.png",
       },
       {
         slug: "menyasszonyi-proba-smink",
         name: "Menyasszonyi próbasmink",
         duration: "1–1,5 óra",
+        price: "20 000 Ft",
         description:
           "Az esküvő előtti próba során kialakítható az ideális sminkstílus, színvilág és intenzitás.",
-        image: "/images/gallery-makeup.jpg",
+        image: "/images/gallery-menyasszonyi-proba-smink.png",
       },
       {
         slug: "menyasszonyi-smink",
         name: "Menyasszonyi smink",
         duration: "1–1,5 óra",
+        price: "35 000 Ft",
         description:
           "Az esküvő napjára készített, az arcvonásokhoz, ruhához és az esküvő stílusához igazított professzionális smink.",
         image: "/images/gallery-makeup.jpg",
@@ -248,6 +266,7 @@ export const categories: Category[] = [
         slug: "professzionalis-szemoldokformazas",
         name: "Professzionális szemöldökformázás",
         duration: "20 perc",
+        price: "3 000 Ft-tól",
         description:
           "Az arcformához és egyéni adottságokhoz igazított szemöldökformázás.",
         image: "/images/gallery-makeup.jpg",
@@ -256,6 +275,7 @@ export const categories: Category[] = [
         slug: "szemoldoklifting",
         name: "Szemöldöklifting",
         duration: "1 óra",
+        price: "15 000 Ft",
         description:
           "A szemöldökszálak rendezése és formázása természetes, ápolt és emeltebb hatásért.",
         image: "/images/gallery-makeup.jpg",
@@ -271,12 +291,13 @@ export const categories: Category[] = [
       "Ma már nem természetes eredetű festékekkel és ősi praktikákkal dolgozunk, hanem korszerű, precíz technikákkal. A cél azonban mit sem változott: kiemelni a tekintetedet úgy, hogy az harmonizáljon az arcoddal és természetes szépségeddel.",
       "A szempillaliftingtől a festésen át a műszempilláig olyan megoldásokat kínálok, amelyekkel a tekinteted lehet az egyik legszebb ékszered.",
     ],
-    image: "/images/gallery-makeup.jpg",
+    image: "/images/hero-szempilla.png",
     treatments: [
       {
         slug: "szempilla-lifting",
         name: "Szempilla lifting",
         duration: "1 óra",
+        price: "15 000 Ft",
         description:
           "A természetes szempillák ívének kiemelése látványos, mégis természetes hatás érdekében.",
         image: "/images/gallery-makeup.jpg",
@@ -285,14 +306,16 @@ export const categories: Category[] = [
         slug: "szempillafestes",
         name: "Szempillafestés",
         duration: "15 perc",
+        price: "2 500 Ft",
         description:
           "A természetes szempillák hangsúlyosabbá tétele intenzívebb színnel.",
-        image: "/images/gallery-makeup.jpg",
+        image: "/images/gallery-szempillafestes.png",
       },
       {
         slug: "muszempilla-leoldas",
         name: "Műszempilla leoldás",
         duration: "30 perc",
+        price: "10 000 Ft",
         description: "A korábban felhelyezett műszempillák szakszerű eltávolítása.",
         note: "Saját épített szetteknél ingyenes.",
         image: "/images/gallery-makeup.jpg",
@@ -301,6 +324,7 @@ export const categories: Category[] = [
         slug: "3d-muszempilla-uj-szett",
         name: "3D műszempilla – új szett",
         duration: "1,5–2,5 óra",
+        price: "25 000 Ft",
         description:
           "Látványos, mégis személyre szabott műszempilla új szett kialakítása az egyéni adottságokhoz igazítva.",
         image: "/images/gallery-makeup.jpg",
@@ -309,6 +333,7 @@ export const categories: Category[] = [
         slug: "3d-muszempilla-toltes",
         name: "3D műszempilla – töltés",
         duration: "1,5 óra",
+        price: "20 000 Ft",
         description:
           "A kihullott szálak pótlása és a meglévő műszempilla-szett frissítése.",
         image: "/images/gallery-makeup.jpg",
@@ -327,9 +352,10 @@ export const standaloneTreatments: StandaloneTreatment[] = [
     slug: "ferfi-kozmetikai-kezeles",
     name: "Férfi kozmetikai kezelés",
     duration: "1–1,5 óra",
+        price: "30 000 Ft-tól",
     description:
       "A férfi bőr sajátosságaihoz igazított kozmetikai kezelés, tisztítással és célzott bőrápolással.",
-    image: "/images/treatment-room.jpg",
+    image: "/images/ferfi-kezeles.jpg",
     intro: {
       heading: "A férfiak szépségápolása – régen és ma",
       paragraphs: [
@@ -343,6 +369,7 @@ export const standaloneTreatments: StandaloneTreatment[] = [
     slug: "hatkezeles",
     name: "Hátkezelés",
     duration: "1 óra",
+        price: "30 000 Ft",
     description:
       "A hát bőrének alapos tisztítására és ápolására kialakított kozmetikai kezelés, különösen problémásabb bőr esetén.",
     image: "/images/treatment-room.jpg",
@@ -351,6 +378,7 @@ export const standaloneTreatments: StandaloneTreatment[] = [
     slug: "szortelenites-es-gyantazas",
     name: "Szőrtelenítés és gyantázás",
     duration: "30–60 perc",
+        price: "15 000 Ft",
     description:
       "Professzionális kozmetikai szőrtelenítés női és férfi vendégek számára.",
     image: "/images/treatment-room.jpg",

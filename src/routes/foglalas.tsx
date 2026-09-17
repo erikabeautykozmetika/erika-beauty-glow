@@ -34,7 +34,7 @@ function BookingPage() {
   return (
     <section className="mx-auto max-w-5xl px-4 py-14 sm:px-6">
       <Breadcrumbs items={[{ label: "Kezdőlap", to: "/" }, { label: "Foglalás" }]} />
-      <h1 className="font-display text-3xl font-semibold sm:text-4xl">Foglalás</h1>
+      <h1 className="font-display text-3xl font-semibold text-primary sm:text-4xl">Foglalás</h1>
       <p className="mt-5 max-w-3xl text-lg leading-relaxed text-muted-foreground">
         {site.contactPrompt}
       </p>

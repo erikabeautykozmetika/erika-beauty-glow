@@ -18,7 +18,6 @@ import {
 } from "@/components/ui/dialog";
 import { PageHero } from "@/components/PageHero";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import erikaPortrait from "@/assets/erika-portrait-banner.png.asset.json";
 import { site } from "@/lib/site-data";
 import { breadcrumbJsonLd, canonical, localBusinessJsonLd, pageMeta } from "@/lib/seo";
 
@@ -56,19 +55,10 @@ function ContactPage() {
       <PageHero src="/images/hero-contact.png" alt="Erika Beauty Kozmetika kapcsolat" eager compact />
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6">
         <Breadcrumbs items={[{ label: "Kezdőlap", to: "/" }, { label: "Kontakt" }]} />
-        <h1 className="font-display text-3xl font-semibold sm:text-4xl">Kontakt</h1>
+        <h1 className="font-display text-3xl font-semibold text-primary sm:text-4xl">Kontakt</h1>
         <p className="mt-5 max-w-3xl text-lg leading-relaxed text-muted-foreground">
           {site.contactPrompt}
         </p>
-
-        <img
-          src={erikaPortrait.url}
-          alt="Erika, az Erika Beauty Kozmetika tulajdonosa"
-          width={1200}
-          height={800}
-          loading="lazy"
-          className="mt-10 w-full rounded-sm shadow-md"
-        />
 
         <div className="mt-12 grid gap-12 lg:grid-cols-2">
           <ul className="space-y-6">

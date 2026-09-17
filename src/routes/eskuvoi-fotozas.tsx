@@ -51,12 +51,16 @@ function WeddingPage() {
         <Breadcrumbs
           items={[{ label: "Kezdőlap", to: "/" }, { label: "Esküvői fotózás" }]}
         />
-        <h1 className="font-display text-3xl font-semibold sm:text-4xl">
+        <h1 className="font-display text-3xl font-semibold text-primary sm:text-4xl">
           Emlékek, amik örökké kísérnek
         </h1>
         <p className="mt-5 max-w-3xl text-lg leading-relaxed text-muted-foreground">
           Esküvői fotózás, ami megőrzi életed legszebb pillanatait. Mert a
           legszebb történetek képekben élnek tovább.
+        </p>
+        <p className="mt-5 max-w-3xl italic leading-relaxed text-muted-foreground">
+          Az anyaság után ❤️ első mindig a kozmetika marad, viszont mostantól a
+          második szerelmemnek is ismét hódolok! Újra esküvői fotózok! ❤️
         </p>
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -66,6 +70,27 @@ function WeddingPage() {
               <p className="mt-4 font-medium">{f.title}</p>
             </div>
           ))}
+        </div>
+
+        <div className="mt-12 max-w-3xl space-y-5 leading-relaxed text-muted-foreground">
+          <p>
+            Vannak pillanatok, amelyek egyszer történnek meg az életben – de az
+            emlékük örökre velünk marad. Egy esküvő, egy mosoly, egy ölelés, egy
+            könnycsepp vagy az a különleges pillantás, amit talán észre sem
+            veszünk akkor. A fényképek segítenek megőrizni mindazt, amit az idő
+            múlásával már csak az emlékeinkben őrizhetnénk.
+          </p>
+          <p>
+            Mert egy napból emlék lesz, az emlékből pedig történet – amit jó
+            újra és újra átélni.
+          </p>
+          <p>
+            A fotózás számomra nem egyszerűen képek készítése. Egy történet
+            megőrzése: a várakozásé, az örömé, a meghatottságé és azoké az
+            apró, őszinte pillanatoké, amelyek talán csak egyszer történnek
+            meg.
+          </p>
+          <p>Hogy évekkel később is elég legyen egyetlen képre nézni, és újra ott legyél.</p>
         </div>
 
         <div className="mt-12 bg-secondary p-8 text-center">
