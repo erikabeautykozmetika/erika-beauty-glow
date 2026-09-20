@@ -58,7 +58,7 @@ function ContactPage() {
         <Breadcrumbs items={[{ label: "Kezdőlap", to: "/" }, { label: "Kontakt" }]} />
         <h1 className="text-center font-display text-3xl font-semibold text-primary sm:text-4xl">Kontakt</h1>
         <SocialLinks className="mt-4 justify-center" />
-        <p className="mx-auto mt-5 max-w-3xl text-center text-lg leading-relaxed text-muted-foreground">
+        <p className="mx-auto mt-5 text-center text-lg leading-relaxed text-muted-foreground sm:whitespace-nowrap">
           {site.contactPrompt}
         </p>
 
