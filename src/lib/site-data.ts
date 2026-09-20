@@ -449,6 +449,21 @@ export const overviewItems: {
   { name: "Menyasszonyi smink", duration: "1–1,5 óra", to: "/kozmetikai-kezelesek/smink/menyasszonyi-smink" },
 ];
 
+/** Egy kezelés fotójának megkeresése a "/kozmetikai-kezelesek/..." linkje alapján. */
+export function findTreatmentImageByPath(to: string): string | undefined {
+  const parts = to.replace(/^\/kozmetikai-kezelesek\//, "").split("/");
+  if (parts.length === 2) {
+    const [categorySlug, treatmentSlug] = parts;
+    return categories
+      .find((c) => c.slug === categorySlug)
+      ?.treatments.find((t) => t.slug === treatmentSlug)?.image;
+  }
+  if (parts.length === 1) {
+    return standaloneTreatments.find((t) => t.slug === parts[0])?.image;
+  }
+  return undefined;
+}
+
 export function findCategory(slug: string) {
   return categories.find((c) => c.slug === slug);
 }
