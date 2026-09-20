@@ -63,6 +63,50 @@ function ContactPage() {
         </p>
 
         <div className="mt-12 grid gap-12 lg:grid-cols-2">
+          <div className="space-y-6">
+            <iframe
+              title={`${site.name} térkép — ${site.mapsQuery}`}
+              src={mapSrc}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="h-[380px] w-full border border-border"
+            />
+            <Dialog>
+              <DialogTrigger asChild>
+                <button
+                  type="button"
+                  className="group relative block w-full cursor-zoom-in border border-border"
+                  aria-label="Parkolási térkép nagyítása"
+                >
+                  <img
+                    src="/images/parking-map.png"
+                    alt="Parkolási térkép a kozmetika környékén — kattints a nagyításhoz"
+                    width={1536}
+                    height={1024}
+                    loading="lazy"
+                    className="w-full object-contain"
+                  />
+                  <span className="absolute bottom-3 right-3 flex items-center gap-2 rounded-full bg-background/90 px-3 py-2 text-sm font-medium shadow-md">
+                    <ZoomIn className="h-4 w-4 text-primary" aria-hidden="true" />
+                    Nagyítás
+                  </span>
+                </button>
+              </DialogTrigger>
+              <DialogContent className="max-h-[95vh] max-w-[95vw] overflow-auto p-2 sm:max-w-[95vw]">
+                <DialogTitle className="sr-only">
+                  Parkolási térkép nagyítva
+                </DialogTitle>
+                <img
+                  src="/images/parking-map.png"
+                  alt="Parkolási térkép a kozmetika környékén, nagyítva"
+                  width={1536}
+                  height={1024}
+                  className="h-auto w-[1536px] max-w-none"
+                />
+              </DialogContent>
+            </Dialog>
+          </div>
+
           <ul className="space-y-6">
             <li className="flex gap-4">
               <MapPin className="mt-1 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
@@ -118,50 +162,6 @@ function ContactPage() {
               </div>
             </li>
           </ul>
-
-          <div className="space-y-6">
-            <iframe
-              title={`${site.name} térkép — ${site.mapsQuery}`}
-              src={mapSrc}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="h-[380px] w-full border border-border"
-            />
-            <Dialog>
-              <DialogTrigger asChild>
-                <button
-                  type="button"
-                  className="group relative block w-full cursor-zoom-in border border-border"
-                  aria-label="Parkolási térkép nagyítása"
-                >
-                  <img
-                    src="/images/parking-map.png"
-                    alt="Parkolási térkép a kozmetika környékén — kattints a nagyításhoz"
-                    width={1536}
-                    height={1024}
-                    loading="lazy"
-                    className="w-full object-contain"
-                  />
-                  <span className="absolute bottom-3 right-3 flex items-center gap-2 rounded-full bg-background/90 px-3 py-2 text-sm font-medium shadow-md">
-                    <ZoomIn className="h-4 w-4 text-primary" aria-hidden="true" />
-                    Nagyítás
-                  </span>
-                </button>
-              </DialogTrigger>
-              <DialogContent className="max-h-[95vh] max-w-[95vw] overflow-auto p-2 sm:max-w-[95vw]">
-                <DialogTitle className="sr-only">
-                  Parkolási térkép nagyítva
-                </DialogTitle>
-                <img
-                  src="/images/parking-map.png"
-                  alt="Parkolási térkép a kozmetika környékén, nagyítva"
-                  width={1536}
-                  height={1024}
-                  className="h-auto w-[1536px] max-w-none"
-                />
-              </DialogContent>
-            </Dialog>
-          </div>
         </div>
 
         <Button asChild size="lg" className="mt-12">
