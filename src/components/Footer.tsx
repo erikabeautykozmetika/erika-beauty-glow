@@ -1,14 +1,13 @@
 import { Link } from "@tanstack/react-router";
 import { MapPin, MessageCircle, Phone } from "lucide-react";
 
-import footerImage from "@/assets/footer-cherry-blossoms.png.asset.json";
 import { site } from "@/lib/site-data";
 
 export function Footer() {
   return (
     <footer className="relative min-h-[360px] overflow-hidden border-t border-border bg-secondary sm:min-h-[320px]">
       <img
-        src={footerImage.url}
+        src="/images/footer-cherry-blossoms.png"
         alt=""
         width={1920}
         height={720}

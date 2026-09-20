@@ -3,7 +3,6 @@ import { HeartHandshake, ShieldCheck, Sparkles } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/PageHero";
-import erikaPortrait from "@/assets/erika-portrait-banner.png.asset.json";
 import { categories, site, standaloneTreatments } from "@/lib/site-data";
 import {
   canonical,
@@ -62,7 +61,7 @@ function HomePage() {
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16">
         <div className="grid items-center gap-8 md:grid-cols-[minmax(260px,0.78fr)_minmax(0,1.22fr)] lg:gap-12">
           <img
-            src={erikaPortrait.url}
+            src="/images/erika-portrait.jpg"
             alt="Erika, az Erika Beauty Kozmetika tulajdonosa"
             width={1200}
             height={800}
