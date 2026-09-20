@@ -88,7 +88,7 @@ export const categories: Category[] = [
         price: "15 000 Ft",
         description:
           "Relaxáló és frissítő arcmasszázs a bőr és az arcizmok kellemes ápolására.",
-        image: "/images/gallery-massage.jpg",
+        image: "/images/gallery-arcmasszazs.jpg",
       },
       {
         slug: "oxigenes-kezeles",
@@ -97,7 +97,7 @@ export const categories: Category[] = [
         price: "35 000 Ft",
         description:
           "Frissítő, hidratáló és revitalizáló kozmetikai kezelés a fáradt, fakó bőr számára.",
-        image: "/images/gallery-skin.jpg",
+        image: "/images/gallery-oxigenes-kezeles.jpg",
       },
       {
         slug: "szemelyre-szabott-arckezeles",
@@ -106,7 +106,7 @@ export const categories: Category[] = [
         price: "30 000 Ft-tól",
         description:
           "A bőr aktuális állapotához és egyéni igényeihez igazított komplex arckezelés.",
-        image: "/images/gallery-facial.jpg",
+        image: "/images/gallery-szemelyre-szabott-arckezeles.jpg",
       },
       {
         slug: "regeneralo-kezeles",
@@ -115,7 +115,7 @@ export const categories: Category[] = [
         price: "30 000 Ft",
         description:
           "A megterhelt, fáradt bőr intenzívebb ápolására és regenerálásának támogatására.",
-        image: "/images/treatment-room.jpg",
+        image: "/images/gallery-regeneralo-kezeles.jpg",
       },
       {
         slug: "szemkezeles",
@@ -124,7 +124,7 @@ export const categories: Category[] = [
         price: "20 000 Ft",
         description:
           "Célzott kozmetikai ápolás a szemkörnyék érzékeny bőrére, hidratáló és frissítő hatással.",
-        image: "/images/gallery-skin.jpg",
+        image: "/images/gallery-szemkezeles.jpg",
       },
       {
         slug: "tini-kezeles",
@@ -133,7 +133,7 @@ export const categories: Category[] = [
         price: "20 000 Ft",
         description:
           "A fiatal bőr igényeihez igazított kozmetikai kezelés, különös figyelemmel a tisztításra és a megfelelő bőrápolásra.",
-        image: "/images/gallery-facial.jpg",
+        image: "/images/gallery-tini-kezeles.jpg",
       },
     ],
   },
@@ -156,14 +156,14 @@ export const categories: Category[] = [
         price: "45 000 Ft",
         description:
           "Lifting hatású kozmetikai kezelés a feszesebb, simább és fiatalosabb megjelenés támogatására.",
-        image: "/images/treatment-room.jpg",
+        image: "/images/gallery-therma-lifting.jpg",
       },
       {
         slug: "ranctalanitas-telomer-kezeles",
         name: "Ránctalanítás – Telomer kezelés",
         duration: "1 óra",
         price: "90 000 Ft",
-        image: "/images/treatment-room.jpg",
+        image: "/images/gallery-telomer-kezeles.jpg",
       },
       {
         slug: "ranctalanitas-tu-nelkuli-kezeles",
@@ -181,7 +181,7 @@ export const categories: Category[] = [
         price: "40 000 Ft-tól",
         description:
           "Intenzív kozmetikai kezelés célzott hatóanyagok alkalmazásával, a bőr hidratáltságának, feszességének és megújulásának támogatására.",
-        image: "/images/gallery-facial.jpg",
+        image: "/images/gallery-mezoterapia-invaziv.jpg",
       },
       {
         slug: "ranctalanitas-mezoterapia-non-invaziv",
@@ -190,7 +190,7 @@ export const categories: Category[] = [
         price: "20 000 Ft-tól",
         description:
           "Tű nélküli, kíméletes mezoterápiás kezelés a bőr megújulásának és hidratáltságának támogatására.",
-        image: "/images/gallery-facial.jpg",
+        image: "/images/gallery-mezoterapia-non-invaziv.jpg",
       },
       {
         slug: "expressz-kezeles",
@@ -199,7 +199,7 @@ export const categories: Category[] = [
         price: "20 000 Ft",
         description:
           "Rövidebb idő alatt elvégezhető, célzott kozmetikai kezelés, amikor gyors felfrissülésre van szükség.",
-        image: "/images/gallery-skin.jpg",
+        image: "/images/gallery-expressz-kezeles.jpg",
       },
       {
         slug: "vitaminos-arckezeles",
@@ -208,7 +208,7 @@ export const categories: Category[] = [
         price: "30 000 Ft-tól",
         description:
           "Tápláló és revitalizáló arckezelés a bőr friss, üde és ápolt megjelenésének támogatására.",
-        image: "/images/gallery-facial.jpg",
+        image: "/images/gallery-vitaminos-arckezeles.jpg",
       },
       {
         slug: "bormegujito-savas-kezeles",
@@ -217,7 +217,7 @@ export const categories: Category[] = [
         price: "20 000 Ft-tól",
         description:
           "Kozmetikai savas kezelés a bőr megújulásának és egyenletesebb bőrfelszínének támogatására.",
-        image: "/images/gallery-bormegujito-savas.png",
+        image: "/images/gallery-bormegujito-savas-2.jpg",
       },
       {
         slug: "borfiatalito-arckezeles",
@@ -226,7 +226,7 @@ export const categories: Category[] = [
         price: "35 000 Ft-tól",
         description:
           "Intenzívebb kozmetikai ápolás az érett, fáradt vagy feszességét vesztett bőr számára.",
-        image: "/images/treatment-room.jpg",
+        image: "/images/gallery-borfiatalito-arckezeles.jpg",
       },
     ],
   },
@@ -372,7 +372,7 @@ export const standaloneTreatments: StandaloneTreatment[] = [
         price: "30 000 Ft-tól",
     description:
       "A férfi bőr sajátosságaihoz igazított kozmetikai kezelés, tisztítással és célzott bőrápolással.",
-    image: "/images/ferfi-kezeles.jpg",
+    image: "/images/gallery-ferfi-kezeles.jpg",
     intro: {
       heading: "A férfiak szépségápolása – régen és ma",
       paragraphs: [
@@ -389,7 +389,7 @@ export const standaloneTreatments: StandaloneTreatment[] = [
         price: "30 000 Ft",
     description:
       "A hát bőrének alapos tisztítására és ápolására kialakított kozmetikai kezelés, különösen problémásabb bőr esetén.",
-    image: "/images/treatment-room.jpg",
+    image: "/images/gallery-hatkezeles.jpg",
   },
   {
     slug: "szortelenites-es-gyantazas",
