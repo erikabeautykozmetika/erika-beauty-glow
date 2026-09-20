@@ -39,9 +39,9 @@ function BookingPage() {
       <PageHero src="/images/hero-foglalas.png" alt="Erika Beauty Kozmetika időpontfoglalás" eager />
       <section className="mx-auto max-w-5xl px-4 py-14 sm:px-6">
       <Breadcrumbs items={[{ label: "Kezdőlap", to: "/" }, { label: "Foglalás" }]} />
-      <h1 className="font-display text-3xl font-semibold text-primary sm:text-4xl">Foglalás</h1>
-      <SocialLinks className="mt-4" />
-      <p className="mt-5 max-w-3xl text-lg leading-relaxed text-muted-foreground">
+      <h1 className="text-center font-display text-3xl font-semibold text-primary sm:text-4xl">Foglalás</h1>
+      <SocialLinks className="mt-4 justify-center" />
+      <p className="mx-auto mt-5 max-w-3xl text-center text-lg leading-relaxed text-muted-foreground">
         {site.contactPrompt}
       </p>
 
