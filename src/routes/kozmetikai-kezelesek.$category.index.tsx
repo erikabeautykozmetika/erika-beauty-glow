@@ -83,12 +83,12 @@ function Page() {
         )}
 
         {isSzemoldok ? (
-          <div className="mt-8 grid gap-8 md:grid-cols-2 md:items-center">
+          <div className="mt-8 grid gap-8 md:grid-cols-2 md:items-stretch">
             <img
               src="/images/gallery-szemoldok-tortenete.jpg"
               alt="Szemöldökformázás az ókori Egyiptomban — a szépségápolás évezredes hagyománya"
               loading="lazy"
-              className="w-full rounded-sm object-cover shadow-md"
+              className="h-full min-h-[280px] w-full rounded-sm object-cover shadow-md"
             />
             <div className="space-y-5 text-center leading-relaxed text-muted-foreground">
               {c.intro.map((p) => (
