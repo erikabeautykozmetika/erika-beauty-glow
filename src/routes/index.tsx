@@ -66,15 +66,15 @@ function HomePage() {
             loading="lazy"
             className="mx-auto w-full max-w-lg rounded-sm object-cover shadow-md md:mx-0 md:mt-[6.5rem]"
           />
-          <div className="text-center md:text-left">
+          <div className="text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">
               {site.postalCode} {site.city} · {site.district}
             </p>
             <h1 className="mt-5 font-display text-3xl font-semibold text-primary sm:text-4xl">
               {site.name}
             </h1>
-            <SocialLinks className="mt-4 justify-center md:justify-start" />
-            <div className="mt-6 space-y-4 text-lg leading-relaxed text-muted-foreground">
+            <SocialLinks className="mt-4 justify-center" />
+            <div className="mt-6 space-y-4 text-left text-lg leading-relaxed text-muted-foreground">
               <p>
                 Te is úgy érzed, hogy elvesztél a kozmetikai termékek és
                 ígéretek végtelen tengerében? Eleged van a felesleges
