@@ -56,7 +56,7 @@ function WeddingPage() {
           Emlékek, amik örökké kísérnek
         </h1>
         <SocialLinks className="mt-4 justify-center" />
-        <p className="mx-auto mt-5 max-w-3xl text-center text-lg leading-relaxed text-muted-foreground">
+        <p className="mx-auto mt-5 text-center text-lg leading-relaxed text-muted-foreground sm:whitespace-nowrap">
           Esküvői fotózás, ami megőrzi életed legszebb pillanatait. Mert a
           legszebb történetek képekben élnek tovább.
         </p>
