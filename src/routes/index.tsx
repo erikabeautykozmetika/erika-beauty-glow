@@ -75,11 +75,37 @@ function HomePage() {
             <h1 className="mt-5 font-display text-3xl font-semibold text-primary sm:text-4xl">
               {site.name}
             </h1>
-            <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-              Te is úgy érzed, hogy elvesztél a kozmetikai termékek és ígéretek
-              végtelen tengerében? A filozófiám egyszerű: nálam nincs tukmálás,
-              csak valódi megoldások és szakértő segítség.
-            </p>
+            <div className="mt-6 space-y-4 text-lg leading-relaxed text-muted-foreground">
+              <p>
+                Te is úgy érzed, hogy elvesztél a kozmetikai termékek és
+                ígéretek végtelen tengerében? Eleged van a felesleges
+                termékekből és a nyomulós értékesítésből?
+              </p>
+              <p>
+                Az Erika Beauty Kozmetika filozófiája egyszerű: nálam nincs
+                tukmálás, csak őszinte szakmai segítség, személyre szabott
+                kozmetikai kezelések és valódi megoldások. Hiszek abban, hogy
+                nem az a cél, hogy minél több terméket vásárolj, hanem hogy a
+                bőröd valódi igényeinek megfelelő ápolást kapja.
+              </p>
+              <p>
+                Minden arcbőr egyedi történetet mesél, ezért nem sablonokban
+                gondolkodom. A bőr aktuális állapotát és egyéni igényeit
+                figyelembe véve keresem meg azt a kezelést és bőrápolási
+                megoldást, amely számodra valóban megfelelő lehet.
+              </p>
+              <p>
+                Legyen szó mélytisztító arckezelésről, hidratálásról,
+                bőrmegújításról, anti-aging kezelésről vagy a bőr egészségének
+                megőrzéséről, az a célom, hogy bőröd az év minden időszakában
+                megkapja a számára szükséges törődést.
+              </p>
+              <p>
+                Az Erika Beauty Kozmetikában Budán, a XII. kerületben nyugodt,
+                személyes környezetben várlak, ahol a figyelem rólad és a
+                bőrödről szól.
+              </p>
+            </div>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row md:justify-start">
               <Button asChild size="lg">
                 <Link to="/foglalas">Időpontfoglalás</Link>

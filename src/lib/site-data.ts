@@ -25,7 +25,7 @@ export const site = {
     "Gyalogos bejárat a Művészbejárat felől, a Park oldaláról, a sárga lépcsőn lefelé.",
   transit: "61-es villamos, valamint az 5, 9, 105 és 110 BKK buszok.",
   contactPrompt:
-    "Kérdésed van? Foglalnál? Nem vagy biztos valamiben? Írj, és a lehető leghamarabb válaszolok neked.",
+    "Kérdésed van? Foglalnál? Nem vagy biztos valamiben? Írj, vagy hívj és a lehető leghamarabb válaszolok neked.",
   copyright: "Minden jog fenntartva © erikabeautykozmetika.hu 2026",
   stats: [
     { value: "18 féle", label: "ARCKEZELÉS", image: "/images/stat-arckezeles.jpg" },
