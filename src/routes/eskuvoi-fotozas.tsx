@@ -60,7 +60,7 @@ function WeddingPage() {
           Esküvői fotózás, ami megőrzi életed legszebb pillanatait. Mert a
           legszebb történetek képekben élnek tovább.
         </p>
-        <p className="mx-auto mt-5 max-w-3xl text-center italic leading-relaxed text-muted-foreground">
+        <p className="mx-auto mt-5 text-center italic leading-relaxed text-muted-foreground sm:whitespace-nowrap">
           Az anyaság után ❤️ első mindig a kozmetika marad, viszont mostantól a
           második szerelmemnek is ismét hódolok! Újra esküvői fotózok! ❤️
         </p>
