@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { HeartHandshake, ShieldCheck, Sparkles } from "lucide-react";
+import { CheckSquare } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/PageHero";
@@ -33,17 +33,14 @@ export const Route = createFileRoute("/")({
 
 const pillars = [
   {
-    icon: HeartHandshake,
     title: "Nálam nincs tukmálás",
     text: "Nem termékeket adok el, hanem valódi megoldásokat és szakértő segítséget.",
   },
   {
-    icon: Sparkles,
     title: "Személyre szabott kezelés",
     text: "Minden bőr más, ezért a kezelés mindig a bőröd aktuális állapotához igazodik.",
   },
   {
-    icon: ShieldCheck,
     title: "16 év tapasztalat",
     text: "Szakmai tudás és őszinte törődés, a XII. kerület szívében.",
   },
@@ -59,14 +56,14 @@ function HomePage() {
       />
 
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16">
-        <div className="grid items-center gap-8 md:grid-cols-[minmax(260px,0.78fr)_minmax(0,1.22fr)] lg:gap-12">
+        <div className="grid items-start gap-8 md:grid-cols-[minmax(260px,0.78fr)_minmax(0,1.22fr)] lg:gap-12">
           <img
             src="/images/erika-portrait.jpg"
             alt="Erika, az Erika Beauty Kozmetika tulajdonosa"
             width={1200}
             height={800}
             loading="lazy"
-            className="mx-auto w-full max-w-lg rounded-sm object-cover shadow-md md:mx-0"
+            className="mx-auto w-full max-w-lg rounded-sm object-cover shadow-md md:mx-0 md:mt-[6.5rem]"
           />
           <div className="text-center md:text-left">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">
@@ -122,7 +119,7 @@ function HomePage() {
         aria-label="Számokban"
         className="border-y border-border bg-secondary"
       >
-        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-4 py-12 sm:px-6 lg:grid-cols-4">
+        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-6 px-4 py-12 sm:px-6 lg:grid-cols-4 lg:gap-8">
           {site.stats.map((stat) => (
             <div key={stat.label} className="text-center">
               <img
@@ -130,11 +127,17 @@ function HomePage() {
                 alt=""
                 aria-hidden="true"
                 loading="lazy"
-                className="mx-auto mb-4 h-20 w-20 rounded-full border-2 border-primary/30 object-cover shadow-sm sm:h-24 sm:w-24"
+                className="mx-auto mb-4 aspect-[3/2] w-full rounded-md object-cover shadow-sm"
               />
-              <p className="font-display text-3xl font-semibold sm:text-4xl">
-                {stat.value}
-              </p>
+              <div className="flex items-center justify-center gap-2">
+                <CheckSquare
+                  className="h-5 w-5 shrink-0 fill-emerald-500 text-white"
+                  aria-hidden="true"
+                />
+                <p className="font-display text-2xl font-semibold sm:text-3xl">
+                  {stat.value}
+                </p>
+              </div>
               <p className="mt-1 text-xs uppercase tracking-[0.2em] text-muted-foreground">
                 {stat.label}
               </p>
@@ -153,7 +156,10 @@ function HomePage() {
               key={pillar.title}
               className="border-b-2 border-primary/40 bg-secondary p-7"
             >
-              <pillar.icon className="h-6 w-6 text-primary" aria-hidden="true" />
+              <CheckSquare
+                className="h-7 w-7 fill-primary text-primary-foreground"
+                aria-hidden="true"
+              />
               <h3 className="mt-5 font-display text-2xl font-semibold">
                 {pillar.title}
               </h3>
