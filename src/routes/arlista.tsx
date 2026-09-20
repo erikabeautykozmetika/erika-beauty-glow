@@ -3,6 +3,7 @@ import { Info } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/PageHero";
+import { SocialLinks } from "@/components/SocialLinks";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { categories, standaloneTreatments, site, type Treatment } from "@/lib/site-data";
 import { breadcrumbJsonLd, canonical, pageMeta } from "@/lib/seo";
@@ -74,6 +75,7 @@ function PriceListPage() {
       <h1 className="text-center font-display text-3xl font-semibold text-primary sm:text-4xl">
         Kozmetikai kezelések és árak
       </h1>
+      <SocialLinks className="mt-4 justify-center" />
       <p className="mx-auto mt-4 max-w-2xl text-center text-lg leading-relaxed text-muted-foreground">
         Személyre szabott kozmetikai kezelések Budán, a XII. kerületben.
       </p>

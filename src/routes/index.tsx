@@ -3,6 +3,7 @@ import { CheckSquare } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/PageHero";
+import { SocialLinks } from "@/components/SocialLinks";
 import { categories, site, standaloneTreatments } from "@/lib/site-data";
 import {
   canonical,
@@ -72,6 +73,7 @@ function HomePage() {
             <h1 className="mt-5 font-display text-3xl font-semibold text-primary sm:text-4xl">
               {site.name}
             </h1>
+            <SocialLinks className="mt-4 justify-center md:justify-start" />
             <div className="mt-6 space-y-4 text-lg leading-relaxed text-muted-foreground">
               <p>
                 Te is úgy érzed, hogy elvesztél a kozmetikai termékek és

@@ -3,6 +3,7 @@ import { Camera, Clock, Heart, Sparkles } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/PageHero";
+import { SocialLinks } from "@/components/SocialLinks";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { site } from "@/lib/site-data";
 import { breadcrumbJsonLd, canonical, pageMeta } from "@/lib/seo";
@@ -54,6 +55,7 @@ function WeddingPage() {
         <h1 className="font-display text-3xl font-semibold text-primary sm:text-4xl">
           Emlékek, amik örökké kísérnek
         </h1>
+        <SocialLinks className="mt-4" />
         <p className="mt-5 max-w-3xl text-lg leading-relaxed text-muted-foreground">
           Esküvői fotózás, ami megőrzi életed legszebb pillanatait. Mert a
           legszebb történetek képekben élnek tovább.

@@ -17,6 +17,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { PageHero } from "@/components/PageHero";
+import { SocialLinks } from "@/components/SocialLinks";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { site } from "@/lib/site-data";
 import { breadcrumbJsonLd, canonical, localBusinessJsonLd, pageMeta } from "@/lib/seo";
@@ -56,6 +57,7 @@ function ContactPage() {
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6">
         <Breadcrumbs items={[{ label: "Kezdőlap", to: "/" }, { label: "Kontakt" }]} />
         <h1 className="font-display text-3xl font-semibold text-primary sm:text-4xl">Kontakt</h1>
+        <SocialLinks className="mt-4" />
         <p className="mt-5 max-w-3xl text-lg leading-relaxed text-muted-foreground">
           {site.contactPrompt}
         </p>
