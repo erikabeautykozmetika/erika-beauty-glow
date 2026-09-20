@@ -24,6 +24,23 @@ export const site = {
   pedestrianAccess:
     "Gyalogos bejárat a Művészbejárat felől, a Park oldaláról, a sárga lépcsőn lefelé.",
   transit: "61-es villamos, valamint az 5, 9, 105 és 110 BKK buszok.",
+  transitDetails: [
+    {
+      heading: "🚌 A közvetlenül releváns járatok:",
+      paragraphs: [
+        "Jagelló út / BAH csomópont környéke BKK Buszok:",
+        "110, 112, 212 – az Apor Vilmos tér és a BAH csomópont között a Jagelló úton közlekedik bizonyos útvonalakon; a BKK korábbi útvonalleírásai ezt egyértelműen rögzítik. Továbbá a 61-es villamos is.",
+        "A 110 és 112 különösen fontos, mert a Jagelló úton van a Sirály utca és a BAH-csomópont megállójuk, tehát ezek tényleg nagyon közel vannak a címhez.",
+      ],
+    },
+    {
+      heading: "🚌 Apor Vilmos tér felől:",
+      paragraphs: [
+        "Az ellenkező irányból az Apor Vilmos tér is nagyon fontos közlekedési csomópont:",
+        "102, 105, 110, 112, 212",
+      ],
+    },
+  ],
   contactPrompt:
     "Kérdésed van? Foglalnál? Nem vagy biztos valamiben? Írj, vagy hívj és a lehető leghamarabb válaszolok neked.",
   copyright: "Minden jog fenntartva © erikabeautykozmetika.hu 2026",

@@ -159,6 +159,18 @@ function ContactPage() {
               <div>
                 <h2 className="font-display text-xl font-semibold">Tömegközlekedés</h2>
                 <p className="text-muted-foreground">{site.transit}</p>
+                <div className="mt-4 space-y-4">
+                  {site.transitDetails.map((section) => (
+                    <div key={section.heading}>
+                      <h3 className="font-semibold text-primary">{section.heading}</h3>
+                      <div className="mt-1 space-y-2 text-sm text-muted-foreground">
+                        {section.paragraphs.map((p) => (
+                          <p key={p}>{p}</p>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </li>
           </ul>
