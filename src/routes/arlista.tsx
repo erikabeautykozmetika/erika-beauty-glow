@@ -68,7 +68,7 @@ const groups: PriceGroup[] = [
 function PriceListPage() {
   return (
     <>
-      <PageHero src="/images/hero-arlista.png" alt="Erika Beauty Kozmetika árlista" eager compact />
+      <PageHero src="/images/hero-arlista.png" alt="Erika Beauty Kozmetika árlista" eager />
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
       <Breadcrumbs items={[{ label: "Kezdőlap", to: "/" }, { label: "Árlista" }]} />
       <h1 className="text-center font-display text-3xl font-semibold text-primary sm:text-4xl">

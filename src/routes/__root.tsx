@@ -13,6 +13,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { MessengerButton } from "@/components/MessengerButton";
 import { Toaster } from "@/components/ui/sonner";
 import { ScrollToTop } from "@/components/ScrollToTop";
 
@@ -133,6 +134,7 @@ function RootComponent() {
         <Footer />
       </div>
       <ScrollToTop />
+      <MessengerButton />
       <Toaster position="bottom-right" />
     </QueryClientProvider>
   );
