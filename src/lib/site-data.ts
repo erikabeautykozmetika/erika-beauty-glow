@@ -400,6 +400,16 @@ export const standaloneTreatments: StandaloneTreatment[] = [
       "Professzionális kozmetikai szőrtelenítés női és férfi vendégek számára.",
     image: "/images/treatment-room.jpg",
   },
+  {
+    slug: "microblading-szemoldok-tetovalas",
+    name: "Microblading szemöldök tetoválás",
+    duration: "2,5–3 óra",
+    price: "90 000 Ft",
+    description:
+      "Természetes hatású, szálazott szemöldöktetoválás, amely a szemöldök formájának, sűrűségének és karakterének optikai javítására szolgál.",
+    note: "Ingyenes a korrekció, és garancia fél évig!",
+    image: "/images/treatment-room.jpg",
+  },
 ];
 
 /** A Kozmetikai kezelések áttekintő oldal listája (a jelenlegi oldal sorrendjében). */
@@ -433,7 +443,7 @@ export const overviewItems: {
   { name: "Műszempilla leoldás", duration: "30 perc", note: "Saját épített szetteknél ingyenes.", to: "/kozmetikai-kezelesek/szempilla-kezelesek/muszempilla-leoldas" },
   { name: "3D műszempilla – új szett", duration: "1,5–2,5 óra", to: "/kozmetikai-kezelesek/szempilla-kezelesek/3d-muszempilla-uj-szett" },
   { name: "3D műszempilla – töltés", duration: "1,5 óra", to: "/kozmetikai-kezelesek/szempilla-kezelesek/3d-muszempilla-toltes" },
-  { name: "Microblading szemöldök tetoválás", duration: "2,5–3 óra", note: "Ingyenes a korrekció, és garancia fél évig!" },
+  { name: "Microblading szemöldök tetoválás", duration: "2,5–3 óra", note: "Ingyenes a korrekció, és garancia fél évig!", to: "/kozmetikai-kezelesek/microblading-szemoldok-tetovalas" },
   { name: "Professzionális smink", duration: "30–60 perc", to: "/kozmetikai-kezelesek/smink/professzionalis-smink" },
   { name: "Menyasszonyi próbasmink", duration: "1–1,5 óra", to: "/kozmetikai-kezelesek/smink/menyasszonyi-proba-smink" },
   { name: "Menyasszonyi smink", duration: "1–1,5 óra", to: "/kozmetikai-kezelesek/smink/menyasszonyi-smink" },

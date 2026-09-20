@@ -50,20 +50,6 @@ const groups: PriceGroup[] = [
       to: `/kozmetikai-kezelesek/${t.slug}`,
     })),
   },
-  {
-    name: "Microblading szemöldök tetoválás",
-    treatments: [
-      {
-        slug: "microblading",
-        name: "Microblading szemöldök tetoválás",
-        duration: "2,5–3 óra",
-        price: "90 000 Ft",
-        description:
-          "Természetes hatású, szálazott szemöldöktetoválás, amely a szemöldök formájának, sűrűségének és karakterének optikai javítására szolgál.",
-        note: "A korrekció ingyenes, és fél év garancia.",
-      },
-    ],
-  },
 ];
 
 function PriceListPage() {
