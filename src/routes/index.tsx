@@ -57,24 +57,27 @@ function HomePage() {
       />
 
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16">
-        <div className="grid items-start gap-8 md:grid-cols-[minmax(260px,0.78fr)_minmax(0,1.22fr)] lg:gap-12">
+        <div className="text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">
+            {site.postalCode} {site.city} · {site.district}
+          </p>
+          <h1 className="mt-5 font-display text-3xl font-semibold text-primary sm:text-4xl">
+            {site.name}
+          </h1>
+          <SocialLinks className="mt-4 justify-center" />
+        </div>
+
+        <div className="mt-10 grid items-start gap-8 md:grid-cols-[minmax(260px,0.78fr)_minmax(0,1.22fr)] lg:gap-12">
           <img
             src="/images/erika-portrait.jpg"
             alt="Erika, az Erika Beauty Kozmetika tulajdonosa"
             width={1200}
             height={800}
             loading="lazy"
-            className="mx-auto w-full max-w-lg rounded-sm object-cover shadow-md md:mx-0 md:mt-[6.5rem]"
+            className="mx-auto w-full max-w-lg rounded-sm object-cover shadow-md md:mx-0"
           />
-          <div className="text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">
-              {site.postalCode} {site.city} · {site.district}
-            </p>
-            <h1 className="mt-5 font-display text-3xl font-semibold text-primary sm:text-4xl">
-              {site.name}
-            </h1>
-            <SocialLinks className="mt-4 justify-center" />
-            <div className="mt-6 space-y-4 text-left text-lg leading-relaxed text-muted-foreground">
+          <div>
+            <div className="space-y-4 text-left text-lg leading-relaxed text-muted-foreground">
               <p>
                 Te is úgy érzed, hogy elvesztél a kozmetikai termékek és
                 ígéretek végtelen tengerében? Eleged van a felesleges
