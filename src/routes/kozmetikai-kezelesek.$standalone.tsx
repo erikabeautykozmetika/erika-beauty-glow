@@ -53,28 +53,40 @@ function Page() {
           { label: t.name },
         ]}
       />
-      {t.image && (
-        <img
-          src={t.image}
-          alt={`${t.name} kozmetikai kezelés`}
-          width="1200"
-          height="700"
-          className="mb-10 aspect-[12/7] w-full object-cover"
-        />
-      )}
       <h1 className="text-center font-display text-3xl font-semibold text-primary sm:text-4xl">
         {t.name}
       </h1>
       <SocialLinks className="mt-4 justify-center" />
-      <p className="mt-5 text-center text-lg text-primary">Időtartam: {t.duration}</p>
-      {t.description && (
-        <p className="mx-auto mt-7 max-w-3xl text-center text-lg leading-relaxed text-muted-foreground">
-          {t.description}
-        </p>
+
+      {t.image ? (
+        <div className="mt-8 grid items-center gap-8 md:grid-cols-2">
+          <img
+            src={t.image}
+            alt={`${t.name} kozmetikai kezelés`}
+            loading="lazy"
+            className="aspect-[4/3] w-full rounded-sm object-cover shadow-md"
+          />
+          <div>
+            <h2 className="font-display text-2xl font-semibold">{t.name}</h2>
+            {t.description && (
+              <p className="mt-4 leading-relaxed text-muted-foreground">{t.description}</p>
+            )}
+            <p className="mt-4 text-lg text-primary">Időtartam: {t.duration}</p>
+          </div>
+        </div>
+      ) : (
+        <>
+          <p className="mt-5 text-center text-lg text-primary">Időtartam: {t.duration}</p>
+          {t.description && (
+            <p className="mx-auto mt-7 max-w-3xl text-center text-lg leading-relaxed text-muted-foreground">
+              {t.description}
+            </p>
+          )}
+        </>
       )}
 
       {t.intro && (
-        <div className="mt-10 grid gap-8 md:grid-cols-2">
+        <div className="mt-14 grid gap-8 md:grid-cols-2">
           <div className="space-y-5">
             <h2 className="font-display text-3xl font-semibold italic text-primary">
               {t.intro.heading}
@@ -89,8 +101,8 @@ function Page() {
         </div>
       )}
 
-      <div className="text-center">
-        <Button asChild className="mt-9">
+      <div className="mt-9 text-center">
+        <Button asChild>
           <Link to="/foglalas">Időpontfoglalás</Link>
         </Button>
       </div>
