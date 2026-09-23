@@ -265,7 +265,7 @@ export const categories: Category[] = [
         price: "35 000 Ft",
         description:
           "Az esküvő napjára készített, az arcvonásokhoz, ruhához és az esküvő stílusához igazított professzionális smink.",
-        image: "/images/gallery-makeup.jpg",
+        image: "/images/gallery-menyasszonyi-smink.png",
       },
     ],
   },
