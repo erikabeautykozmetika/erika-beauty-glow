@@ -59,9 +59,23 @@ function IntroParagraph({ text }: { text: string }) {
   );
 }
 
+// Azon kategóriák, ahol a bevezető szöveg mellett egy egyiptomi témájú kép
+// jelenik meg két hasábban, a kép magassága a szöveg magasságához igazítva.
+const SIDE_IMAGES: Record<string, { src: string; alt: string }> = {
+  "szemoldok-kezelesek": {
+    src: "/images/gallery-szemoldok-tortenete.jpg",
+    alt: "Szemöldökformázás az ókori Egyiptomban — a szépségápolás évezredes hagyománya",
+  },
+  "szempilla-kezelesek": {
+    src: "/images/gallery-szempilla-tortenete.jpg",
+    alt: "Szempilla- és szemsmink-formázás az ókori Egyiptomban — a hangsúlyos tekintet évezredes szépségtitka",
+  },
+};
+
 function Page() {
   const c = Route.useLoaderData();
   const isSzemoldok = c.slug === "szemoldok-kezelesek";
+  const sideImage = SIDE_IMAGES[c.slug];
 
   return (
     <>
@@ -82,11 +96,11 @@ function Page() {
           <p className="mx-auto mt-4 max-w-3xl text-center text-xl text-primary">{c.lead}</p>
         )}
 
-        {isSzemoldok ? (
+        {sideImage ? (
           <div className="mt-8 grid gap-8 md:grid-cols-2 md:items-stretch">
             <img
-              src="/images/gallery-szemoldok-tortenete.jpg"
-              alt="Szemöldökformázás az ókori Egyiptomban — a szépségápolás évezredes hagyománya"
+              src={sideImage.src}
+              alt={sideImage.alt}
               loading="lazy"
               className="h-full min-h-[280px] w-full rounded-sm object-cover shadow-md"
             />
