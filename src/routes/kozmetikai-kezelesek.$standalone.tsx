@@ -97,7 +97,16 @@ function Page() {
               </p>
             ))}
           </div>
-          <div aria-hidden="true" />
+          {t.introImage ? (
+            <img
+              src={t.introImage}
+              alt={t.intro.heading || t.name}
+              loading="lazy"
+              className="aspect-[4/3] w-full self-start rounded-sm object-cover shadow-md"
+            />
+          ) : (
+            <div aria-hidden="true" />
+          )}
         </div>
       )}
 

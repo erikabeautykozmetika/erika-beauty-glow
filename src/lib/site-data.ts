@@ -363,6 +363,8 @@ export const categories: Category[] = [
 /** Önálló kezelésoldalak, amelyek közvetlenül a Kozmetikai kezelések alatt vannak. */
 export type StandaloneTreatment = Treatment & {
   intro?: { heading?: string; paragraphs: string[] };
+  /** Opcionális kép az intro szövegblokk melletti, eddig üres oszlopban. */
+  introImage?: string;
 };
 
 export const standaloneTreatments: StandaloneTreatment[] = [
@@ -382,6 +384,7 @@ export const standaloneTreatments: StandaloneTreatment[] = [
         "Ma a modern kozmetikai kezelések ezt az igényt ötvözik korszerű hatóanyagokkal és technológiákkal – személyre szabva, férfi bőrre is figyelve. Az ápolt megjelenés nem női kiváltság, hanem mindenkié.",
       ],
     },
+    introImage: "/images/gallery-ferfi-kezeles-tortenete.jpg",
   },
   {
     slug: "hatkezeles",
