@@ -96,12 +96,12 @@ function Page() {
         )}
 
         {sideImage ? (
-          <div className="mt-8 grid gap-8 md:grid-cols-2 md:items-stretch">
+          <div className="mt-8 grid gap-8 md:grid-cols-2 md:items-start">
             <img
               src={sideImage.src}
               alt={sideImage.alt}
               loading="lazy"
-              className="h-full min-h-[280px] w-full rounded-sm object-cover shadow-md"
+              className="h-[280px] w-full rounded-sm object-cover shadow-md"
             />
             <div className="space-y-5 text-center leading-relaxed text-muted-foreground">
               {c.intro.map((p) => (
