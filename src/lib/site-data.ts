@@ -417,7 +417,8 @@ export const standaloneTreatments: StandaloneTreatment[] = [
     description:
       "Természetes hatású, szálazott szemöldöktetoválás, amely a szemöldök formájának, sűrűségének és karakterének optikai javítására szolgál.",
     note: "Ingyenes a korrekció, és garancia fél évig!",
-    image: "/images/treatment-room.jpg",
+    image: "/images/gallery-microblading.jpg",
+    heroImage: "/images/hero-microblading.jpg",
   },
 ];
 
