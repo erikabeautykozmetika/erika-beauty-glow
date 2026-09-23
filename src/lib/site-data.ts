@@ -397,6 +397,7 @@ export const standaloneTreatments: StandaloneTreatment[] = [
     description:
       "A hát bőrének alapos tisztítására és ápolására kialakított kozmetikai kezelés, különösen problémásabb bőr esetén.",
     image: "/images/gallery-hatkezeles.jpg",
+    heroImage: "/images/hero-hatkezeles.jpg",
   },
   {
     slug: "szortelenites-es-gyantazas",
