@@ -44,7 +44,6 @@ export const Route = createFileRoute("/kozmetikai-kezelesek/$category/")({
 // Bekezdés-részletek, amiket egy sorban kell tartani nagyobb képernyőn.
 const NOWRAP_MARKERS = [
   "tisztításról, regenerálásról vagy a bőr frissebb, üdébb megjelenésének támogatásáról, a kezelés mindig rólad és a bőrödről szól.",
-  "A szempillaliftingtől a festésen át a műszempilláig olyan megoldásokat kínálok, amelyekkel a tekinteted lehet az egyik legszebb ékszered.",
 ];
 
 function IntroParagraph({ text }: { text: string }) {
