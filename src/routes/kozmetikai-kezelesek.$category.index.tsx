@@ -227,7 +227,7 @@ function StandaloneTreatmentPage({
       {t.intro && (
         <div className="mt-14 grid gap-8 md:grid-cols-2">
           <div className="space-y-5">
-            <h2 className="font-display text-3xl font-semibold italic text-primary">
+            <h2 className="font-display text-xl font-semibold italic text-primary">
               {t.intro.heading}
             </h2>
             {t.intro.paragraphs.map((p) => (
