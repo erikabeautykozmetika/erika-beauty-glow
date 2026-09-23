@@ -318,7 +318,7 @@ export const categories: Category[] = [
         price: "15 000 Ft",
         description:
           "A természetes szempillák ívének kiemelése látványos, mégis természetes hatás érdekében.",
-        image: "/images/gallery-makeup.jpg",
+        image: "/images/gallery-szempilla-lifting.png",
       },
       {
         slug: "szempillafestes",
@@ -336,7 +336,7 @@ export const categories: Category[] = [
         price: "10 000 Ft",
         description: "A korábban felhelyezett műszempillák szakszerű eltávolítása.",
         note: "Saját épített szetteknél ingyenes.",
-        image: "/images/gallery-makeup.jpg",
+        image: "/images/gallery-muszempilla-leoldas.png",
       },
       {
         slug: "3d-muszempilla-uj-szett",
@@ -345,7 +345,7 @@ export const categories: Category[] = [
         price: "25 000 Ft",
         description:
           "Látványos, mégis személyre szabott műszempilla új szett kialakítása az egyéni adottságokhoz igazítva.",
-        image: "/images/gallery-makeup.jpg",
+        image: "/images/gallery-3d-muszempilla-uj-szett.png",
       },
       {
         slug: "3d-muszempilla-toltes",
@@ -354,7 +354,7 @@ export const categories: Category[] = [
         price: "20 000 Ft",
         description:
           "A kihullott szálak pótlása és a meglévő műszempilla-szett frissítése.",
-        image: "/images/gallery-makeup.jpg",
+        image: "/images/gallery-3d-muszempilla-toltes.png",
       },
     ],
   },
