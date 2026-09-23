@@ -17,7 +17,6 @@ import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as KozmetikaiKezelesekRouteImport } from './routes/kozmetikai-kezelesek'
 import { Route as KozmetikaiKezelesekIndexRouteImport } from './routes/kozmetikai-kezelesek.index'
 import { Route as KozmetikaiKezelesekCategoryRouteImport } from './routes/kozmetikai-kezelesek.$category'
-import { Route as KozmetikaiKezelesekStandaloneRouteImport } from './routes/kozmetikai-kezelesek.$standalone'
 import { Route as KozmetikaiKezelesekCategoryIndexRouteImport } from './routes/kozmetikai-kezelesek.$category.index'
 import { Route as KozmetikaiKezelesekCategoryTreatmentRouteImport } from './routes/kozmetikai-kezelesek.$category.$treatment'
 
@@ -63,12 +62,6 @@ const KozmetikaiKezelesekCategoryRoute =
     path: '/$category',
     getParentRoute: () => KozmetikaiKezelesekRoute,
   } as any)
-const KozmetikaiKezelesekStandaloneRoute =
-  KozmetikaiKezelesekStandaloneRouteImport.update({
-    id: '/$standalone',
-    path: '/$standalone',
-    getParentRoute: () => KozmetikaiKezelesekRoute,
-  } as any)
 const KozmetikaiKezelesekCategoryIndexRoute =
   KozmetikaiKezelesekCategoryIndexRouteImport.update({
     id: '/',
@@ -90,7 +83,6 @@ export interface FileRoutesByFullPath {
   '/kontakt': typeof KontaktRoute
   '/kozmetikai-kezelesek': typeof KozmetikaiKezelesekRouteWithChildren
   '/kozmetikai-kezelesek/$category': typeof KozmetikaiKezelesekCategoryRouteWithChildren
-  '/kozmetikai-kezelesek/$standalone': typeof KozmetikaiKezelesekStandaloneRoute
   '/kozmetikai-kezelesek/': typeof KozmetikaiKezelesekIndexRoute
   '/kozmetikai-kezelesek/$category/$treatment': typeof KozmetikaiKezelesekCategoryTreatmentRoute
   '/kozmetikai-kezelesek/$category/': typeof KozmetikaiKezelesekCategoryIndexRoute
@@ -101,7 +93,6 @@ export interface FileRoutesByTo {
   '/eskuvoi-fotozas': typeof EskuvoiFotozasRoute
   '/foglalas': typeof FoglalasRoute
   '/kontakt': typeof KontaktRoute
-  '/kozmetikai-kezelesek/$standalone': typeof KozmetikaiKezelesekStandaloneRoute
   '/kozmetikai-kezelesek': typeof KozmetikaiKezelesekIndexRoute
   '/kozmetikai-kezelesek/$category/$treatment': typeof KozmetikaiKezelesekCategoryTreatmentRoute
   '/kozmetikai-kezelesek/$category': typeof KozmetikaiKezelesekCategoryIndexRoute
@@ -115,7 +106,6 @@ export interface FileRoutesById {
   '/kontakt': typeof KontaktRoute
   '/kozmetikai-kezelesek': typeof KozmetikaiKezelesekRouteWithChildren
   '/kozmetikai-kezelesek/$category': typeof KozmetikaiKezelesekCategoryRouteWithChildren
-  '/kozmetikai-kezelesek/$standalone': typeof KozmetikaiKezelesekStandaloneRoute
   '/kozmetikai-kezelesek/': typeof KozmetikaiKezelesekIndexRoute
   '/kozmetikai-kezelesek/$category/$treatment': typeof KozmetikaiKezelesekCategoryTreatmentRoute
   '/kozmetikai-kezelesek/$category/': typeof KozmetikaiKezelesekCategoryIndexRoute
@@ -130,7 +120,6 @@ export interface FileRouteTypes {
     | '/kontakt'
     | '/kozmetikai-kezelesek'
     | '/kozmetikai-kezelesek/$category'
-    | '/kozmetikai-kezelesek/$standalone'
     | '/kozmetikai-kezelesek/'
     | '/kozmetikai-kezelesek/$category/$treatment'
     | '/kozmetikai-kezelesek/$category/'
@@ -141,7 +130,6 @@ export interface FileRouteTypes {
     | '/eskuvoi-fotozas'
     | '/foglalas'
     | '/kontakt'
-    | '/kozmetikai-kezelesek/$standalone'
     | '/kozmetikai-kezelesek'
     | '/kozmetikai-kezelesek/$category/$treatment'
     | '/kozmetikai-kezelesek/$category'
@@ -154,7 +142,6 @@ export interface FileRouteTypes {
     | '/kontakt'
     | '/kozmetikai-kezelesek'
     | '/kozmetikai-kezelesek/$category'
-    | '/kozmetikai-kezelesek/$standalone'
     | '/kozmetikai-kezelesek/'
     | '/kozmetikai-kezelesek/$category/$treatment'
     | '/kozmetikai-kezelesek/$category/'
@@ -227,13 +214,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof KozmetikaiKezelesekCategoryRouteImport
       parentRoute: typeof KozmetikaiKezelesekRoute
     }
-    '/kozmetikai-kezelesek/$standalone': {
-      id: '/kozmetikai-kezelesek/$standalone'
-      path: '/$standalone'
-      fullPath: '/kozmetikai-kezelesek/$standalone'
-      preLoaderRoute: typeof KozmetikaiKezelesekStandaloneRouteImport
-      parentRoute: typeof KozmetikaiKezelesekRoute
-    }
     '/kozmetikai-kezelesek/$category/': {
       id: '/kozmetikai-kezelesek/$category/'
       path: '/'
@@ -271,14 +251,12 @@ const KozmetikaiKezelesekCategoryRouteWithChildren =
 
 interface KozmetikaiKezelesekRouteChildren {
   KozmetikaiKezelesekCategoryRoute: typeof KozmetikaiKezelesekCategoryRouteWithChildren
-  KozmetikaiKezelesekStandaloneRoute: typeof KozmetikaiKezelesekStandaloneRoute
   KozmetikaiKezelesekIndexRoute: typeof KozmetikaiKezelesekIndexRoute
 }
 
 const KozmetikaiKezelesekRouteChildren: KozmetikaiKezelesekRouteChildren = {
   KozmetikaiKezelesekCategoryRoute:
     KozmetikaiKezelesekCategoryRouteWithChildren,
-  KozmetikaiKezelesekStandaloneRoute: KozmetikaiKezelesekStandaloneRoute,
   KozmetikaiKezelesekIndexRoute: KozmetikaiKezelesekIndexRoute,
 }
 

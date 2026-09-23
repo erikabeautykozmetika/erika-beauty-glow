@@ -207,8 +207,8 @@ function HomePage() {
             {standaloneTreatments.map((t) => (
               <Link
                 key={t.slug}
-                to="/kozmetikai-kezelesek/$standalone"
-                params={{ standalone: t.slug }}
+                to="/kozmetikai-kezelesek/$category"
+                params={{ category: t.slug }}
                 className="group relative overflow-hidden border-b-2 border-primary/40 bg-background p-6 transition-colors hover:border-primary"
               >
                 {t.image && (
