@@ -3,11 +3,21 @@ type PageHeroProps = {
   alt: string;
   eager?: boolean;
   compact?: boolean;
+  /** Extra Tailwind max-height osztály (pl. "max-h-[420px]") olyan képekhez,
+   * amik nem panoráma arányúak, és object-contain mellett irreálisan
+   * magasra nőnének teljes szélességben. Nem vág, csak korlátozza a magasságot. */
+  maxHeightClass?: string;
 };
 
 import { ChevronDown } from "lucide-react";
 
-export function PageHero({ src, alt, eager = false, compact = false }: PageHeroProps) {
+export function PageHero({
+  src,
+  alt,
+  eager = false,
+  compact = false,
+  maxHeightClass,
+}: PageHeroProps) {
   const scrollBelow = () => {
     window.scrollTo({
       top: window.scrollY + window.innerHeight * 0.72,
@@ -27,7 +37,7 @@ export function PageHero({ src, alt, eager = false, compact = false }: PageHeroP
         className={
           compact
             ? "mx-auto h-52 w-full max-w-[1920px] object-cover object-[50%_62%] sm:h-64 md:h-72"
-            : "mx-auto h-auto w-full max-w-[1920px] object-contain"
+            : `mx-auto h-auto w-full max-w-[1920px] object-contain${maxHeightClass ? ` ${maxHeightClass}` : ""}`
         }
       />
       <button
