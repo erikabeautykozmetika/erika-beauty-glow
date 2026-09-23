@@ -406,7 +406,8 @@ export const standaloneTreatments: StandaloneTreatment[] = [
         price: "15 000 Ft",
     description:
       "Professzionális kozmetikai szőrtelenítés női és férfi vendégek számára.",
-    image: "/images/treatment-room.jpg",
+    image: "/images/gallery-szortelenites-es-gyantazas.jpg",
+    heroImage: "/images/hero-szortelenites-es-gyantazas.jpg",
   },
   {
     slug: "microblading-szemoldok-tetovalas",
