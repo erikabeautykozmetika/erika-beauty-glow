@@ -307,6 +307,7 @@ export const categories: Category[] = [
       "A hangsúlyos tekintet szépsége nem új keletű. Már az ókori kultúrákban is nagy jelentőséget tulajdonítottak a szemek kiemelésének: a hosszú, dús szempilla a nőiesség, az elegancia és a különleges tekintet része volt.",
       "Ma már nem természetes eredetű festékekkel és ősi praktikákkal dolgozunk, hanem korszerű, precíz technikákkal. A cél azonban mit sem változott: kiemelni a tekintetedet úgy, hogy az harmonizáljon az arcoddal és természetes szépségeddel.",
       "A szempillaliftingtől a festésen át a műszempilláig olyan megoldásokat kínálok, amelyekkel a tekinteted lehet az egyik legszebb ékszered.",
+      "Kínálatomban megtalálod a szempillaliftinget és -festést a természetes pillák hangsúlyozására, valamint a 3D műszempilla építést és annak töltését is, ha dúsabb, látványosabb hatásra vágysz. Bármelyiket válaszod, mindig a szemformádhoz és az igényeidhez igazítom az eredményt.",
     ],
     image: "/images/hero-szempilla.png",
     treatments: [
