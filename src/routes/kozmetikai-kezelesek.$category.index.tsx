@@ -203,9 +203,7 @@ function StandaloneTreatmentPage({
 }) {
   return (
     <>
-      {t.image && (
-        <PageHero src={t.image} alt={t.name} eager maxHeightClass="max-h-[420px]" />
-      )}
+      {t.heroImage && <PageHero src={t.heroImage} alt={t.name} eager />}
       <section className="mx-auto max-w-5xl px-4 py-14 sm:px-6">
       <Breadcrumbs
         items={[

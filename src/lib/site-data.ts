@@ -365,6 +365,8 @@ export type StandaloneTreatment = Treatment & {
   intro?: { heading?: string; paragraphs: string[] };
   /** Opcionális kép az intro szövegblokk melletti, eddig üres oszlopban. */
   introImage?: string;
+  /** Panoráma arányú (1920x700) fejléc-kép a saját oldal tetején. */
+  heroImage?: string;
 };
 
 export const standaloneTreatments: StandaloneTreatment[] = [
@@ -385,6 +387,7 @@ export const standaloneTreatments: StandaloneTreatment[] = [
       ],
     },
     introImage: "/images/gallery-ferfi-kezeles-tortenete.jpg",
+    heroImage: "/images/hero-ferfi-kezeles.jpg",
   },
   {
     slug: "hatkezeles",
