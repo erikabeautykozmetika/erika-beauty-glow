@@ -486,3 +486,5 @@ export const allTreatmentPaths = [
   ),
   ...standaloneTreatments.map((t) => `/kozmetikai-kezelesek/${t.slug}`),
 ];
+
+// build-trigger-test 2026-09-23T22:28:45Z
