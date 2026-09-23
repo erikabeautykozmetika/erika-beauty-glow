@@ -277,7 +277,7 @@ export const categories: Category[] = [
       "A szemöldök nem új keletű szépségtrend. Az ókori Egyiptomban már több ezer éve hangsúlyozták és formázták a szemöldököt, gyakran sötét pigmentekkel. A kozmetikumokat nemcsak szépségápolásra, hanem kulturális és vallási célokra is használták. A görög és római kultúrákban is fontos szerepet kapott a szemöldök formája. A rómaiaknál például a sötétebb, egymáshoz közelebb húzódó szemöldök szépségideálnak számított.",
       "Ma már nem egyetlen divatot követünk. A megfelelő forma az arc karakteréhez, szemformájához és egyéni adottságokhoz igazítható – legyen szó formázásról, festésről vagy liftingről. Mert egy jól megformált szemöldök nem változtatja meg az arcot, hanem kiemeli azt, ami már eleve szép benne.",
     ],
-    image: "/images/gallery-makeup.jpg",
+    image: "/images/hero-szemoldok.png",
     treatments: [
       {
         slug: "professzionalis-szemoldokformazas",
