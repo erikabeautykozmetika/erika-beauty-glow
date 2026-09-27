@@ -15,6 +15,7 @@ import { Route as EskuvoiFotozasRouteImport } from './routes/eskuvoi-fotozas'
 import { Route as FoglalasRouteImport } from './routes/foglalas'
 import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as KozmetikaiKezelesekRouteImport } from './routes/kozmetikai-kezelesek'
+import { Route as KvizRouteImport } from './routes/kviz'
 import { Route as PartnerekRouteImport } from './routes/partnerek'
 import { Route as KozmetikaiKezelesekIndexRouteImport } from './routes/kozmetikai-kezelesek.index'
 import { Route as KozmetikaiKezelesekCategoryRouteImport } from './routes/kozmetikai-kezelesek.$category'
@@ -49,6 +50,11 @@ const KontaktRoute = KontaktRouteImport.update({
 const KozmetikaiKezelesekRoute = KozmetikaiKezelesekRouteImport.update({
   id: '/kozmetikai-kezelesek',
   path: '/kozmetikai-kezelesek',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KvizRoute = KvizRouteImport.update({
+  id: '/kviz',
+  path: '/kviz',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PartnerekRoute = PartnerekRouteImport.update({
@@ -88,6 +94,7 @@ export interface FileRoutesByFullPath {
   '/foglalas': typeof FoglalasRoute
   '/kontakt': typeof KontaktRoute
   '/kozmetikai-kezelesek': typeof KozmetikaiKezelesekRouteWithChildren
+  '/kviz': typeof KvizRoute
   '/partnerek': typeof PartnerekRoute
   '/kozmetikai-kezelesek/$category': typeof KozmetikaiKezelesekCategoryRouteWithChildren
   '/kozmetikai-kezelesek/': typeof KozmetikaiKezelesekIndexRoute
@@ -100,6 +107,7 @@ export interface FileRoutesByTo {
   '/eskuvoi-fotozas': typeof EskuvoiFotozasRoute
   '/foglalas': typeof FoglalasRoute
   '/kontakt': typeof KontaktRoute
+  '/kviz': typeof KvizRoute
   '/partnerek': typeof PartnerekRoute
   '/kozmetikai-kezelesek': typeof KozmetikaiKezelesekIndexRoute
   '/kozmetikai-kezelesek/$category/$treatment': typeof KozmetikaiKezelesekCategoryTreatmentRoute
@@ -113,6 +121,7 @@ export interface FileRoutesById {
   '/foglalas': typeof FoglalasRoute
   '/kontakt': typeof KontaktRoute
   '/kozmetikai-kezelesek': typeof KozmetikaiKezelesekRouteWithChildren
+  '/kviz': typeof KvizRoute
   '/partnerek': typeof PartnerekRoute
   '/kozmetikai-kezelesek/$category': typeof KozmetikaiKezelesekCategoryRouteWithChildren
   '/kozmetikai-kezelesek/': typeof KozmetikaiKezelesekIndexRoute
@@ -128,6 +137,7 @@ export interface FileRouteTypes {
     | '/foglalas'
     | '/kontakt'
     | '/kozmetikai-kezelesek'
+    | '/kviz'
     | '/partnerek'
     | '/kozmetikai-kezelesek/$category'
     | '/kozmetikai-kezelesek/'
@@ -140,6 +150,7 @@ export interface FileRouteTypes {
     | '/eskuvoi-fotozas'
     | '/foglalas'
     | '/kontakt'
+    | '/kviz'
     | '/partnerek'
     | '/kozmetikai-kezelesek'
     | '/kozmetikai-kezelesek/$category/$treatment'
@@ -152,6 +163,7 @@ export interface FileRouteTypes {
     | '/foglalas'
     | '/kontakt'
     | '/kozmetikai-kezelesek'
+    | '/kviz'
     | '/partnerek'
     | '/kozmetikai-kezelesek/$category'
     | '/kozmetikai-kezelesek/'
@@ -166,6 +178,7 @@ export interface RootRouteChildren {
   FoglalasRoute: typeof FoglalasRoute
   KontaktRoute: typeof KontaktRoute
   KozmetikaiKezelesekRoute: typeof KozmetikaiKezelesekRouteWithChildren
+  KvizRoute: typeof KvizRoute
   PartnerekRoute: typeof PartnerekRoute
 }
 
@@ -211,6 +224,13 @@ declare module '@tanstack/react-router' {
       path: '/kozmetikai-kezelesek'
       fullPath: '/kozmetikai-kezelesek'
       preLoaderRoute: typeof KozmetikaiKezelesekRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kviz': {
+      id: '/kviz'
+      path: '/kviz'
+      fullPath: '/kviz'
+      preLoaderRoute: typeof KvizRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/partnerek': {
@@ -290,6 +310,7 @@ const rootRouteChildren: RootRouteChildren = {
   FoglalasRoute: FoglalasRoute,
   KontaktRoute: KontaktRoute,
   KozmetikaiKezelesekRoute: KozmetikaiKezelesekRouteWithChildren,
+  KvizRoute: KvizRoute,
   PartnerekRoute: PartnerekRoute,
 }
 export const routeTree = rootRouteImport

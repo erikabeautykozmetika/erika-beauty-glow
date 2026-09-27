@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { CheckSquare } from "lucide-react";
+import { CheckSquare, Sparkles } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/PageHero";
@@ -243,6 +243,12 @@ function HomePage() {
         </p>
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
           <Button asChild size="lg">
+            <Link to="/kviz">
+              <Sparkles className="mr-1 h-4 w-4" aria-hidden="true" />
+              Melyik kezelés illik hozzám?
+            </Link>
+          </Button>
+          <Button asChild size="lg" variant="outline">
             <Link to="/foglalas">Időpontot foglalok</Link>
           </Button>
           <Button asChild size="lg" variant="outline">
