@@ -1,11 +1,14 @@
+import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 
 import { PageHero } from "@/components/PageHero";
 import { SocialLinks } from "@/components/SocialLinks";
 import { ReviewCTA } from "@/components/ReviewCTA";
+import { SearchBox } from "@/components/SearchBox";
 import { Button } from "@/components/ui/button";
 import { overviewItems, findTreatmentImageByPath } from "@/lib/site-data";
 import { canonical, pageMeta } from "@/lib/seo";
+import { matchesSearch } from "@/lib/utils";
 
 export const Route = createFileRoute("/kozmetikai-kezelesek/")({
   head: () => ({
@@ -22,6 +25,9 @@ export const Route = createFileRoute("/kozmetikai-kezelesek/")({
 });
 
 function Page() {
+  const [query, setQuery] = useState("");
+  const filteredItems = overviewItems.filter((item) => matchesSearch(item.name, query));
+
   return (
     <>
       <PageHero src="/images/hero-treatments.png" alt="Erika Beauty kozmetikai kezelések" eager />
@@ -31,8 +37,22 @@ function Page() {
         </h1>
         <SocialLinks className="mt-4 justify-center" />
 
+        <SearchBox
+          value={query}
+          onChange={setQuery}
+          label="Kezelések keresése"
+          placeholder="Keresés a kezelések között…"
+          className="mt-8"
+        />
+
+        {filteredItems.length === 0 && (
+          <p className="mt-10 text-center text-muted-foreground">
+            Nincs találat erre a keresésre. Próbálj egy másik kulcsszót!
+          </p>
+        )}
+
         <div className="mt-12 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
-          {overviewItems.map((item) => {
+          {filteredItems.map((item) => {
             const image = item.to ? findTreatmentImageByPath(item.to) : undefined;
             const content = (
               <>

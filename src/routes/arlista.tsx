@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Info } from "lucide-react";
 
@@ -7,8 +8,10 @@ import { SocialLinks } from "@/components/SocialLinks";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ReviewCTA } from "@/components/ReviewCTA";
 import { PhoneLink } from "@/components/PhoneLink";
+import { SearchBox } from "@/components/SearchBox";
 import { categories, standaloneTreatments, site, type Treatment } from "@/lib/site-data";
 import { breadcrumbJsonLd, canonical, pageMeta } from "@/lib/seo";
+import { matchesSearch } from "@/lib/utils";
 
 export const Route = createFileRoute("/arlista")({
   head: () => ({
@@ -55,6 +58,16 @@ const groups: PriceGroup[] = [
 ];
 
 function PriceListPage() {
+  const [query, setQuery] = useState("");
+  const filteredGroups = groups
+    .map((group) => ({
+      ...group,
+      treatments: group.treatments.filter(
+        (t) => matchesSearch(t.name, query) || (t.description && matchesSearch(t.description, query)),
+      ),
+    }))
+    .filter((group) => group.treatments.length > 0);
+
   return (
     <>
       <PageHero src="/images/hero-arlista.png" alt="Erika Beauty Kozmetika árlista" eager />
@@ -73,7 +86,21 @@ function PriceListPage() {
         <p>Az árak az egyedi igényektől függően változhatnak. Az árváltoztatás jogát fenntartom.</p>
       </div>
 
-      {groups.map((group) => (
+      <SearchBox
+        value={query}
+        onChange={setQuery}
+        label="Kezelések keresése az árlistában"
+        placeholder="Keresés a kezelések között…"
+        className="mt-8"
+      />
+
+      {filteredGroups.length === 0 && (
+        <p className="mt-10 text-center text-muted-foreground">
+          Nincs találat erre a keresésre. Próbálj egy másik kulcsszót!
+        </p>
+      )}
+
+      {filteredGroups.map((group) => (
         <div key={group.name} className="mt-14">
           <div className="text-center">
             <h2 className="inline-block border-b border-primary pb-2 font-display text-2xl font-semibold text-primary">
