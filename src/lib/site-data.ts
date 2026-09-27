@@ -23,21 +23,31 @@ export const site = {
   parkingLots: "A MOM Irodaháznál és a Kongresszusi parkolóban.",
   pedestrianAccess:
     "Gyalogos bejárat a Művészbejárat felől, a Park oldaláról, a sárga lépcsőn lefelé.",
-  transit: "61-es villamos, valamint az 5, 9, 105 és 110 BKK buszok.",
+  transit:
+    "17-es és 61-es villamos, valamint a 102, 105, 110, 112, 212, 8E és 108E BKK buszjáratok.",
   transitDetails: [
-    {
-      heading: "🚌 A közvetlenül releváns járatok:",
-      paragraphs: [
-        "Jagelló út / BAH csomópont környéke BKK Buszok:",
-        "110, 112, 212 – az Apor Vilmos tér és a BAH csomópont között a Jagelló úton közlekedik bizonyos útvonalakon; a BKK korábbi útvonalleírásai ezt egyértelműen rögzítik. Továbbá a 61-es villamos is.",
-        "A 110 és 112 különösen fontos, mert a Jagelló úton van a Sirály utca és a BAH-csomópont megállójuk, tehát ezek tényleg nagyon közel vannak a címhez.",
-      ],
-    },
     {
       heading: "🚌 Apor Vilmos tér felől:",
       paragraphs: [
-        "Az ellenkező irányból az Apor Vilmos tér is nagyon fontos közlekedési csomópont:",
-        "102, 105, 110, 112, 212",
+        "102, 105, 110, 112, 212 · 🚊 Villamosok (Alkotás utca / Csörsz utca megállók)",
+        "17-es villamos: Bécsi út / Vörösvári út ⇄ Savoya Park (közvetlen kapcsolat Buda északi és déli részei felé)",
+        "61-es villamos: Hűvösvölgy ⇄ Móricz Zsigmond körtér M",
+      ],
+    },
+    {
+      heading: "🚌 Nappali autóbuszok (BAH-csomópont és Csörsz utca megállók)",
+      paragraphs: [
+        "8E, 108E: Gyorsjáratok Kelenföld vasútállomás, illetve Újpalota / Zugló irányába (a BAH-csomópontról)",
+        "110, 112: A Hegyalja út és a Sánc utca / Bosnyák tér felé közlekedő járatok",
+        "139, 140, 140A: A Széll Kálmán tér M felől érkező és Budaörs / Törökbálint felé közlekedő járatok",
+        "212, 212A, 212B: Boráros tér H ⇄ Normafa / Svábhegy / Csillebérc",
+      ],
+    },
+    {
+      heading: "🌙 Éjszakai járatok",
+      paragraphs: [
+        "908, 908A: Móricz Zsigmond körtér M ⇄ Cinkota / Rákoscsaba-újtelep",
+        "917: Blaha Lujza tér M ⇄ Solymár, iskola (érinti a Csörsz utcai megállót)",
       ],
     },
   ],
