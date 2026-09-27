@@ -20,7 +20,7 @@ export function ReviewCTA() {
           ))}
         </div>
         <h2 className="mt-1 font-display text-xl font-semibold">
-          Elégedett voltál? Értékelj minket a Google-n!
+          Elégedett voltál? Értékelj a Google-n!
         </h2>
         <p className="mt-2 max-w-md text-sm leading-relaxed text-muted-foreground">
           Olvasd be a QR kódot a telefonoddal, vagy kattints a gombra — egy
