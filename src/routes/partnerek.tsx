@@ -4,6 +4,7 @@ import { ExternalLink, Handshake, Star } from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { SocialLinks } from "@/components/SocialLinks";
 import { PageHero } from "@/components/PageHero";
+import { Reveal } from "@/components/Reveal";
 import { partners } from "@/lib/site-data";
 import { breadcrumbJsonLd, canonical, pageMeta } from "@/lib/seo";
 
@@ -48,13 +49,13 @@ function PartnersPage() {
       </p>
 
       <div className="mx-auto mt-12 flex max-w-3xl flex-wrap justify-center gap-6">
-        {partners.map((p) => (
+        {partners.map((p, i) => (
+          <Reveal key={p.url} delay={i * 100} className="w-full sm:w-[340px]">
           <a
-            key={p.url}
             href={p.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex w-full flex-col items-center overflow-hidden rounded-md border border-border bg-card p-6 text-center shadow-sm transition-shadow hover:shadow-md sm:w-[340px]"
+            className="group flex w-full flex-col items-center overflow-hidden rounded-md border border-border bg-card p-6 text-center shadow-sm transition-shadow hover:shadow-md"
           >
             {p.image && (
               <img
@@ -92,6 +93,7 @@ function PartnersPage() {
               <ExternalLink className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
             </span>
           </a>
+          </Reveal>
         ))}
       </div>
       </section>

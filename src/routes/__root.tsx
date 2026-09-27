@@ -15,6 +15,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { KeywordMarquee } from "@/components/KeywordMarquee";
 import { MessengerButton } from "@/components/MessengerButton";
+import { StickyBookingBar } from "@/components/StickyBookingBar";
 import { Toaster } from "@/components/ui/sonner";
 import { ScrollToTop } from "@/components/ScrollToTop";
 
@@ -127,7 +128,7 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="flex min-h-screen flex-col">
+      <div className="flex min-h-screen flex-col pb-16 lg:pb-0">
         <Header />
         <KeywordMarquee />
         <main className="flex-1">
@@ -137,6 +138,7 @@ function RootComponent() {
       </div>
       <ScrollToTop />
       <MessengerButton />
+      <StickyBookingBar />
       <Toaster position="bottom-right" />
     </QueryClientProvider>
   );

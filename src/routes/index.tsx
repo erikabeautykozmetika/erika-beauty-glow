@@ -4,6 +4,7 @@ import { CheckSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/PageHero";
 import { SocialLinks } from "@/components/SocialLinks";
+import { Reveal } from "@/components/Reveal";
 import { categories, site, standaloneTreatments } from "@/lib/site-data";
 import {
   canonical,
@@ -125,8 +126,8 @@ function HomePage() {
         className="border-y border-border bg-secondary"
       >
         <div className="mx-auto grid max-w-7xl grid-cols-2 gap-6 px-4 py-12 sm:px-6 lg:grid-cols-4 lg:gap-8">
-          {site.stats.map((stat) => (
-            <div key={stat.label} className="text-center">
+          {site.stats.map((stat, i) => (
+            <Reveal key={stat.label} delay={i * 100} className="text-center">
               <img
                 src={stat.image}
                 alt=""
@@ -146,7 +147,7 @@ function HomePage() {
               <p className="mt-1 text-xs uppercase tracking-[0.2em] text-muted-foreground">
                 {stat.label}
               </p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </section>
@@ -156,22 +157,21 @@ function HomePage() {
           Miért az Erika Beauty Kozmetika?
         </h2>
         <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {pillars.map((pillar) => (
-            <article
-              key={pillar.title}
-              className="border-b-2 border-primary/40 bg-secondary p-7"
-            >
-              <CheckSquare
-                className="h-7 w-7 fill-primary text-primary-foreground"
-                aria-hidden="true"
-              />
-              <h3 className="mt-5 font-display text-2xl font-semibold">
-                {pillar.title}
-              </h3>
-              <p className="mt-3 leading-relaxed text-muted-foreground">
-                {pillar.text}
-              </p>
-            </article>
+          {pillars.map((pillar, i) => (
+            <Reveal key={pillar.title} delay={i * 100}>
+              <article className="border-b-2 border-primary/40 bg-secondary p-7">
+                <CheckSquare
+                  className="h-7 w-7 fill-primary text-primary-foreground"
+                  aria-hidden="true"
+                />
+                <h3 className="mt-5 font-display text-2xl font-semibold">
+                  {pillar.title}
+                </h3>
+                <p className="mt-3 leading-relaxed text-muted-foreground">
+                  {pillar.text}
+                </p>
+              </article>
+            </Reveal>
           ))}
         </div>
       </section>
@@ -182,51 +182,53 @@ function HomePage() {
             Kezeléseim
           </h2>
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {categories.map((c) => (
-              <Link
-                key={c.slug}
-                to="/kozmetikai-kezelesek/$category"
-                params={{ category: c.slug }}
-                className="group relative overflow-hidden border-b-2 border-primary/40 bg-background p-6 transition-colors hover:border-primary"
-              >
-                <img
-                  src={c.image}
-                  alt=""
-                  aria-hidden="true"
-                  loading="lazy"
-                  className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-10 transition-opacity duration-300 group-hover:opacity-15"
-                />
-                <div className="relative">
-                  <h3 className="font-display text-xl font-semibold">{c.name}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">
-                    {c.treatments.length} kezelés
-                  </p>
-                </div>
-              </Link>
-            ))}
-            {standaloneTreatments.map((t) => (
-              <Link
-                key={t.slug}
-                to="/kozmetikai-kezelesek/$category"
-                params={{ category: t.slug }}
-                className="group relative overflow-hidden border-b-2 border-primary/40 bg-background p-6 transition-colors hover:border-primary"
-              >
-                {t.image && (
+            {categories.map((c, i) => (
+              <Reveal key={c.slug} delay={(i % 6) * 70}>
+                <Link
+                  to="/kozmetikai-kezelesek/$category"
+                  params={{ category: c.slug }}
+                  className="group relative block overflow-hidden border-b-2 border-primary/40 bg-background p-6 transition-colors hover:border-primary"
+                >
                   <img
-                    src={t.image}
+                    src={c.image}
                     alt=""
                     aria-hidden="true"
                     loading="lazy"
                     className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-10 transition-opacity duration-300 group-hover:opacity-15"
                   />
-                )}
-                <div className="relative">
-                  <h3 className="font-display text-xl font-semibold">{t.name}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">
-                    Időtartam: {t.duration}
-                  </p>
-                </div>
-              </Link>
+                  <div className="relative">
+                    <h3 className="font-display text-xl font-semibold">{c.name}</h3>
+                    <p className="mt-2 text-sm text-muted-foreground">
+                      {c.treatments.length} kezelés
+                    </p>
+                  </div>
+                </Link>
+              </Reveal>
+            ))}
+            {standaloneTreatments.map((t, i) => (
+              <Reveal key={t.slug} delay={((categories.length + i) % 6) * 70}>
+                <Link
+                  to="/kozmetikai-kezelesek/$category"
+                  params={{ category: t.slug }}
+                  className="group relative block overflow-hidden border-b-2 border-primary/40 bg-background p-6 transition-colors hover:border-primary"
+                >
+                  {t.image && (
+                    <img
+                      src={t.image}
+                      alt=""
+                      aria-hidden="true"
+                      loading="lazy"
+                      className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-10 transition-opacity duration-300 group-hover:opacity-15"
+                    />
+                  )}
+                  <div className="relative">
+                    <h3 className="font-display text-xl font-semibold">{t.name}</h3>
+                    <p className="mt-2 text-sm text-muted-foreground">
+                      Időtartam: {t.duration}
+                    </p>
+                  </div>
+                </Link>
+              </Reveal>
             ))}
           </div>
         </div>

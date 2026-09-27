@@ -5,6 +5,7 @@ import { SocialLinks } from "@/components/SocialLinks";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ServiceCard } from "@/components/ServiceCard";
 import { ReviewCTA } from "@/components/ReviewCTA";
+import { Reveal } from "@/components/Reveal";
 import { Button } from "@/components/ui/button";
 import { findCategory, findStandalone } from "@/lib/site-data";
 import { breadcrumbJsonLd, canonical, pageMeta, serviceJsonLd } from "@/lib/seo";
@@ -166,8 +167,10 @@ function CategoryPage({ category: c }: { category: NonNullable<ReturnType<typeof
         )}
 
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {c.treatments.map((t) => (
-            <ServiceCard key={t.slug} treatment={t} to={`/kozmetikai-kezelesek/${c.slug}/${t.slug}`} />
+          {c.treatments.map((t, i) => (
+            <Reveal key={t.slug} delay={(i % 6) * 70}>
+              <ServiceCard treatment={t} to={`/kozmetikai-kezelesek/${c.slug}/${t.slug}`} />
+            </Reveal>
           ))}
           {isSzemoldok && (
             <article className="group flex h-full flex-col overflow-hidden rounded-md border border-border bg-card shadow-sm transition-shadow hover:shadow-md">

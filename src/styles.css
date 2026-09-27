@@ -178,4 +178,10 @@ html {
   .marquee-track {
     animation-duration: 220s;
   }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }
