@@ -181,7 +181,7 @@ function HomePage() {
           <h2 className="text-center font-display text-3xl font-semibold sm:text-4xl">
             Kezeléseim
           </h2>
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {categories.map((c) => (
               <Link
                 key={c.slug}
