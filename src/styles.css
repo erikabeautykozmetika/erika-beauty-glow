@@ -171,7 +171,7 @@ html {
 }
 
 .marquee-track {
-  animation: marquee-scroll 70s linear infinite;
+  animation: marquee-scroll 140s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {

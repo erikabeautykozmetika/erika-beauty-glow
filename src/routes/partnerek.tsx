@@ -50,7 +50,7 @@ function PartnersPage() {
             href={p.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex flex-col overflow-hidden rounded-md border border-border bg-card p-6 shadow-sm transition-shadow hover:shadow-md"
+            className="group flex flex-col items-center overflow-hidden rounded-md border border-border bg-card p-6 text-center shadow-sm transition-shadow hover:shadow-md"
           >
             {p.image && (
               <img

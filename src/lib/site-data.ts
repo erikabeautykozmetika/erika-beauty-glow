@@ -551,6 +551,7 @@ export const partners: Partner[] = [
     category: "Fodrászat",
     description:
       "Fodrászat Budán, a Krisztina körúton, a Széll Kálmán tér közelében.",
+    image: "/images/partner-harmony-room.jpg",
   },
 ];
 
