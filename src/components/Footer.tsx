@@ -62,7 +62,8 @@ export function Footer() {
         </div>
       </div>
       <div className="relative z-10 border-t border-foreground/15 px-4 py-5 text-center text-xs text-foreground/75">
-        {site.copyright}
+        <p>{site.copyright}</p>
+        <p className="mt-1">Weboldalt készítette: EraStudio &ndash; Bertus Erika</p>
       </div>
     </footer>
   );
