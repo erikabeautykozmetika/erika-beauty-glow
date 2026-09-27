@@ -83,17 +83,6 @@ function BookingPage() {
           <Info className="h-5 w-5 text-primary" aria-hidden="true" />
           Lemondási feltételek
         </h2>
-        <ul className="mt-5 space-y-4 leading-relaxed text-muted-foreground">
-          <li>
-            24 órán belüli lemondás esetén (betegség és rendkívüli ok
-            kivételével) a kieső idő miatt a lefoglalt szolgáltatás 50%-a
-            fizetendő átutalással.
-          </li>
-          <li>
-            Visszatérő vendég esetén a lemondási díj a következő igénybe vett
-            szolgáltatás árához adódik hozzá.
-          </li>
-        </ul>
         <p className="mt-5 leading-relaxed text-muted-foreground">
           Kérlek, tiszteljük egymás idejét: ha módosítanod vagy lemondanod
           kell, szólj kellő időben, hogy a helyedre más vendéget tudjak
