@@ -13,7 +13,7 @@ export const Route = createFileRoute("/arlista")({
     meta: pageMeta({
       title: "Árlista és kezelési idők | Erika Beauty Kozmetika",
       description:
-        "Az Erika Beauty Kozmetika szolgáltatásai, kezelési idői és árai. Az árváltoztatás jogát fenntartom.",
+        "Az Erika Beauty Kozmetika szolgáltatásai, kezelési idői és árai. Az árak az egyedi igényektől függően változhatnak. Az árváltoztatás jogát fenntartom.",
       path: "/arlista",
       image: "/images/hero-arlista.png",
     }),
@@ -68,7 +68,7 @@ function PriceListPage() {
 
       <div className="mx-auto mt-8 flex max-w-2xl gap-3 border-l-4 border-primary bg-secondary p-5 text-sm leading-relaxed text-muted-foreground">
         <Info className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
-        <p>Az árváltoztatás jogát fenntartom.</p>
+        <p>Az árak az egyedi igényektől függően változhatnak. Az árváltoztatás jogát fenntartom.</p>
       </div>
 
       {groups.map((group) => (
