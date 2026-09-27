@@ -542,6 +542,8 @@ export type Partner = {
   category: string;
   description: string;
   image?: string;
+  rating?: number;
+  ratingCount?: number;
 };
 
 export const partners: Partner[] = [
@@ -552,6 +554,8 @@ export const partners: Partner[] = [
     description:
       "Fodrászat Budán, a Krisztina körúton, a Széll Kálmán tér közelében.",
     image: "/images/partner-harmony-room.jpg",
+    rating: 5,
+    ratingCount: 25,
   },
 ];
 

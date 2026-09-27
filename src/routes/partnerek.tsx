@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ExternalLink, Handshake } from "lucide-react";
+import { ExternalLink, Handshake, Star } from "lucide-react";
 
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { SocialLinks } from "@/components/SocialLinks";
@@ -71,6 +71,19 @@ function PartnersPage() {
             <h2 className="mt-3 font-display text-xl font-semibold text-foreground">
               {p.name}
             </h2>
+            {p.rating && (
+              <div className="mt-1.5 flex items-center justify-center gap-1.5">
+                <div className="flex items-center gap-0.5">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star key={i} className="h-3.5 w-3.5 fill-primary text-primary" />
+                  ))}
+                </div>
+                <span className="text-xs text-muted-foreground">
+                  {p.rating.toFixed(1).replace(".", ",")}
+                  {p.ratingCount ? ` (${p.ratingCount} értékelés)` : ""} a Google-n
+                </span>
+              </div>
+            )}
             <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
               {p.description}
             </p>
