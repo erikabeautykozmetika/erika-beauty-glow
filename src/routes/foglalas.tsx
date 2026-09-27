@@ -91,9 +91,14 @@ function BookingPage() {
           </li>
           <li>
             Visszatérő vendég esetén a lemondási díj a következő igénybe vett
-            szolgáltatás árához adódik hozzá. Köszönöm a megértésed!
+            szolgáltatás árához adódik hozzá.
           </li>
         </ul>
+        <p className="mt-5 leading-relaxed text-muted-foreground">
+          Kérlek, tiszteljük egymás idejét: ha módosítanod vagy lemondanod
+          kell, szólj kellő időben, hogy a helyedre más vendéget tudjak
+          beütemezni. Köszönöm a megértésed!
+        </p>
       </div>
 
       <div className="mt-12 flex flex-wrap items-center gap-3">
