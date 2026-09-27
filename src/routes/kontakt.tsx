@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import {
   Car,
   Footprints,
@@ -9,7 +9,6 @@ import {
   ZoomIn,
 } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -175,10 +174,6 @@ function ContactPage() {
             </li>
           </ul>
         </div>
-
-        <Button asChild size="lg" className="mt-12">
-          <Link to="/foglalas">Időpontfoglalás</Link>
-        </Button>
       </section>
     </>
   );
