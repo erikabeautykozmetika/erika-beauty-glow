@@ -18,6 +18,7 @@ import {
 import { PageHero } from "@/components/PageHero";
 import { SocialLinks } from "@/components/SocialLinks";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { PhoneLink } from "@/components/PhoneLink";
 import { site } from "@/lib/site-data";
 import { breadcrumbJsonLd, canonical, localBusinessJsonLd, pageMeta } from "@/lib/seo";
 
@@ -119,9 +120,9 @@ function ContactPage() {
               <Phone className="mt-1 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
               <div>
                 <h2 className="font-display text-xl font-semibold">Telefon</h2>
-                <a href={`tel:${site.phone}`} className="text-muted-foreground hover:text-primary">
+                <PhoneLink className="text-muted-foreground hover:text-primary">
                   {site.phoneDisplay}
-                </a>
+                </PhoneLink>
               </div>
             </li>
             <li className="flex gap-4">

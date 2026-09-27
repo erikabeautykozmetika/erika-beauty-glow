@@ -6,6 +6,7 @@ import { PageHero } from "@/components/PageHero";
 import { SocialLinks } from "@/components/SocialLinks";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ReviewCTA } from "@/components/ReviewCTA";
+import { PhoneLink } from "@/components/PhoneLink";
 import { site } from "@/lib/site-data";
 import { breadcrumbJsonLd, canonical, pageMeta } from "@/lib/seo";
 
@@ -47,10 +48,7 @@ function BookingPage() {
       </p>
 
       <div className="mt-10 grid gap-6 sm:grid-cols-2">
-        <a
-          href={`tel:${site.phone}`}
-          className="flex items-start gap-4 border-b-2 border-primary/40 bg-secondary p-6 transition-colors hover:border-primary"
-        >
+        <PhoneLink className="flex items-start gap-4 border-b-2 border-primary/40 bg-secondary p-6 transition-colors hover:border-primary">
           <Phone className="mt-1 h-6 w-6 shrink-0 text-primary" aria-hidden="true" />
           <span>
             <span className="block font-display text-xl font-semibold">
@@ -60,7 +58,7 @@ function BookingPage() {
               {site.phoneDisplay}
             </span>
           </span>
-        </a>
+        </PhoneLink>
         <a
           href={site.messengerUrl}
           target="_blank"

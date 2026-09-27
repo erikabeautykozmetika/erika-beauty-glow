@@ -6,6 +6,7 @@ import { PageHero } from "@/components/PageHero";
 import { SocialLinks } from "@/components/SocialLinks";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ReviewCTA } from "@/components/ReviewCTA";
+import { PhoneLink } from "@/components/PhoneLink";
 import { categories, standaloneTreatments, site, type Treatment } from "@/lib/site-data";
 import { breadcrumbJsonLd, canonical, pageMeta } from "@/lib/seo";
 
@@ -140,7 +141,7 @@ function PriceListPage() {
             <Link to="/foglalas">Időpontfoglalás</Link>
           </Button>
           <Button asChild size="lg" variant="outline">
-            <a href={`tel:${site.phone}`}>{site.phoneDisplay}</a>
+            <PhoneLink>{site.phoneDisplay}</PhoneLink>
           </Button>
         </div>
       </div>

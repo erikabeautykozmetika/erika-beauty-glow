@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { MapPin, MessageCircle, Phone } from "lucide-react";
 
+import { PhoneLink } from "@/components/PhoneLink";
 import { site } from "@/lib/site-data";
 
 export function Footer() {
@@ -45,10 +46,10 @@ export function Footer() {
               <br />
               {site.addressExtra}
             </p>
-            <a href={`tel:${site.phone}`} className="flex gap-2">
+            <PhoneLink className="flex gap-2">
               <Phone className="h-4 w-4 text-primary" />
               {site.phoneDisplay}
-            </a>
+            </PhoneLink>
             <a
               href={site.messengerUrl}
               target="_blank"

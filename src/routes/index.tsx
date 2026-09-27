@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/PageHero";
 import { SocialLinks } from "@/components/SocialLinks";
 import { Reveal } from "@/components/Reveal";
+import { PhoneLink } from "@/components/PhoneLink";
 import { categories, site, standaloneTreatments } from "@/lib/site-data";
 import {
   canonical,
@@ -252,7 +253,7 @@ function HomePage() {
             <Link to="/foglalas">Időpontot foglalok</Link>
           </Button>
           <Button asChild size="lg" variant="outline">
-            <a href={`tel:${site.phone}`}>{site.phoneDisplay}</a>
+            <PhoneLink>{site.phoneDisplay}</PhoneLink>
           </Button>
         </div>
       </section>
