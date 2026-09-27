@@ -13,6 +13,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { KeywordMarquee } from "@/components/KeywordMarquee";
 import { MessengerButton } from "@/components/MessengerButton";
 import { Toaster } from "@/components/ui/sonner";
 import { ScrollToTop } from "@/components/ScrollToTop";
@@ -128,6 +129,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <div className="flex min-h-screen flex-col">
         <Header />
+        <KeywordMarquee />
         <main className="flex-1">
           <Outlet />
         </main>

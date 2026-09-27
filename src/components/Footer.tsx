@@ -33,6 +33,7 @@ export function Footer() {
             <Link to="/foglalas">Foglalás</Link>
             <Link to="/eskuvoi-fotozas">Esküvői fotózás</Link>
             <Link to="/kontakt">Kontakt</Link>
+            <Link to="/partnerek">Partnereink</Link>
           </div>
         </nav>
         <div>

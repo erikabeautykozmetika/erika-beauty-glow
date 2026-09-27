@@ -12,6 +12,7 @@ export const navItems = [
   { to: "/foglalas", label: "FOGLALÁS" },
   { to: "/eskuvoi-fotozas", label: "ESKÜVŐI FOTÓZÁS" },
   { to: "/kontakt", label: "KONTAKT" },
+  { to: "/partnerek", label: "PARTNEREINK" },
 ] as const;
 
 function Wordmark() {

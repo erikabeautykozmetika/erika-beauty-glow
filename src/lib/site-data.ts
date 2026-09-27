@@ -499,6 +499,61 @@ export function findTreatment(categorySlug: string, treatmentSlug: string) {
   return findCategory(categorySlug)?.treatments.find((t) => t.slug === treatmentSlug);
 }
 
+export const marqueeKeywords: string[] = [
+  "Arckezelések",
+  "Arcmasszázs",
+  "Oxigénes kezelés",
+  "Személyre szabott arckezelés",
+  "Regeneráló kezelés",
+  "Szemkezelés",
+  "Tini kezelés",
+  "Ránctalanítás és bőrmegújító kezelések",
+  "Ránctalanítás – Therma Lifting",
+  "Ránctalanítás – tű nélküli kezelés",
+  "Ránctalanítás – mezoterápia",
+  "Ránctalanítás – non-invazív mezoterápia",
+  "Expressz kezelés",
+  "Vitaminos arckezelés",
+  "Bőrmegújító savas kezelés",
+  "Bőrfiatalító arckezelés",
+  "Hátkezelés",
+  "Férfi kozmetikai kezelés",
+  "Női és férfi gyantázás",
+  "Szemöldök kezelések",
+  "Professzionális szemöldökformázás",
+  "Szemöldöklifting",
+  "Szempilla kezelések",
+  "Szempilla lifting",
+  "Szempillafestés",
+  "Műszempilla leoldás",
+  "3D műszempilla – új szett",
+  "3D műszempilla – töltés",
+  "Microblading szemöldök tetoválás",
+  "Smink",
+  "Menyasszonyi próbasmink",
+  "Menyasszonyi smink",
+  "Budapest XII. kerület",
+  "Erika Beauty Kozmetika",
+];
+
+export type Partner = {
+  name: string;
+  url: string;
+  category: string;
+  description: string;
+  image?: string;
+};
+
+export const partners: Partner[] = [
+  {
+    name: "Harmony Room",
+    url: "https://www.harmonyroom.hu/",
+    category: "Fodrászat",
+    description:
+      "Fodrászat Budán, a Krisztina körúton, a Széll Kálmán tér közelében.",
+  },
+];
+
 export const allTreatmentPaths = [
   ...categories.flatMap((c) =>
     c.treatments.map((t) => `/kozmetikai-kezelesek/${c.slug}/${t.slug}`),
