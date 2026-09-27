@@ -3,6 +3,7 @@ import { ExternalLink, Handshake } from "lucide-react";
 
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { SocialLinks } from "@/components/SocialLinks";
+import { PageHero } from "@/components/PageHero";
 import { partners } from "@/lib/site-data";
 import { breadcrumbJsonLd, canonical, pageMeta } from "@/lib/seo";
 
@@ -13,6 +14,7 @@ export const Route = createFileRoute("/partnerek")({
       description:
         "Az Erika Beauty Kozmetika ajánlott partnerei és együttműködő vállalkozásai Budapesten.",
       path: "/partnerek",
+      image: "/images/hero-partnerek.jpg",
     }),
     links: canonical("/partnerek"),
     scripts: [
@@ -32,7 +34,9 @@ export const Route = createFileRoute("/partnerek")({
 
 function PartnersPage() {
   return (
-    <section className="mx-auto max-w-5xl px-4 py-14 text-center sm:px-6">
+    <>
+      <PageHero src="/images/hero-partnerek.jpg" alt="Erika Beauty Kozmetika partnerei" eager />
+      <section className="mx-auto max-w-5xl px-4 py-14 text-center sm:px-6">
       <Breadcrumbs items={[{ label: "Kezdőlap", to: "/" }, { label: "Partnereink" }]} />
       <h1 className="font-display text-3xl font-semibold text-primary sm:text-4xl">
         Partnereink
@@ -77,6 +81,7 @@ function PartnersPage() {
           </a>
         ))}
       </div>
-    </section>
+      </section>
+    </>
   );
 }
