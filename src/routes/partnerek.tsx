@@ -84,7 +84,7 @@ function PartnersPage() {
                 </span>
               </div>
             )}
-            <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-2 flex-1 whitespace-pre-line text-sm leading-relaxed text-muted-foreground">
               {p.description}
             </p>
             <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-primary">
