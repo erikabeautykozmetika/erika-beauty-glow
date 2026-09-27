@@ -14,8 +14,12 @@ export function ReviewCTA() {
         className="h-32 w-32 shrink-0 border border-border p-1 sm:h-36 sm:w-36"
       />
       <div>
-        <h2 className="flex items-center justify-center gap-2 font-display text-xl font-semibold sm:justify-start">
-          <Star className="h-5 w-5 text-primary" aria-hidden="true" />
+        <div className="flex items-center justify-center gap-1 sm:justify-start" aria-hidden="true">
+          {Array.from({ length: 5 }).map((_, i) => (
+            <Star key={i} className="h-4 w-4 fill-primary text-primary" />
+          ))}
+        </div>
+        <h2 className="mt-1 font-display text-xl font-semibold">
           Elégedett voltál? Értékelj minket a Google-n!
         </h2>
         <p className="mt-2 max-w-md text-sm leading-relaxed text-muted-foreground">
