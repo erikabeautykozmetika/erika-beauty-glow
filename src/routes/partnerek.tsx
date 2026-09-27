@@ -47,14 +47,14 @@ function PartnersPage() {
         dolgozunk együtt, és akiknek a munkáját mi magunk is szeretjük.
       </p>
 
-      <div className="mx-auto mt-12 grid max-w-3xl gap-6 text-left sm:grid-cols-2">
+      <div className="mx-auto mt-12 flex max-w-3xl flex-wrap justify-center gap-6">
         {partners.map((p) => (
           <a
             key={p.url}
             href={p.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex flex-col items-center overflow-hidden rounded-md border border-border bg-card p-6 text-center shadow-sm transition-shadow hover:shadow-md"
+            className="group flex w-full flex-col items-center overflow-hidden rounded-md border border-border bg-card p-6 text-center shadow-sm transition-shadow hover:shadow-md sm:w-[340px]"
           >
             {p.image && (
               <img
