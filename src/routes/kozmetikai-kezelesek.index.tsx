@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 
 import { PageHero } from "@/components/PageHero";
 import { SocialLinks } from "@/components/SocialLinks";
+import { ReviewCTA } from "@/components/ReviewCTA";
 import { Button } from "@/components/ui/button";
 import { overviewItems, findTreatmentImageByPath } from "@/lib/site-data";
 import { canonical, pageMeta } from "@/lib/seo";
@@ -74,6 +75,8 @@ function Page() {
             <Link to="/foglalas">Időpontfoglalás</Link>
           </Button>
         </div>
+
+        <ReviewCTA />
       </section>
     </>
   );

@@ -4,6 +4,7 @@ import { PageHero } from "@/components/PageHero";
 import { SocialLinks } from "@/components/SocialLinks";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ServiceCard } from "@/components/ServiceCard";
+import { ReviewCTA } from "@/components/ReviewCTA";
 import { Button } from "@/components/ui/button";
 import { findCategory, findStandalone } from "@/lib/site-data";
 import { breadcrumbJsonLd, canonical, pageMeta, serviceJsonLd } from "@/lib/seo";
@@ -191,6 +192,8 @@ function CategoryPage({ category: c }: { category: NonNullable<ReturnType<typeof
             </article>
           )}
         </div>
+
+        <ReviewCTA />
       </section>
     </>
   );
@@ -254,6 +257,8 @@ function StandaloneTreatmentPage({
           <Link to="/foglalas">Időpontfoglalás</Link>
         </Button>
       </div>
+
+      <ReviewCTA />
       </section>
     </>
   );

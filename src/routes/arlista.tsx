@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/PageHero";
 import { SocialLinks } from "@/components/SocialLinks";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ReviewCTA } from "@/components/ReviewCTA";
 import { categories, standaloneTreatments, site, type Treatment } from "@/lib/site-data";
 import { breadcrumbJsonLd, canonical, pageMeta } from "@/lib/seo";
 
@@ -143,6 +144,8 @@ function PriceListPage() {
           </Button>
         </div>
       </div>
+
+      <ReviewCTA />
     </section>
     </>
   );

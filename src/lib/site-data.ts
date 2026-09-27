@@ -18,6 +18,9 @@ export const site = {
   phone: "+36704173932",
   phoneDisplay: "+36 70 417 3932",
   messengerUrl: "https://m.me/erika.lorinc.5",
+  googlePlaceId: "ChIJB7_7QOrdQUcRyPvkMLCMT8s",
+  googleReviewUrl:
+    "https://search.google.com/local/writereview?placeid=ChIJB7_7QOrdQUcRyPvkMLCMT8s",
   mapsQuery: "1124 Budapest, Jagelló út 1-3.",
   parking: "Utcában fizetős.",
   parkingLots: "A MOM Irodaháznál és a Kongresszusi parkolóban.",

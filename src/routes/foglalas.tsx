@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/PageHero";
 import { SocialLinks } from "@/components/SocialLinks";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ReviewCTA } from "@/components/ReviewCTA";
 import { site } from "@/lib/site-data";
 import { breadcrumbJsonLd, canonical, pageMeta } from "@/lib/seo";
 
@@ -99,6 +100,8 @@ function BookingPage() {
           <Link to="/kozmetikai-kezelesek">Kezelések megtekintése</Link>
         </Button>
       </div>
+
+      <ReviewCTA />
     </section>
     </>
   );
